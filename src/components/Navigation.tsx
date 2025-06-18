@@ -48,7 +48,7 @@ const Navigation = () => {
                 <span className="font-serif">Travel</span>
               </div>
               <div className="text-xs text-amber-600 font-medium tracking-widest animate-fade-in">
-                ✨ Premium Travel Experience ✨
+                Premium Travel Experience
               </div>
             </div>
           </Link>

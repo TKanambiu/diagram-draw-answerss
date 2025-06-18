@@ -18,80 +18,122 @@ const Activities = () => {
     },
     {
       id: 2,
+      name: "Skydiving Over Palm Jumeirah",
+      image: "/lovable-uploads/4e84f9cf-38b7-41b6-aa4d-6000217b448d.png",
+      description: "Experience the ultimate adrenaline rush with tandem skydiving over Dubai's iconic Palm Jumeirah.",
+      highlights: ["Tandem Jump", "Palm Views", "Professional Guide", "HD Video Package"]
+    },
+    {
+      id: 3,
+      name: "Luxury Yacht Charter",
+      image: "/lovable-uploads/8d822d3d-3fbe-41d7-bac8-2af12f41c190.png",
+      description: "Cruise through Dubai Marina and see the city's stunning skyline from the water in ultimate luxury.",
+      highlights: ["Luxury Yacht", "Marina Views", "Atlantis Views", "Gourmet Catering"]
+    },
+    {
+      id: 4,
+      name: "Premium Yacht Experience",
+      image: "/lovable-uploads/214460b6-128d-4ae8-a69a-ae47f03c4a3e.png",
+      description: "Enjoy a premium yacht experience with breathtaking views of Dubai's coastline and landmarks.",
+      highlights: ["Premium Service", "Coastal Views", "Professional Crew", "Luxury Amenities"]
+    },
+    {
+      id: 5,
+      name: "Scuba Diving Adventure",
+      image: "/lovable-uploads/98ee2f3a-adf6-43aa-af52-cbe3efa4faf8.png",
+      description: "Explore Dubai's underwater world with professional diving instructors and discover marine life.",
+      highlights: ["Professional Guide", "Equipment Included", "Marine Life", "Certification Available"]
+    },
+    {
+      id: 6,
+      name: "Tandem Skydiving Dubai",
+      image: "/lovable-uploads/b91d963a-5590-472e-8bda-ea298b028551.png",
+      description: "Feel the ultimate thrill of free-falling over Dubai's stunning landscapes and coastline.",
+      highlights: ["15000ft Jump", "Dubai Coastline", "Expert Instructors", "Certificate"]
+    },
+    {
+      id: 7,
+      name: "Luxury Mega Yacht",
+      image: "/lovable-uploads/920ef9ad-df29-4c49-a8f1-65ef96250c9a.png",
+      description: "Experience ultimate luxury on our mega yacht with Atlantis views and premium amenities.",
+      highlights: ["Mega Yacht", "Atlantis Views", "VIP Service", "Fine Dining"]
+    },
+    {
+      id: 8,
       name: "Burj Khalifa Experience",
       image: "https://images.unsplash.com/photo-1512632578888-169bbbc64f33",
       description: "Visit the world's tallest building and enjoy breathtaking views from the observation decks.",
       highlights: ["At the Top SKY", "Level 148 & 125", "Dubai Fountain", "VIP Access"]
     },
     {
-      id: 3,
-      name: "Dubai Marina Yacht Tour",
-      image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d",
-      description: "Cruise through Dubai Marina and see the city's stunning skyline from the water.",
-      highlights: ["Luxury Yacht", "Marina Views", "Atlantis Views", "Refreshments"]
-    },
-    {
-      id: 4,
+      id: 9,
       name: "Dubai Aquarium & Underwater Zoo",
       image: "https://images.unsplash.com/photo-1566073771259-6a8506099945",
       description: "Walk through one of the world's largest suspended aquariums in Dubai Mall.",
       highlights: ["Tunnel Experience", "Shark Dive", "Glass Boat Ride", "Penguin Cove"]
     },
     {
-      id: 5,
+      id: 10,
       name: "Ski Dubai Snow Experience",
       image: "https://images.unsplash.com/photo-1551524164-6cf2ac92c602",
       description: "Enjoy snow activities in the middle of the desert at Mall of the Emirates.",
       highlights: ["Skiing & Snowboarding", "Penguin Encounter", "Snow Park", "Chairlift Rides"]
     },
     {
-      id: 6,
+      id: 11,
       name: "Dubai Frame & City Views",
       image: "https://images.unsplash.com/photo-1518684079-3c830dcef090",
       description: "See old and new Dubai from the world's largest picture frame structure.",
       highlights: ["Panoramic Views", "Sky Deck", "Museum Experience", "Glass Bridge"]
     },
     {
-      id: 7,
+      id: 12,
       name: "Hot Air Balloon Adventure",
       image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4",
       description: "Soar above the Dubai desert and witness a spectacular sunrise from the sky.",
       highlights: ["Sunrise Flight", "Desert Views", "Wildlife Spotting", "Champagne Breakfast"]
     },
     {
-      id: 8,
+      id: 13,
       name: "Dubai Miracle Garden",
       image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
       description: "Explore the world's largest natural flower garden with over 50 million flowers.",
       highlights: ["Floral Displays", "Butterfly Garden", "Heart Pathway", "Airbus A380"]
     },
     {
-      id: 9,
+      id: 14,
       name: "Global Village Cultural Tour",
       image: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4",
       description: "Experience cultures from around the world in one spectacular location.",
       highlights: ["Cultural Pavilions", "International Cuisine", "Live Shows", "Shopping"]
     },
     {
-      id: 10,
+      id: 15,
       name: "Dubai Parks & Resorts",
       image: "https://images.unsplash.com/photo-1594736797933-d0b22e7d5132",
       description: "Enjoy thrilling rides and attractions at the Middle East's largest theme park.",
       highlights: ["Motiongate Dubai", "Bollywood Parks", "Legoland Dubai", "Water Parks"]
     },
     {
-      id: 11,
+      id: 16,
       name: "Atlantis Aquaventure",
       image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
       description: "Experience one of the world's largest waterparks with thrilling slides and marine life.",
       highlights: ["Water Slides", "Shark Lagoon", "Dolphin Bay", "Private Beach"]
     },
     {
-      id: 12,
+      id: 17,
       name: "Dubai Creek Heritage Tour",
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96",
       description: "Discover Dubai's rich heritage and traditional culture in the historic Creek area.",
       highlights: ["Abra Rides", "Gold Souk", "Spice Souk", "Heritage Village"]
+    },
+    {
+      id: 18,
+      name: "Ferrari World Abu Dhabi",
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64",
+      description: "Experience the world's fastest roller coaster and Ferrari-themed attractions.",
+      highlights: ["Formula Rossa", "Ferrari Experience", "Racing Simulators", "Go-Karting"]
     }
   ];
 
@@ -108,9 +150,10 @@ const Activities = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
       <Navigation />
-      <div className="pt-24 pb-16">
+      
+      {/* Hero Section with Motion */}
+      <div className="pt-24 pb-8">
         <div className="container mx-auto px-4">
-          {/* Enhanced Header with animations */}
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent mb-6 animate-bounce">
               Dubai Adventures
@@ -119,6 +162,30 @@ const Activities = () => {
               Discover the magic of Dubai with our exclusive collection of experiences. 
               From desert safaris to sky-high adventures, create memories that last a lifetime.
             </p>
+          </div>
+
+          {/* Featured Adventure Photos with Motion */}
+          <div className="mb-16 overflow-hidden">
+            <div className="flex animate-slide-left-right space-x-8">
+              <img 
+                src="/lovable-uploads/4e84f9cf-38b7-41b6-aa4d-6000217b448d.png" 
+                alt="Skydiving over Palm Jumeirah" 
+                className="w-80 h-60 object-cover rounded-xl shadow-xl cursor-pointer hover:scale-110 transition-transform duration-500"
+                onClick={() => handleImageClick("Skydiving Over Palm Jumeirah")}
+              />
+              <img 
+                src="/lovable-uploads/8d822d3d-3fbe-41d7-bac8-2af12f41c190.png" 
+                alt="Luxury Yacht" 
+                className="w-80 h-60 object-cover rounded-xl shadow-xl cursor-pointer hover:scale-110 transition-transform duration-500"
+                onClick={() => handleImageClick("Luxury Yacht Charter")}
+              />
+              <img 
+                src="/lovable-uploads/b91d963a-5590-472e-8bda-ea298b028551.png" 
+                alt="Tandem Skydiving" 
+                className="w-80 h-60 object-cover rounded-xl shadow-xl cursor-pointer hover:scale-110 transition-transform duration-500"
+                onClick={() => handleImageClick("Tandem Skydiving Dubai")}
+              />
+            </div>
           </div>
 
           {/* Activities Grid with enhanced animations */}

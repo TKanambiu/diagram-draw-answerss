@@ -1,208 +1,179 @@
-
-import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock, Plane } from "lucide-react";
+import { Facebook, Instagram, Twitter, Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
-  const handleServiceClick = (service: string) => {
-    const message = encodeURIComponent(`Hi! I'm interested in your ${service} service. Could you please provide more information?`);
+  const handleWhatsAppContact = (service: string) => {
+    const message = encodeURIComponent(`Hi! I'm interested in ${service}. Could you please provide more information?`);
     window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
   };
 
+  const handlePhoneCall = () => {
+    window.open("tel:+971568723633", "_self");
+  };
+
+  const handleEmailContact = () => {
+    window.open("mailto:info@emiratesdubaitravel.com", "_self");
+  };
+
   const handleSocialClick = (platform: string) => {
-    // You can replace these with actual social media links
-    const socialLinks = {
-      facebook: "https://facebook.com",
-      twitter: "https://twitter.com",
-      instagram: "https://instagram.com"
-    };
-    window.open(socialLinks[platform as keyof typeof socialLinks], "_blank");
+    switch (platform) {
+      case 'facebook':
+        window.open("https://www.facebook.com/share/19RHchYsK1/", "_blank");
+        break;
+      case 'instagram':
+        window.open("https://instagram.com/emiratesdubaitravel", "_blank");
+        break;
+      case 'twitter':
+        window.open("https://twitter.com/emiratesdubai", "_blank");
+        break;
+    }
   };
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-16 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-amber-400/20 rounded-full animate-ping"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 4}s`
-            }}
-          />
-        ))}
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="animate-fade-in">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="bg-gradient-to-r from-amber-500 to-yellow-500 p-2 rounded-full animate-spin" style={{ animationDuration: '3s' }}>
-                <Plane className="w-6 h-6 text-white" />
+    <footer className="bg-gradient-to-br from-amber-900 via-yellow-900 to-amber-800 text-white">
+      
+      <div className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Company Info */}
+            <div className="animate-fade-in">
+              <div className="flex items-center space-x-3 mb-6">
+                <img 
+                  src="/lovable-uploads/a9cb64a3-5cd6-403e-9e5b-ce0057d90590.png" 
+                  alt="Emirates Dubai Travel Logo" 
+                  className="w-12 h-12 object-contain animate-pulse"
+                />
+                <div>
+                  <h3 className="text-xl font-bold bg-gradient-to-r from-amber-300 to-yellow-300 bg-clip-text text-transparent">
+                    Emirates Dubai Travel
+                  </h3>
+                  <p className="text-sm text-amber-200">Premium Travel Experience</p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-amber-400 to-yellow-400 bg-clip-text text-transparent animate-pulse">
-                Emirates Dubai Travel
-              </h3>
+              <p className="text-amber-100 mb-4">
+                Your gateway to unforgettable Dubai experiences. We create magical moments 
+                that last a lifetime with our premium travel services.
+              </p>
+              <div className="flex space-x-4">
+                <button 
+                  onClick={() => handleSocialClick('facebook')}
+                  className="bg-blue-600 hover:bg-blue-700 p-3 rounded-full transform hover:scale-110 transition-all duration-300 hover:shadow-xl"
+                >
+                  <Facebook size={20} />
+                </button>
+                <button 
+                  onClick={() => handleSocialClick('instagram')}
+                  className="bg-pink-600 hover:bg-pink-700 p-3 rounded-full transform hover:scale-110 transition-all duration-300 hover:shadow-xl"
+                >
+                  <Instagram size={20} />
+                </button>
+                <button 
+                  onClick={() => handleSocialClick('twitter')}
+                  className="bg-sky-600 hover:bg-sky-700 p-3 rounded-full transform hover:scale-110 transition-all duration-300 hover:shadow-xl"
+                >
+                  <Twitter size={20} />
+                </button>
+              </div>
             </div>
-            <p className="text-gray-300 mb-4 animate-slide-in-right">
-              Your premier destination management company for unforgettable Dubai experiences. 
-              We create magical journeys that showcase the best of the UAE.
-            </p>
-            <div className="flex space-x-4">
-              <button 
-                onClick={() => handleSocialClick('facebook')}
-                className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-all duration-300 transform hover:scale-125 hover:rotate-12 animate-bounce"
-              >
-                <span className="text-sm font-bold">f</span>
-              </button>
-              <button 
-                onClick={() => handleSocialClick('twitter')}
-                className="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-all duration-300 transform hover:scale-125 hover:rotate-12 animate-bounce"
-                style={{ animationDelay: '0.2s' }}
-              >
-                <span className="text-sm font-bold">t</span>
-              </button>
-              <button 
-                onClick={() => handleSocialClick('instagram')}
-                className="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-all duration-300 transform hover:scale-125 hover:rotate-12 animate-bounce"
-                style={{ animationDelay: '0.4s' }}
-              >
-                <span className="text-sm font-bold">i</span>
-              </button>
+
+            {/* Quick Links */}
+            <div className="animate-fade-in" style={{ animationDelay: "200ms" }}>
+              <h4 className="text-lg font-semibold mb-6 text-amber-300">Quick Links</h4>
+              <ul className="space-y-3">
+                <li><a href="/" className="text-amber-100 hover:text-amber-300 transition-colors duration-300 transform hover:translate-x-2 inline-block">Home</a></li>
+                <li><a href="/activities" className="text-amber-100 hover:text-amber-300 transition-colors duration-300 transform hover:translate-x-2 inline-block">Activities</a></li>
+                <li><a href="/cruise" className="text-amber-100 hover:text-amber-300 transition-colors duration-300 transform hover:translate-x-2 inline-block">Cruise</a></li>
+                <li><a href="/visa" className="text-amber-100 hover:text-amber-300 transition-colors duration-300 transform hover:translate-x-2 inline-block">Visa Services</a></li>
+                <li><a href="/hotel" className="text-amber-100 hover:text-amber-300 transition-colors duration-300 transform hover:translate-x-2 inline-block">Hotels</a></li>
+                <li><a href="/holiday" className="text-amber-100 hover:text-amber-300 transition-colors duration-300 transform hover:translate-x-2 inline-block">Holiday Packages</a></li>
+              </ul>
             </div>
-          </div>
 
-          {/* Quick Links */}
-          <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <h4 className="text-lg font-semibold mb-4 animate-pulse">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-300 hover:text-amber-400 transition-all duration-300 transform hover:translate-x-2">Home</Link></li>
-              <li><Link to="/about" className="text-gray-300 hover:text-amber-400 transition-all duration-300 transform hover:translate-x-2">About Us</Link></li>
-              <li><Link to="/activities" className="text-gray-300 hover:text-amber-400 transition-all duration-300 transform hover:translate-x-2">Activities</Link></li>
-              <li><Link to="/visa" className="text-gray-300 hover:text-amber-400 transition-all duration-300 transform hover:translate-x-2">Visa Services</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-amber-400 transition-all duration-300 transform hover:translate-x-2">Contact</Link></li>
-            </ul>
-          </div>
+            {/* Services */}
+            <div className="animate-fade-in" style={{ animationDelay: "400ms" }}>
+              <h4 className="text-lg font-semibold mb-6 text-amber-300">Our Services</h4>
+              <ul className="space-y-3">
+                <li>
+                  <button 
+                    onClick={() => handleWhatsAppContact("Desert Safari")}
+                    className="text-amber-100 hover:text-amber-300 transition-colors duration-300 transform hover:translate-x-2 inline-block text-left"
+                  >
+                    Desert Safari
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleWhatsAppContact("City Tours")}
+                    className="text-amber-100 hover:text-amber-300 transition-colors duration-300 transform hover:translate-x-2 inline-block text-left"
+                  >
+                    City Tours
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleWhatsAppContact("Yacht Charters")}
+                    className="text-amber-100 hover:text-amber-300 transition-colors duration-300 transform hover:translate-x-2 inline-block text-left"
+                  >
+                    Yacht Charters
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleWhatsAppContact("Adventure Sports")}
+                    className="text-amber-100 hover:text-amber-300 transition-colors duration-300 transform hover:translate-x-2 inline-block text-left"
+                  >
+                    Adventure Sports
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleWhatsAppContact("Cultural Experiences")}
+                    className="text-amber-100 hover:text-amber-300 transition-colors duration-300 transform hover:translate-x-2 inline-block text-left"
+                  >
+                    Cultural Experiences
+                  </button>
+                </li>
+              </ul>
+            </div>
 
-          {/* Services */}
-          <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <h4 className="text-lg font-semibold mb-4 animate-pulse">Our Services</h4>
-            <ul className="space-y-2 text-gray-300">
-              <li>
+            {/* Contact Info */}
+            <div className="animate-fade-in" style={{ animationDelay: "600ms" }}>
+              <h4 className="text-lg font-semibold mb-6 text-amber-300">Contact Us</h4>
+              <div className="space-y-4">
                 <button 
-                  onClick={() => handleServiceClick('Dubai City Tours')}
-                  className="hover:text-amber-400 transition-all duration-300 transform hover:translate-x-2 text-left"
+                  onClick={handlePhoneCall}
+                  className="flex items-center space-x-3 text-amber-100 hover:text-amber-300 transition-colors duration-300 transform hover:scale-105"
                 >
-                  Dubai City Tours
+                  <Phone size={18} />
+                  <span>+971 56 872 3633</span>
                 </button>
-              </li>
-              <li>
                 <button 
-                  onClick={() => handleServiceClick('Desert Safari')}
-                  className="hover:text-amber-400 transition-all duration-300 transform hover:translate-x-2 text-left"
+                  onClick={handleEmailContact}
+                  className="flex items-center space-x-3 text-amber-100 hover:text-amber-300 transition-colors duration-300 transform hover:scale-105"
                 >
-                  Desert Safari
+                  <Mail size={18} />
+                  <span>info@emiratesdubaitravel.com</span>
                 </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => handleServiceClick('Visa Processing')}
-                  className="hover:text-amber-400 transition-all duration-300 transform hover:translate-x-2 text-left"
-                >
-                  Visa Processing
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => handleServiceClick('Group Packages')}
-                  className="hover:text-amber-400 transition-all duration-300 transform hover:translate-x-2 text-left"
-                >
-                  Group Packages
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => handleServiceClick('Luxury Experiences')}
-                  className="hover:text-amber-400 transition-all duration-300 transform hover:translate-x-2 text-left"
-                >
-                  Luxury Experiences
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => handleServiceClick('Airport Transfers')}
-                  className="hover:text-amber-400 transition-all duration-300 transform hover:translate-x-2 text-left"
-                >
-                  Airport Transfers
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <h4 className="text-lg font-semibold mb-4 animate-pulse">Contact Info</h4>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3 group">
-                <Phone className="w-5 h-5 text-amber-400 mt-0.5 animate-pulse" />
-                <div>
-                  <a href="tel:+971568723633" className="text-gray-300 hover:text-amber-400 transition-colors transform group-hover:scale-105">+971 56 872 3633</a>
-                  <br />
-                  <a href="tel:+971505988436" className="text-gray-300 hover:text-amber-400 transition-colors transform group-hover:scale-105">+971 50 598 8436</a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 group">
-                <Mail className="w-5 h-5 text-amber-400 mt-0.5 animate-pulse" />
-                <div>
-                  <a href="mailto:info@emiratesdubaitravel.com" className="text-gray-300 hover:text-amber-400 transition-colors transform group-hover:scale-105">info@emiratesdubaitravel.com</a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-amber-400 mt-0.5 animate-bounce" />
-                <div>
-                  <p className="text-gray-300">Dubai Marina Walk</p>
-                  <p className="text-gray-300">Dubai, UAE</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Clock className="w-5 h-5 text-amber-400 mt-0.5 animate-spin" style={{ animationDuration: '2s' }} />
-                <div>
-                  <p className="text-gray-300">24/7 WhatsApp Support</p>
-                  <p className="text-gray-300">Mon-Fri: 9AM-8PM</p>
+                <div className="flex items-center space-x-3 text-amber-100">
+                  <MapPin size={18} />
+                  <span>Dubai, United Arab Emirates</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 animate-fade-in">
+      {/* Bottom Bar */}
+      <div className="border-t border-amber-700 py-6">
+        <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm animate-pulse">
+            <p className="text-amber-200 text-sm mb-4 md:mb-0">
               © 2024 Emirates Dubai Travel. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <button 
-                onClick={() => handleServiceClick('Privacy Policy')}
-                className="text-gray-400 hover:text-amber-400 text-sm transition-all duration-300 transform hover:scale-105"
-              >
-                Privacy Policy
-              </button>
-              <button 
-                onClick={() => handleServiceClick('Terms of Service')}
-                className="text-gray-400 hover:text-amber-400 text-sm transition-all duration-300 transform hover:scale-105"
-              >
-                Terms of Service
-              </button>
-              <button 
-                onClick={() => handleServiceClick('Cookie Policy')}
-                className="text-gray-400 hover:text-amber-400 text-sm transition-all duration-300 transform hover:scale-105"
-              >
-                Cookie Policy
-              </button>
+            <div className="flex space-x-6 text-sm">
+              <a href="#" className="text-amber-200 hover:text-amber-300 transition-colors duration-300">Privacy Policy</a>
+              <a href="#" className="text-amber-200 hover:text-amber-300 transition-colors duration-300">Terms of Service</a>
+              <a href="#" className="text-amber-200 hover:text-amber-300 transition-colors duration-300">Cookie Policy</a>
             </div>
           </div>
         </div>
