@@ -9,11 +9,11 @@ const Navigation = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Activities", path: "/activities" },
-    { name: "Visa Services", path: "/visa" },
-    { name: "Contact", path: "/contact" },
+    { name: "Cruise", path: "/cruise", color: "from-blue-500 to-cyan-500", textColor: "text-blue-600" },
+    { name: "Visa", path: "/visa", color: "from-green-500 to-emerald-500", textColor: "text-green-600" },
+    { name: "Activities", path: "/activities", color: "from-purple-500 to-violet-500", textColor: "text-purple-600" },
+    { name: "Hotel", path: "/hotel", color: "from-red-500 to-pink-500", textColor: "text-red-600" },
+    { name: "Holiday", path: "/holiday", color: "from-orange-500 to-amber-500", textColor: "text-orange-600" },
   ];
 
   const isActivePath = (path: string) => {
@@ -21,30 +21,34 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-white shadow-lg z-50 border-b border-amber-200">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            <div className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">
               Emirates Dubai Travel
             </div>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium ${
-                  isActivePath(item.path) ? "text-blue-600 border-b-2 border-blue-600" : ""
-                }`}
+                className="relative group"
               >
-                {item.name}
+                <Button 
+                  className={`bg-gradient-to-r ${item.color} hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-white font-semibold px-4 py-2 ${
+                    isActivePath(item.path) ? "shadow-lg scale-105" : ""
+                  }`}
+                >
+                  {item.name}
+                </Button>
               </Link>
             ))}
-            <Button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white">
+            <Button className="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-semibold px-6 py-2 ml-4">
               Book Now
             </Button>
           </div>
@@ -53,7 +57,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
+              className="text-gray-700 hover:text-amber-600 transition-colors duration-200"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -62,22 +66,26 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="md:hidden bg-white border-t border-amber-200">
+            <div className="px-2 pt-2 pb-3 space-y-2">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`block px-3 py-2 text-gray-700 hover: bg-blue-50 hover:text-blue-600 transition-colors duration-200 rounded-md ${
-                    isActivePath(item.path) ? "bg-blue-50 text-blue-600" : ""
-                  }`}
+                  className="block"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.name}
+                  <Button 
+                    className={`w-full bg-gradient-to-r ${item.color} hover:shadow-lg text-white font-semibold ${
+                      isActivePath(item.path) ? "shadow-lg" : ""
+                    }`}
+                  >
+                    {item.name}
+                  </Button>
                 </Link>
               ))}
-              <div className="px-3 py-2">
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white">
+              <div className="pt-2">
+                <Button className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-semibold">
                   Book Now
                 </Button>
               </div>
