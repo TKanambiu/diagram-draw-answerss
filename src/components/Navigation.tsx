@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Plane } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -20,35 +20,55 @@ const Navigation = () => {
     return location.pathname === path;
   };
 
+  const handleBookNow = () => {
+    const message = encodeURIComponent("Hi! I'm interested in booking a Dubai experience. Please help me with the best packages available.");
+    window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white shadow-lg z-50 border-b border-amber-200">
+    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-xl z-50 border-b border-amber-200 transition-all duration-300">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">
-              Emirates Dubai Travel
+        <div className="flex justify-between items-center h-20">
+          {/* Enhanced Logo */}
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+              <div className="relative bg-gradient-to-r from-amber-500 to-yellow-500 p-3 rounded-full transform group-hover:scale-110 transition-transform duration-300">
+                <Plane className="w-8 h-8 text-white animate-pulse" />
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <div className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent animate-pulse">
+                Emirates Dubai Travel
+              </div>
+              <div className="text-xs text-amber-600 font-medium tracking-wide">
+                Premium Travel Experience
+              </div>
             </div>
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-4">
-            {navItems.map((item) => (
+          {/* Desktop Menu with enhanced animations */}
+          <div className="hidden md:flex items-center space-x-2">
+            {navItems.map((item, index) => (
               <Link
                 key={item.name}
                 to={item.path}
                 className="relative group"
               >
                 <Button 
-                  className={`bg-gradient-to-r ${item.color} hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-white font-semibold px-4 py-2 ${
-                    isActivePath(item.path) ? "shadow-lg scale-105" : ""
+                  className={`bg-gradient-to-r ${item.color} hover:shadow-2xl transform hover:scale-110 transition-all duration-300 text-white font-semibold px-6 py-3 animate-fade-in hover:animate-pulse ${
+                    isActivePath(item.path) ? "shadow-2xl scale-110 animate-bounce" : ""
                   }`}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {item.name}
                 </Button>
               </Link>
             ))}
-            <Button className="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-semibold px-6 py-2 ml-4">
+            <Button 
+              onClick={handleBookNow}
+              className="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-semibold px-8 py-3 ml-4 transform hover:scale-110 transition-all duration-300 hover:shadow-2xl animate-bounce"
+            >
               Book Now
             </Button>
           </div>
@@ -57,27 +77,28 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-amber-600 transition-colors duration-200"
+              className="text-gray-700 hover:text-amber-600 transition-all duration-300 transform hover:scale-110"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={28} className="animate-spin" /> : <Menu size={28} className="animate-pulse" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu with enhanced animations */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-amber-200">
-            <div className="px-2 pt-2 pb-3 space-y-2">
-              {navItems.map((item) => (
+          <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-amber-200 animate-slide-in-right">
+            <div className="px-2 pt-2 pb-3 space-y-3">
+              {navItems.map((item, index) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="block"
+                  className="block animate-fade-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Button 
-                    className={`w-full bg-gradient-to-r ${item.color} hover:shadow-lg text-white font-semibold ${
-                      isActivePath(item.path) ? "shadow-lg" : ""
+                    className={`w-full bg-gradient-to-r ${item.color} hover:shadow-2xl text-white font-semibold transform hover:scale-105 transition-all duration-300 ${
+                      isActivePath(item.path) ? "shadow-2xl animate-pulse" : ""
                     }`}
                   >
                     {item.name}
@@ -85,7 +106,10 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="pt-2">
-                <Button className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-semibold">
+                <Button 
+                  onClick={handleBookNow}
+                  className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-semibold transform hover:scale-105 transition-all duration-300 animate-bounce"
+                >
                   Book Now
                 </Button>
               </div>
