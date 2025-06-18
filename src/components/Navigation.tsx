@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Plane } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -29,20 +29,26 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-xl z-50 border-b border-amber-200 transition-all duration-300">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
-          {/* Enhanced Logo */}
+          {/* Enhanced Logo with uploaded image */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-              <div className="relative bg-gradient-to-r from-amber-500 to-yellow-500 p-3 rounded-full transform group-hover:scale-110 transition-transform duration-300">
-                <Plane className="w-8 h-8 text-white animate-pulse" />
+              <div className="relative transform group-hover:scale-110 transition-transform duration-300">
+                <img 
+                  src="/lovable-uploads/a9cb64a3-5cd6-403e-9e5b-ce0057d90590.png" 
+                  alt="Emirates Dubai Travel Logo" 
+                  className="w-16 h-16 object-contain animate-pulse"
+                />
               </div>
             </div>
             <div className="flex flex-col">
-              <div className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent animate-pulse">
-                Emirates Dubai Travel
+              <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 bg-clip-text text-transparent animate-pulse tracking-wide">
+                <span className="font-serif italic">Emirates</span>{" "}
+                <span className="font-sans font-black">Dubai</span>{" "}
+                <span className="font-serif">Travel</span>
               </div>
-              <div className="text-xs text-amber-600 font-medium tracking-wide">
-                Premium Travel Experience
+              <div className="text-xs text-amber-600 font-medium tracking-widest animate-fade-in">
+                ✨ Premium Travel Experience ✨
               </div>
             </div>
           </Link>

@@ -100,6 +100,11 @@ const Activities = () => {
     window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
   };
 
+  const handleImageClick = (activityName: string) => {
+    const message = encodeURIComponent(`Hi! I'd like to know more about ${activityName}. Can you send me detailed information, photos, and availability?`);
+    window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
       <Navigation />
@@ -121,7 +126,7 @@ const Activities = () => {
             {activities.map((activity, index) => (
               <div 
                 key={activity.id} 
-                className={`bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-4 hover:shadow-2xl border border-amber-200 animate-fade-in ${
+                className={`bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-4 hover:shadow-2xl border border-amber-200 animate-fade-in cursor-pointer ${
                   hoveredActivity === activity.id ? 'scale-105 rotate-1' : ''
                 }`}
                 style={{ animationDelay: `${index * 100}ms` }}
@@ -132,16 +137,24 @@ const Activities = () => {
                   <img 
                     src={activity.image} 
                     alt={activity.name}
-                    className={`w-full h-48 object-cover transition-all duration-700 ${
+                    className={`w-full h-48 object-cover transition-all duration-700 cursor-pointer ${
                       hoveredActivity === activity.id ? 'scale-125 rotate-3' : 'scale-100'
                     }`}
+                    onClick={() => handleImageClick(activity.name)}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-lg font-bold text-white animate-pulse">{activity.name}</h3>
+                    <h3 
+                      className="text-lg font-bold text-white animate-pulse cursor-pointer hover:text-amber-300 transition-colors duration-300"
+                      onClick={() => handleImageClick(activity.name)}
+                    >
+                      {activity.name}
+                    </h3>
                   </div>
                   {hoveredActivity === activity.id && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 animate-pulse"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 animate-pulse flex items-center justify-center">
+                      <span className="text-white font-bold text-lg animate-bounce">Click for Details!</span>
+                    </div>
                   )}
                 </div>
                 
@@ -159,12 +172,20 @@ const Activities = () => {
                     </div>
                   </div>
                   
-                  <Button 
-                    onClick={() => handleBookNow(activity.name)}
-                    className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-semibold transform hover:scale-105 transition-all duration-300 hover:shadow-xl animate-bounce"
-                  >
-                    Book Now via WhatsApp
-                  </Button>
+                  <div className="flex flex-col gap-2">
+                    <Button 
+                      onClick={() => handleImageClick(activity.name)}
+                      className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
+                    >
+                      View Details
+                    </Button>
+                    <Button 
+                      onClick={() => handleBookNow(activity.name)}
+                      className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-semibold transform hover:scale-105 transition-all duration-300 hover:shadow-xl animate-bounce"
+                    >
+                      Book Now via WhatsApp
+                    </Button>
+                  </div>
                 </div>
               </div>
             ))}

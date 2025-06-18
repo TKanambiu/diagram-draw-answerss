@@ -74,16 +74,26 @@ const Hotel = () => {
     }
   ];
 
+  const handleViewHotels = (category: string) => {
+    const message = encodeURIComponent(`Hi! I'm interested in ${category} in Dubai. Could you please show me available options and pricing?`);
+    window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
+  };
+
+  const handleGetQuote = () => {
+    const message = encodeURIComponent("Hi! I'd like to get a custom quote for Dubai hotel bookings. Please provide me with your best packages and pricing.");
+    window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-yellow-50">
       <Navigation />
       <div className="pt-20 pb-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent mb-4">
+          <div className="text-center mb-12 animate-fade-in">
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent mb-4 animate-bounce">
               Dubai Hotel Bookings
             </h1>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto animate-slide-in-right">
               From world-class luxury resorts to budget-friendly stays, we'll help you find 
               the perfect accommodation for your Dubai experience.
             </p>
@@ -91,8 +101,12 @@ const Hotel = () => {
 
           {/* Hotel Categories Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {hotelCategories.map((category) => (
-              <div key={category.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-amber-200">
+            {hotelCategories.map((category, index) => (
+              <div 
+                key={category.id} 
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-amber-200 animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <div className="relative overflow-hidden">
                   <img 
                     src={category.image} 
@@ -101,7 +115,7 @@ const Hotel = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-xl font-bold text-white mb-2">{category.category}</h3>
+                    <h3 className="text-xl font-bold text-white mb-2 animate-pulse">{category.category}</h3>
                   </div>
                 </div>
                 <div className="p-6">
@@ -109,14 +123,17 @@ const Hotel = () => {
                   <ul className="text-sm text-gray-600 space-y-2 mb-6">
                     {category.hotels.map((hotel, index) => (
                       <li key={index} className="flex items-center">
-                        <span className="w-2 h-2 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full mr-3"></span>
+                        <span className="w-2 h-2 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full mr-3 animate-pulse"></span>
                         {hotel}
                       </li>
                     ))}
                   </ul>
                   
-                  <Button className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-semibold">
-                    View Hotels
+                  <Button 
+                    onClick={() => handleViewHotels(category.category)}
+                    className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-semibold transform hover:scale-105 transition-all duration-300 hover:shadow-xl animate-bounce"
+                  >
+                    View Hotels via WhatsApp
                   </Button>
                 </div>
               </div>
@@ -125,29 +142,29 @@ const Hotel = () => {
 
           {/* Services Section */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-amber-200">
+            <div className="bg-white p-8 rounded-xl shadow-lg border border-amber-200 animate-scale-in">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Hotel Services</h3>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-center">
-                  <span className="w-3 h-3 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full mr-3"></span>
+                  <span className="w-3 h-3 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full mr-3 animate-pulse"></span>
                   Best Rate Guarantee
                 </li>
                 <li className="flex items-center">
-                  <span className="w-3 h-3 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full mr-3"></span>
+                  <span className="w-3 h-3 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full mr-3 animate-pulse"></span>
                   Free Hotel Transfers
                 </li>
                 <li className="flex items-center">
-                  <span className="w-3 h-3 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full mr-3"></span>
+                  <span className="w-3 h-3 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full mr-3 animate-pulse"></span>
                   24/7 Customer Support
                 </li>
                 <li className="flex items-center">
-                  <span className="w-3 h-3 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full mr-3"></span>
+                  <span className="w-3 h-3 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full mr-3 animate-pulse"></span>
                   Flexible Cancellation
                 </li>
               </ul>
             </div>
             
-            <div className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white p-8 rounded-xl">
+            <div className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white p-8 rounded-xl animate-scale-in">
               <h3 className="text-2xl font-bold mb-4">Special Packages</h3>
               <ul className="space-y-3">
                 <li>• Hotel + Activities Combo</li>
@@ -155,7 +172,10 @@ const Hotel = () => {
                 <li>• Family Package Deals</li>
                 <li>• Business Travel Rates</li>
               </ul>
-              <Button className="mt-6 bg-white text-amber-600 hover:bg-gray-100 font-semibold">
+              <Button 
+                onClick={handleGetQuote}
+                className="mt-6 bg-white text-amber-600 hover:bg-gray-100 font-semibold transform hover:scale-105 transition-all duration-300"
+              >
                 Get Custom Quote
               </Button>
             </div>
