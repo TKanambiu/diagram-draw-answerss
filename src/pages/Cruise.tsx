@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import WhatsAppChat from "@/components/WhatsAppChat";
 import Footer from "@/components/Footer";
@@ -24,6 +23,14 @@ const Cruise = () => {
     },
     {
       id: 3,
+      title: "Dhow Dinner Cruise with Entertainment",
+      image: "/lovable-uploads/ed5fce7a-dacd-4f89-9db0-cafa8df8c5af.png",
+      description: "Traditional dhow dining experience with authentic Arabian entertainment and cultural performances.",
+      duration: "3 hours",
+      features: ["Traditional dhow boat", "Authentic Arabian buffet", "Live cultural entertainment", "Traditional dance shows", "Panoramic creek views"]
+    },
+    {
+      id: 4,
       title: "Luxury Yacht Charter - Dubai Coast",
       image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png",
       description: "Private luxury yacht experience along Dubai's pristine coastline.",
@@ -31,7 +38,7 @@ const Cruise = () => {
       features: ["Private yacht", "Professional crew", "Water sports", "Gourmet catering"]
     },
     {
-      id: 4,
+      id: 5,
       title: "Sunset Catamaran Cruise",
       image: "/lovable-uploads/37bd3fb1-3908-4a36-9da5-d29eaedd40be.png",
       description: "Watch the spectacular Dubai sunset aboard a modern catamaran.",
@@ -39,7 +46,7 @@ const Cruise = () => {
       features: ["Sunset views", "Refreshments", "Music system", "Swimming stop"]
     },
     {
-      id: 5,
+      id: 6,
       title: "Dubai Canal Sightseeing Cruise",
       image: "/lovable-uploads/767d2299-3c52-45d3-b72c-d113b05be5e4.png",
       description: "Explore Dubai's modern waterways and iconic landmarks from the water.",
@@ -47,7 +54,7 @@ const Cruise = () => {
       features: ["Modern landmarks", "Air-conditioned boat", "Commentary", "Photo opportunities"]
     },
     {
-      id: 6,
+      id: 7,
       title: "Desert Safari Cruise Experience",
       image: "/lovable-uploads/f1060add-de06-497e-9d0f-9ccfc0bf5de0.png",
       description: "Unique combination of desert adventure followed by a relaxing cruise experience.",

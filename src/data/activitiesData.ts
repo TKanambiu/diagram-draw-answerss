@@ -109,3 +109,13 @@ export const ferrariImages = [
   "/lovable-uploads/1c9f7ed7-9e85-438f-b740-05c52882eb07.png",
   "/lovable-uploads/96ead422-c1f0-4063-914a-7c95d3789754.png"
 ];
+
+// New dhow cruise entertainment images
+export const dhowCruiseImages = [
+  "/lovable-uploads/ed5fce7a-dacd-4f89-9db0-cafa8df8c5af.png",
+  "/lovable-uploads/e09e2a51-fabe-4964-975f-a921a5b8af69.png",
+  "/lovable-uploads/d2597b2c-fef9-4dfe-855c-e119494f939f.png",
+  "/lovable-uploads/5475eadd-1835-4d93-a24f-1419d7ab8a91.png",
+  "/lovable-uploads/99b30d62-8b30-4ca1-b118-061973bed25c.png",
+  "/lovable-uploads/82b484ba-8c12-4cce-bcc8-5a8ff206dd56.png"
+];
