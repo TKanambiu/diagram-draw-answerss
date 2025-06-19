@@ -1,4 +1,3 @@
-
 export const yachtingCruises = [
   { name: "Luxury Yacht Charters & Cruises", description: "Premium yacht experiences with luxury amenities, day cruises, sunset trips, and private events", image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png" },
   { name: "Traditional Dhow Cruises", description: "Authentic Arabian dhow boat experiences", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
@@ -131,4 +130,26 @@ export const waterSportsImages = [
 export const skydivingImages = [
   "/lovable-uploads/9caf94b8-8bcc-4060-abac-55a1a674319a.png",
   "/lovable-uploads/e60c1386-dd8a-4f16-8272-3e3d2b10db61.png"
+];
+
+// New image collections for the uploaded photos
+export const newDesertImages = [
+  "/lovable-uploads/4fafeddf-42d6-4dd4-a5c6-5f0ed95b3689.png",
+  "/lovable-uploads/eed682fd-1998-4ce7-bc12-ef7db4a49437.png",
+  "/lovable-uploads/641ff04a-a914-4b2e-8e73-5e4a1d585f0a.png"
+];
+
+export const newFormulaOneImages = [
+  "/lovable-uploads/ed22e76d-58a0-49dc-99da-e980595e84c5.png"
+];
+
+export const newMiracleGardenImages = [
+  "/lovable-uploads/aacf1666-a61c-4192-8185-ff80b546f2e7.png",
+  "/lovable-uploads/e0633304-d87f-4019-9179-dca286e96542.png",
+  "/lovable-uploads/478cfb72-2ef0-44de-8d45-10e4f6bab3ad.png",
+  "/lovable-uploads/b0bfeb3e-6284-4285-95f8-5ee27edab002.png"
+];
+
+export const visaImages = [
+  "/lovable-uploads/f9082ca4-b70a-4446-a58c-8fa4f2656a48.png"
 ];

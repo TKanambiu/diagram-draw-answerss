@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -24,7 +25,11 @@ import {
   marinaImages,
   ferrariImages,
   waterSportsImages,
-  skydivingImages
+  skydivingImages,
+  newDesertImages,
+  newFormulaOneImages,
+  newMiracleGardenImages,
+  visaImages
 } from "@/data/activitiesData";
 
 const Activities = () => {
@@ -90,8 +95,8 @@ const Activities = () => {
               <ActivitySection 
                 activities={themeParksAttractions} 
                 imageSliders={[
-                  { images: formulaOneImages, title: "Formula 1 Grand Prix" },
-                  { images: miracleGardenImages, title: "Dubai Miracle Garden" },
+                  { images: [...formulaOneImages, ...newFormulaOneImages], title: "Formula 1 Grand Prix" },
+                  { images: [...miracleGardenImages, ...newMiracleGardenImages], title: "Dubai Miracle Garden" },
                   { images: museumFrameImages, title: "Museum of the Future & Dubai Frame" },
                   { images: zooImages, title: "Zoo & Wildlife Experiences" }
                 ]}
@@ -102,7 +107,7 @@ const Activities = () => {
             <TabsContent value="desert">
               <ActivitySection 
                 activities={desertExperiences} 
-                imageSliders={[{ images: desertImages, title: "Desert Safari Adventures" }]}
+                imageSliders={[{ images: [...desertImages, ...newDesertImages], title: "Desert Safari Adventures" }]}
                 onBookNow={handleBookNow} 
               />
             </TabsContent>
@@ -121,6 +126,7 @@ const Activities = () => {
             <TabsContent value="visas">
               <ActivitySection 
                 activities={visasPaperwork} 
+                imageSliders={[{ images: visaImages, title: "Visa Services" }]}
                 onBookNow={handleBookNow} 
               />
             </TabsContent>
