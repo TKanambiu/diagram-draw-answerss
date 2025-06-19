@@ -40,12 +40,24 @@ const Activities = () => {
   ];
 
   const themeParksAttractions = [
-    { name: "Ferrari World Abu Dhabi", description: "World's largest indoor theme park", image: "/lovable-uploads/9cebc0ec-daea-4380-bbaa-5bb3376794c4.png" },
+    { name: "Ferrari World Abu Dhabi", description: "World's largest indoor theme park", image: "/lovable-uploads/ebbe7489-7b6a-4cdb-adb1-f4a1c4ffbea4.png" },
     { name: "Formula 1 Grand Prix Tickets", description: "Exclusive F1 race tickets and packages", image: "/lovable-uploads/0ffc5369-38df-4229-9fa5-98cd30c214c0.png" },
-    { name: "Dubai Miracle Garden", description: "World's largest natural flower garden", image: "/lovable-uploads/920ef9ad-df29-4c49-a8f1-65ef96250c9a.png" },
-    { name: "Museum of the Future", description: "Dubai's most innovative architectural marvel", image: "/lovable-uploads/c21fbecb-d54c-4ce2-b9cb-b9598ecd90b7.png" },
-    { name: "Dubai Frame", description: "Iconic golden frame offering panoramic views", image: "/lovable-uploads/c21fbecb-d54c-4ce2-b9cb-b9598ecd90b7.png" },
+    { name: "Dubai Miracle Garden", description: "World's largest natural flower garden", image: "/lovable-uploads/9b715064-256b-45c6-967f-6c43c71d0859.png" },
+    { name: "Museum of the Future", description: "Dubai's most innovative architectural marvel", image: "/lovable-uploads/9d408d3e-f1ac-484e-9e8a-c35e3318f2df.png" },
+    { name: "Dubai Frame", description: "Iconic golden frame offering panoramic views", image: "/lovable-uploads/fcbd310e-927b-4049-bf89-38a380a2a849.png" },
     { name: "Al Ain Zoo", description: "Wildlife conservation and safari experiences", image: "/lovable-uploads/36e0d889-385e-493b-be74-fd791bcc2e2b.png" }
+  ];
+
+  const miracleGardenImages = [
+    "/lovable-uploads/9b715064-256b-45c6-967f-6c43c71d0859.png",
+    "/lovable-uploads/deb3ab63-0a80-4259-b17c-0e0753857550.png",
+    "/lovable-uploads/2c63bb17-11fe-4e72-b607-80cbd0fec950.png"
+  ];
+
+  const museumFrameImages = [
+    "/lovable-uploads/fcbd310e-927b-4049-bf89-38a380a2a849.png",
+    "/lovable-uploads/9d408d3e-f1ac-484e-9e8a-c35e3318f2df.png",
+    "/lovable-uploads/70715c1e-c871-470b-b426-f401aaeebe69.png"
   ];
 
   const zooImages = [
@@ -69,13 +81,19 @@ const Activities = () => {
   ];
 
   const visasPaperwork = [
-    { name: "Tourist Visa", description: "Fast processing for UAE tourist visas", image: "/lovable-uploads/c21fbecb-d54c-4ce2-b9cb-b9598ecd90b7.png" },
-    { name: "Residence Visa", description: "Long-term residence visa assistance", image: "/lovable-uploads/c21fbecb-d54c-4ce2-b9cb-b9598ecd90b7.png" }
+    { name: "Tourist Visa", description: "Fast processing for UAE tourist visas", image: "/lovable-uploads/026e2d7e-6b32-45b8-9e9d-1888e22a9d54.png" },
+    { name: "Residence Visa", description: "Long-term residence visa assistance", image: "/lovable-uploads/026e2d7e-6b32-45b8-9e9d-1888e22a9d54.png" }
   ];
 
   const uniqueStays = [
     { name: "Overnight Yacht Live-Aboard", description: "Sleep under the stars on a luxury yacht", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
-    { name: "Queen Elizabeth II Floating Suite", description: "Exclusive suite on the historic QE2 hotel", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" }
+    { name: "Queen Elizabeth II Floating Suite", description: "Exclusive suite on the historic QE2 hotel", image: "/lovable-uploads/ce9bca36-9216-4d50-9f7d-431a7d3b7aa1.png" }
+  ];
+
+  const queenElizabethImages = [
+    "/lovable-uploads/ce9bca36-9216-4d50-9f7d-431a7d3b7aa1.png",
+    "/lovable-uploads/3e275b51-5a81-430c-82fa-3f9db32997fa.png",
+    "/lovable-uploads/e8ea62b3-70cf-460b-bb6a-de0ca1006d4c.png"
   ];
 
   const renderActivityCard = (activity: any, index: number) => (
@@ -186,6 +204,8 @@ const Activities = () => {
             </TabsContent>
 
             <TabsContent value="theme-parks">
+              {renderImageSlider(miracleGardenImages, "Dubai Miracle Garden")}
+              {renderImageSlider(museumFrameImages, "Museum of the Future & Dubai Frame")}
               {renderImageSlider(zooImages, "Zoo & Wildlife Experiences")}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {themeParksAttractions.map((activity, index) => renderActivityCard(activity, index))}
@@ -211,6 +231,7 @@ const Activities = () => {
             </TabsContent>
 
             <TabsContent value="unique">
+              {renderImageSlider(queenElizabethImages, "Queen Elizabeth II Floating Suite")}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {uniqueStays.map((activity, index) => renderActivityCard(activity, index))}
               </div>
