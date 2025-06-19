@@ -20,7 +20,9 @@ import {
   miracleGardenImages,
   museumFrameImages,
   zooImages,
-  queenElizabethImages
+  queenElizabethImages,
+  marinaImages,
+  ferrariImages
 } from "@/data/activitiesData";
 
 const Activities = () => {
@@ -59,7 +61,10 @@ const Activities = () => {
             <TabsContent value="yachting">
               <ActivitySection 
                 activities={yachtingCruises} 
-                imageSliders={[{ images: yachtImages, title: "Luxury Yacht Experiences" }]}
+                imageSliders={[
+                  { images: yachtImages, title: "Luxury Yacht Experiences" },
+                  { images: marinaImages, title: "Marina & Beach Experience" }
+                ]}
                 onBookNow={handleBookNow} 
               />
             </TabsContent>
@@ -96,7 +101,10 @@ const Activities = () => {
             <TabsContent value="transport">
               <ActivitySection 
                 activities={groundTransportation} 
-                imageSliders={[{ images: limousineImages, title: "Luxury Transportation" }]}
+                imageSliders={[
+                  { images: limousineImages, title: "Luxury Transportation" },
+                  { images: ferrariImages, title: "Premium Ferrari Collection" }
+                ]}
                 onBookNow={handleBookNow} 
               />
             </TabsContent>
@@ -140,3 +148,4 @@ const Activities = () => {
 };
 
 export default Activities;
+

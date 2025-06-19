@@ -15,7 +15,7 @@ const FeaturedTours = () => {
     {
       id: 2,
       title: "Desert Safari Premium",
-      image: "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3",
+      image: "/lovable-uploads/f1060add-de06-497e-9d0f-9ccfc0bf5de0.png",
       description: "Experience the thrill of the Arabian desert with dune bashing and traditional entertainment",
       duration: "6 hours",
       highlights: ["Dune Bashing", "Camel Riding", "BBQ Dinner", "Cultural Shows"]
@@ -23,7 +23,7 @@ const FeaturedTours = () => {
     {
       id: 3,
       title: "Marina & Beach Experience",
-      image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62",
+      image: "/lovable-uploads/e0b69a7c-b75e-4095-885a-ae392b569e79.png",
       description: "Explore Dubai Marina's stunning waterfront and pristine beaches",
       duration: "5 hours",
       highlights: ["Marina Walk", "Beach Access", "Yacht Views", "Waterfront Dining"]
@@ -113,3 +113,4 @@ const FeaturedTours = () => {
 };
 
 export default FeaturedTours;
+

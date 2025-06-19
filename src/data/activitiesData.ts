@@ -10,7 +10,8 @@ export const waterAirAdventures = [
   { name: "Wakeboarding & Waterskiing", description: "Professional wakeboarding and skiing experiences", image: "/lovable-uploads/4e84f9cf-38b7-41b6-aa4d-6000217b448d.png" },
   { name: "Parasailing", description: "Soar above Dubai's coastline with parasailing", image: "/lovable-uploads/4e84f9cf-38b7-41b6-aa4d-6000217b448d.png" },
   { name: "Skydive Dubai", description: "Tandem skydiving over iconic Dubai landmarks", image: "/lovable-uploads/ccad2320-aad3-4ac5-91fb-6c58d6bde829.png" },
-  { name: "Helicopter Tours", description: "Aerial tours of Dubai's stunning skyline", image: "/lovable-uploads/86dbcc77-2d33-4e6b-80a1-d1c43237d88c.png" }
+  { name: "Helicopter Tours", description: "Aerial tours of Dubai's stunning skyline", image: "/lovable-uploads/86dbcc77-2d33-4e6b-80a1-d1c43237d88c.png" },
+  { name: "Breakfast in the Air", description: "Unique dining experience suspended high above Dubai", image: "/lovable-uploads/fcf70f1e-696a-4ac2-9208-c20a1ba4b358.png" }
 ];
 
 export const themeParksAttractions = [
@@ -28,13 +29,13 @@ export const desertExperiences = [
 ];
 
 export const groundTransportation = [
-  { name: "Self-Drive Luxury Cars", description: "Premium car rentals for self-driving", image: "/lovable-uploads/0ffc5369-38df-4229-9fa5-98cd30c214c0.png" },
+  { name: "Self-Drive Luxury Cars", description: "Premium car rentals for self-driving", image: "/lovable-uploads/c24685ca-cc44-4fc5-bd03-a0a74d80c932.png" },
   { name: "Chauffeured Limousines & SUVs", description: "Professional chauffeur services with luxury vehicles", image: "/lovable-uploads/aede6175-4086-428d-893b-2f52c27c187e.png" }
 ];
 
 export const visasPaperwork = [
-  { name: "Tourist Visa", description: "Fast processing for UAE tourist visas", image: "/lovable-uploads/026e2d7e-6b32-45b8-9e9d-1888e22a9d54.png" },
-  { name: "Residence Visa", description: "Long-term residence visa assistance", image: "/lovable-uploads/026e2d7e-6b32-45b8-9e9d-1888e22a9d54.png" }
+  { name: "Tourist Visa", description: "Fast processing for UAE tourist visas", image: "/lovable-uploads/a45ee7c4-7979-4d9b-8784-787f495d218a.png" },
+  { name: "Residence Visa", description: "Long-term residence visa assistance", image: "/lovable-uploads/a45ee7c4-7979-4d9b-8784-787f495d218a.png" }
 ];
 
 export const uniqueStays = [
@@ -95,3 +96,17 @@ export const queenElizabethImages = [
   "/lovable-uploads/3e275b51-5a81-430c-82fa-3f9db32997fa.png",
   "/lovable-uploads/e8ea62b3-70cf-460b-bb6a-de0ca1006d4c.png"
 ];
+
+// New image collections for the uploaded photos
+export const marinaImages = [
+  "/lovable-uploads/e0b69a7c-b75e-4095-885a-ae392b569e79.png",
+  "/lovable-uploads/767d2299-3c52-45d3-b72c-d113b05be5e4.png",
+  "/lovable-uploads/07493481-ecfd-4df0-84cd-e19fe65011b8.png"
+];
+
+export const ferrariImages = [
+  "/lovable-uploads/c24685ca-cc44-4fc5-bd03-a0a74d80c932.png",
+  "/lovable-uploads/1c9f7ed7-9e85-438f-b740-05c52882eb07.png",
+  "/lovable-uploads/96ead422-c1f0-4063-914a-7c95d3789754.png"
+];
+
