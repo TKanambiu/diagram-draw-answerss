@@ -109,4 +109,3 @@ export const ferrariImages = [
   "/lovable-uploads/1c9f7ed7-9e85-438f-b740-05c52882eb07.png",
   "/lovable-uploads/96ead422-c1f0-4063-914a-7c95d3789754.png"
 ];
-

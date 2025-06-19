@@ -9,7 +9,7 @@ const Cruise = () => {
     {
       id: 1,
       title: "Dubai Marina Premium Dinner Cruise",
-      image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62",
+      image: "/lovable-uploads/e0b69a7c-b75e-4095-885a-ae392b569e79.png",
       description: "Experience luxury dining while cruising through Dubai Marina's stunning skyline.",
       duration: "3 hours",
       features: ["5-star buffet dinner", "Live entertainment", "Panoramic views", "Welcome drinks"]
@@ -17,7 +17,7 @@ const Cruise = () => {
     {
       id: 2,
       title: "Dubai Creek Traditional Dhow Cruise",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96",
+      image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png",
       description: "Sail on a traditional wooden dhow and discover Dubai's heritage along the historic creek.",
       duration: "2.5 hours",
       features: ["Traditional dhow boat", "Arabic buffet", "Cultural shows", "Heritage views"]
@@ -25,7 +25,7 @@ const Cruise = () => {
     {
       id: 3,
       title: "Luxury Yacht Charter - Dubai Coast",
-      image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a",
+      image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png",
       description: "Private luxury yacht experience along Dubai's pristine coastline.",
       duration: "4-8 hours",
       features: ["Private yacht", "Professional crew", "Water sports", "Gourmet catering"]
@@ -33,7 +33,7 @@ const Cruise = () => {
     {
       id: 4,
       title: "Sunset Catamaran Cruise",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4",
+      image: "/lovable-uploads/37bd3fb1-3908-4a36-9da5-d29eaedd40be.png",
       description: "Watch the spectacular Dubai sunset aboard a modern catamaran.",
       duration: "2 hours",
       features: ["Sunset views", "Refreshments", "Music system", "Swimming stop"]
@@ -41,18 +41,18 @@ const Cruise = () => {
     {
       id: 5,
       title: "Dubai Canal Sightseeing Cruise",
-      image: "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f",
+      image: "/lovable-uploads/767d2299-3c52-45d3-b72c-d113b05be5e4.png",
       description: "Explore Dubai's modern waterways and iconic landmarks from the water.",
       duration: "1.5 hours",
       features: ["Modern landmarks", "Air-conditioned boat", "Commentary", "Photo opportunities"]
     },
     {
       id: 6,
-      title: "Fishing Trip & Cruise Combo",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
-      description: "Combine deep-sea fishing with a relaxing cruise experience.",
-      duration: "6 hours",
-      features: ["Fishing equipment", "Professional guide", "Fresh catch BBQ", "Cruise experience"]
+      title: "Desert Safari Cruise Experience",
+      image: "/lovable-uploads/f1060add-de06-497e-9d0f-9ccfc0bf5de0.png",
+      description: "Unique combination of desert adventure followed by a relaxing cruise experience.",
+      duration: "8 hours",
+      features: ["Desert safari", "Dune bashing", "Cruise dinner", "Cultural entertainment"]
     }
   ];
 
@@ -126,8 +126,8 @@ const Cruise = () => {
                   <p className="text-sm">Creek Dhow + Marina Cruise</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                  <h3 className="font-bold mb-2">Ultimate Luxury</h3>
-                  <p className="text-sm">Yacht Charter + Sunset Cruise</p>
+                  <h3 className="font-bold mb-2">Ultimate Adventure</h3>
+                  <p className="text-sm">Desert Safari + Sunset Cruise</p>
                 </div>
               </div>
             </div>
