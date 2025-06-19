@@ -1,12 +1,8 @@
 
 export const yachtingCruises = [
-  { name: "Luxury Yacht Charters", description: "Private luxury yacht experiences with premium amenities", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
-  { name: "Day Cruises", description: "Full day sailing experiences around Dubai coastline", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
-  { name: "Sunset Cruises", description: "Romantic sunset sailing with stunning views", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
-  { name: "Private Parties & Events", description: "Exclusive yacht parties and corporate events", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
+  { name: "Luxury Yacht Charters & Cruises", description: "Premium yacht experiences with luxury amenities, day cruises, sunset trips, and private events", image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png" },
   { name: "Traditional Dhow Cruises", description: "Authentic Arabian dhow boat experiences", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
-  { name: "Dinner Cruise with Live Entertainment", description: "Fine dining with cultural shows aboard", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
-  { name: "Brunch Cruises", description: "Luxury brunch experiences on the water", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" }
+  { name: "Dinner Cruise with Live Entertainment", description: "Fine dining with cultural shows aboard", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" }
 ];
 
 export const waterAirAdventures = [
@@ -19,7 +15,7 @@ export const waterAirAdventures = [
 
 export const themeParksAttractions = [
   { name: "Ferrari World Abu Dhabi", description: "World's largest indoor theme park", image: "/lovable-uploads/ebbe7489-7b6a-4cdb-adb1-f4a1c4ffbea4.png" },
-  { name: "Formula 1 Grand Prix Tickets", description: "Exclusive F1 race tickets and packages", image: "/lovable-uploads/0ffc5369-38df-4229-9fa5-98cd30c214c0.png" },
+  { name: "Formula 1 Grand Prix Tickets", description: "Exclusive F1 race tickets and packages", image: "/lovable-uploads/bbd8c5c4-b26f-42a4-bcc3-b35307f3d80a.png" },
   { name: "Dubai Miracle Garden", description: "World's largest natural flower garden", image: "/lovable-uploads/9b715064-256b-45c6-967f-6c43c71d0859.png" },
   { name: "Museum of the Future", description: "Dubai's most innovative architectural marvel", image: "/lovable-uploads/9d408d3e-f1ac-484e-9e8a-c35e3318f2df.png" },
   { name: "Dubai Frame", description: "Iconic golden frame offering panoramic views", image: "/lovable-uploads/fcbd310e-927b-4049-bf89-38a380a2a849.png" },
@@ -27,15 +23,13 @@ export const themeParksAttractions = [
 ];
 
 export const desertExperiences = [
-  { name: "Morning Desert Safari", description: "Early morning dune bashing and camel rides", image: "/lovable-uploads/d0221110-5c8a-4e43-8dfa-1da4ee967acc.png" },
-  { name: "Evening Desert Safari", description: "Sunset safari with BBQ dinner and shows", image: "/lovable-uploads/d0221110-5c8a-4e43-8dfa-1da4ee967acc.png" },
-  { name: "Overnight Safari with BBQ & Show", description: "Full desert camping experience", image: "/lovable-uploads/d0221110-5c8a-4e43-8dfa-1da4ee967acc.png" },
-  { name: "Photo Safaris", description: "Professional photography desert tours", image: "/lovable-uploads/d0221110-5c8a-4e43-8dfa-1da4ee967acc.png" }
+  { name: "Desert Safari Adventures", description: "Thrilling dune bashing, camel rides, BBQ dinner and cultural shows", image: "/lovable-uploads/f1060add-de06-497e-9d0f-9ccfc0bf5de0.png" },
+  { name: "Photo Safaris", description: "Professional photography desert tours", image: "/lovable-uploads/8cae6130-34d5-4166-99ab-1c080c5dbe11.png" }
 ];
 
 export const groundTransportation = [
   { name: "Self-Drive Luxury Cars", description: "Premium car rentals for self-driving", image: "/lovable-uploads/0ffc5369-38df-4229-9fa5-98cd30c214c0.png" },
-  { name: "Chauffeured Limousines & SUVs", description: "Professional chauffeur services", image: "/lovable-uploads/71fba801-a9fc-48c6-8b4c-5729492d59aa.png" }
+  { name: "Chauffeured Limousines & SUVs", description: "Professional chauffeur services with luxury vehicles", image: "/lovable-uploads/aede6175-4086-428d-893b-2f52c27c187e.png" }
 ];
 
 export const visasPaperwork = [
@@ -53,6 +47,27 @@ export const helicopterImages = [
   "/lovable-uploads/0260aa58-51ba-4251-ab06-d8cbbcae5016.png",
   "/lovable-uploads/69806259-7038-4ae7-b806-46ba6ea917e9.png",
   "/lovable-uploads/b3851242-8589-4d28-8849-ebd6681e5669.png"
+];
+
+export const yachtImages = [
+  "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png",
+  "/lovable-uploads/ed15b493-f7a8-44f1-91c4-4541214637ae.png",
+  "/lovable-uploads/37bd3fb1-3908-4a36-9da5-d29eaedd40be.png"
+];
+
+export const formulaOneImages = [
+  "/lovable-uploads/bbd8c5c4-b26f-42a4-bcc3-b35307f3d80a.png",
+  "/lovable-uploads/e29a0d1f-4b25-4d15-9f48-4b5d95573b18.png"
+];
+
+export const limousineImages = [
+  "/lovable-uploads/aede6175-4086-428d-893b-2f52c27c187e.png",
+  "/lovable-uploads/12ef6bf9-3fa2-46af-ad6d-022a85ba013c.png"
+];
+
+export const desertImages = [
+  "/lovable-uploads/f1060add-de06-497e-9d0f-9ccfc0bf5de0.png",
+  "/lovable-uploads/8cae6130-34d5-4166-99ab-1c080c5dbe11.png"
 ];
 
 export const miracleGardenImages = [

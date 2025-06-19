@@ -13,6 +13,10 @@ import {
   visasPaperwork,
   uniqueStays,
   helicopterImages,
+  yachtImages,
+  formulaOneImages,
+  limousineImages,
+  desertImages,
   miracleGardenImages,
   museumFrameImages,
   zooImages,
@@ -55,6 +59,7 @@ const Activities = () => {
             <TabsContent value="yachting">
               <ActivitySection 
                 activities={yachtingCruises} 
+                imageSliders={[{ images: yachtImages, title: "Luxury Yacht Experiences" }]}
                 onBookNow={handleBookNow} 
               />
             </TabsContent>
@@ -71,6 +76,7 @@ const Activities = () => {
               <ActivitySection 
                 activities={themeParksAttractions} 
                 imageSliders={[
+                  { images: formulaOneImages, title: "Formula 1 Grand Prix" },
                   { images: miracleGardenImages, title: "Dubai Miracle Garden" },
                   { images: museumFrameImages, title: "Museum of the Future & Dubai Frame" },
                   { images: zooImages, title: "Zoo & Wildlife Experiences" }
@@ -82,6 +88,7 @@ const Activities = () => {
             <TabsContent value="desert">
               <ActivitySection 
                 activities={desertExperiences} 
+                imageSliders={[{ images: desertImages, title: "Desert Safari Adventures" }]}
                 onBookNow={handleBookNow} 
               />
             </TabsContent>
@@ -89,6 +96,7 @@ const Activities = () => {
             <TabsContent value="transport">
               <ActivitySection 
                 activities={groundTransportation} 
+                imageSliders={[{ images: limousineImages, title: "Luxury Transportation" }]}
                 onBookNow={handleBookNow} 
               />
             </TabsContent>
