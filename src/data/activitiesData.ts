@@ -151,5 +151,19 @@ export const newMiracleGardenImages = [
 ];
 
 export const visaImages = [
-  "/lovable-uploads/f9082ca4-b70a-4446-a58c-8fa4f2656a48.png"
+  "/lovable-uploads/f9082ca4-b70a-4446-a58c-8fa4f2656a48.png",
+  "/lovable-uploads/d85ea6af-7756-4918-89c2-3cbe86220a84.png"
+];
+
+// Additional desert images from the new uploads
+export const additionalDesertImages = [
+  "/lovable-uploads/e4fc1cf7-92e4-490f-adbe-cc2ff335ce60.png",
+  "/lovable-uploads/fa627176-835b-4038-834a-627b38bd2ec8.png",
+  "/lovable-uploads/9898d259-f8cb-4140-81e3-97b628778a3e.png"
+];
+
+// Additional Formula 1 images
+export const additionalFormulaOneImages = [
+  "/lovable-uploads/409d56b0-1a77-4d0a-8ed0-d9909d419d70.png",
+  "/lovable-uploads/f02b0d13-ee11-4477-8815-bb1312d7fd78.png"
 ];
