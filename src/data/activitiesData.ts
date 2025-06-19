@@ -6,10 +6,10 @@ export const yachtingCruises = [
 ];
 
 export const waterAirAdventures = [
-  { name: "Jet-Ski & Flyboard", description: "High-speed water sports and flyboarding thrills", image: "/lovable-uploads/4e84f9cf-38b7-41b6-aa4d-6000217b448d.png" },
-  { name: "Wakeboarding & Waterskiing", description: "Professional wakeboarding and skiing experiences", image: "/lovable-uploads/4e84f9cf-38b7-41b6-aa4d-6000217b448d.png" },
-  { name: "Parasailing", description: "Soar above Dubai's coastline with parasailing", image: "/lovable-uploads/4e84f9cf-38b7-41b6-aa4d-6000217b448d.png" },
-  { name: "Skydive Dubai", description: "Tandem skydiving over iconic Dubai landmarks", image: "/lovable-uploads/ccad2320-aad3-4ac5-91fb-6c58d6bde829.png" },
+  { name: "Jet-Ski & Flyboard", description: "High-speed water sports and flyboarding thrills", image: "/lovable-uploads/345c54d1-791a-4801-b153-5c532a91639a.png" },
+  { name: "Wakeboarding & Waterskiing", description: "Professional wakeboarding and skiing experiences", image: "/lovable-uploads/deabe26b-4e4a-409d-b086-db43fce48ac4.png" },
+  { name: "Parasailing", description: "Soar above Dubai's coastline with parasailing", image: "/lovable-uploads/87a3db89-65d0-4a98-8888-47a3a3daa437.png" },
+  { name: "Skydive Dubai", description: "Tandem skydiving over iconic Dubai landmarks", image: "/lovable-uploads/9caf94b8-8bcc-4060-abac-55a1a674319a.png" },
   { name: "Helicopter Tours", description: "Aerial tours of Dubai's stunning skyline", image: "/lovable-uploads/86dbcc77-2d33-4e6b-80a1-d1c43237d88c.png" },
   { name: "Breakfast in the Air", description: "Unique dining experience suspended high above Dubai", image: "/lovable-uploads/fcf70f1e-696a-4ac2-9208-c20a1ba4b358.png" }
 ];
@@ -118,4 +118,17 @@ export const dhowCruiseImages = [
   "/lovable-uploads/5475eadd-1835-4d93-a24f-1419d7ab8a91.png",
   "/lovable-uploads/99b30d62-8b30-4ca1-b118-061973bed25c.png",
   "/lovable-uploads/82b484ba-8c12-4cce-bcc8-5a8ff206dd56.png"
+];
+
+// New water sports images
+export const waterSportsImages = [
+  "/lovable-uploads/345c54d1-791a-4801-b153-5c532a91639a.png",
+  "/lovable-uploads/deabe26b-4e4a-409d-b086-db43fce48ac4.png",
+  "/lovable-uploads/87a3db89-65d0-4a98-8888-47a3a3daa437.png"
+];
+
+// New skydiving images
+export const skydivingImages = [
+  "/lovable-uploads/9caf94b8-8bcc-4060-abac-55a1a674319a.png",
+  "/lovable-uploads/e60c1386-dd8a-4f16-8272-3e3d2b10db61.png"
 ];

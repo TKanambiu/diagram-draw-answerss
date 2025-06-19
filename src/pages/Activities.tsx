@@ -22,7 +22,9 @@ import {
   zooImages,
   queenElizabethImages,
   marinaImages,
-  ferrariImages
+  ferrariImages,
+  waterSportsImages,
+  skydivingImages
 } from "@/data/activitiesData";
 
 const Activities = () => {
@@ -48,14 +50,14 @@ const Activities = () => {
           </div>
 
           <Tabs defaultValue="yachting" className="w-full">
-            <TabsList className="grid grid-cols-3 md:grid-cols-7 w-full mb-8 bg-white shadow-lg">
-              <TabsTrigger value="yachting" className="text-xs md:text-sm">Yachting & Cruises</TabsTrigger>
-              <TabsTrigger value="water-air" className="text-xs md:text-sm">Water & Air</TabsTrigger>
-              <TabsTrigger value="theme-parks" className="text-xs md:text-sm">Theme Parks</TabsTrigger>
-              <TabsTrigger value="desert" className="text-xs md:text-sm">Desert</TabsTrigger>
-              <TabsTrigger value="transport" className="text-xs md:text-sm">Transport</TabsTrigger>
-              <TabsTrigger value="visas" className="text-xs md:text-sm">Visas</TabsTrigger>
-              <TabsTrigger value="unique" className="text-xs md:text-sm">Unique Stays</TabsTrigger>
+            <TabsList className="grid grid-cols-3 md:grid-cols-7 w-full mb-8 bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg rounded-lg">
+              <TabsTrigger value="yachting" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Yachting & Cruises</TabsTrigger>
+              <TabsTrigger value="water-air" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Water & Air</TabsTrigger>
+              <TabsTrigger value="theme-parks" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Theme Parks</TabsTrigger>
+              <TabsTrigger value="desert" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Desert</TabsTrigger>
+              <TabsTrigger value="transport" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Transport</TabsTrigger>
+              <TabsTrigger value="visas" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Visas</TabsTrigger>
+              <TabsTrigger value="unique" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Unique Stays</TabsTrigger>
             </TabsList>
 
             <TabsContent value="yachting">
@@ -72,7 +74,11 @@ const Activities = () => {
             <TabsContent value="water-air">
               <ActivitySection 
                 activities={waterAirAdventures} 
-                imageSliders={[{ images: helicopterImages, title: "Helicopter Tours" }]}
+                imageSliders={[
+                  { images: helicopterImages, title: "Helicopter Tours" },
+                  { images: waterSportsImages, title: "Water Sports Adventures" },
+                  { images: skydivingImages, title: "Skydiving Experiences" }
+                ]}
                 onBookNow={handleBookNow} 
               />
             </TabsContent>
@@ -148,4 +154,3 @@ const Activities = () => {
 };
 
 export default Activities;
-
