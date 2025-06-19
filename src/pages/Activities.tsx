@@ -1,281 +1,240 @@
 
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
-import WhatsAppChat from "@/components/WhatsAppChat";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Activities = () => {
-  const [hoveredActivity, setHoveredActivity] = useState<number | null>(null);
-
-  const activities = [
-    {
-      id: 1,
-      name: "Desert Safari Adventure",
-      image: "https://images.unsplash.com/photo-1469041797191-50ace28483c3",
-      description: "Experience the thrill of dune bashing, camel riding, and traditional Bedouin entertainment under the stars.",
-      highlights: ["Dune Bashing", "Camel Riding", "BBQ Dinner", "Cultural Show"]
-    },
-    {
-      id: 2,
-      name: "Skydiving Over Palm Jumeirah",
-      image: "/lovable-uploads/4e84f9cf-38b7-41b6-aa4d-6000217b448d.png",
-      description: "Experience the ultimate adrenaline rush with tandem skydiving over Dubai's iconic Palm Jumeirah.",
-      highlights: ["Tandem Jump", "Palm Views", "Professional Guide", "HD Video Package"]
-    },
-    {
-      id: 3,
-      name: "Luxury Yacht Charter",
-      image: "/lovable-uploads/8d822d3d-3fbe-41d7-bac8-2af12f41c190.png",
-      description: "Cruise through Dubai Marina and see the city's stunning skyline from the water in ultimate luxury.",
-      highlights: ["Luxury Yacht", "Marina Views", "Atlantis Views", "Gourmet Catering"]
-    },
-    {
-      id: 4,
-      name: "Premium Yacht Experience",
-      image: "/lovable-uploads/214460b6-128d-4ae8-a69a-ae47f03c4a3e.png",
-      description: "Enjoy a premium yacht experience with breathtaking views of Dubai's coastline and landmarks.",
-      highlights: ["Premium Service", "Coastal Views", "Professional Crew", "Luxury Amenities"]
-    },
-    {
-      id: 5,
-      name: "Scuba Diving Adventure",
-      image: "/lovable-uploads/98ee2f3a-adf6-43aa-af52-cbe3efa4faf8.png",
-      description: "Explore Dubai's underwater world with professional diving instructors and discover marine life.",
-      highlights: ["Professional Guide", "Equipment Included", "Marine Life", "Certification Available"]
-    },
-    {
-      id: 6,
-      name: "Tandem Skydiving Dubai",
-      image: "/lovable-uploads/b91d963a-5590-472e-8bda-ea298b028551.png",
-      description: "Feel the ultimate thrill of free-falling over Dubai's stunning landscapes and coastline.",
-      highlights: ["15000ft Jump", "Dubai Coastline", "Expert Instructors", "Certificate"]
-    },
-    {
-      id: 7,
-      name: "Luxury Mega Yacht",
-      image: "/lovable-uploads/920ef9ad-df29-4c49-a8f1-65ef96250c9a.png",
-      description: "Experience ultimate luxury on our mega yacht with Atlantis views and premium amenities.",
-      highlights: ["Mega Yacht", "Atlantis Views", "VIP Service", "Fine Dining"]
-    },
-    {
-      id: 8,
-      name: "Burj Khalifa Experience",
-      image: "https://images.unsplash.com/photo-1512632578888-169bbbc64f33",
-      description: "Visit the world's tallest building and enjoy breathtaking views from the observation decks.",
-      highlights: ["At the Top SKY", "Level 148 & 125", "Dubai Fountain", "VIP Access"]
-    },
-    {
-      id: 9,
-      name: "Dubai Aquarium & Underwater Zoo",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945",
-      description: "Walk through one of the world's largest suspended aquariums in Dubai Mall.",
-      highlights: ["Tunnel Experience", "Shark Dive", "Glass Boat Ride", "Penguin Cove"]
-    },
-    {
-      id: 10,
-      name: "Ski Dubai Snow Experience",
-      image: "https://images.unsplash.com/photo-1551524164-6cf2ac92c602",
-      description: "Enjoy snow activities in the middle of the desert at Mall of the Emirates.",
-      highlights: ["Skiing & Snowboarding", "Penguin Encounter", "Snow Park", "Chairlift Rides"]
-    },
-    {
-      id: 11,
-      name: "Dubai Frame & City Views",
-      image: "https://images.unsplash.com/photo-1518684079-3c830dcef090",
-      description: "See old and new Dubai from the world's largest picture frame structure.",
-      highlights: ["Panoramic Views", "Sky Deck", "Museum Experience", "Glass Bridge"]
-    },
-    {
-      id: 12,
-      name: "Hot Air Balloon Adventure",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4",
-      description: "Soar above the Dubai desert and witness a spectacular sunrise from the sky.",
-      highlights: ["Sunrise Flight", "Desert Views", "Wildlife Spotting", "Champagne Breakfast"]
-    },
-    {
-      id: 13,
-      name: "Dubai Miracle Garden",
-      image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
-      description: "Explore the world's largest natural flower garden with over 50 million flowers.",
-      highlights: ["Floral Displays", "Butterfly Garden", "Heart Pathway", "Airbus A380"]
-    },
-    {
-      id: 14,
-      name: "Global Village Cultural Tour",
-      image: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4",
-      description: "Experience cultures from around the world in one spectacular location.",
-      highlights: ["Cultural Pavilions", "International Cuisine", "Live Shows", "Shopping"]
-    },
-    {
-      id: 15,
-      name: "Dubai Parks & Resorts",
-      image: "https://images.unsplash.com/photo-1594736797933-d0b22e7d5132",
-      description: "Enjoy thrilling rides and attractions at the Middle East's largest theme park.",
-      highlights: ["Motiongate Dubai", "Bollywood Parks", "Legoland Dubai", "Water Parks"]
-    },
-    {
-      id: 16,
-      name: "Atlantis Aquaventure",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
-      description: "Experience one of the world's largest waterparks with thrilling slides and marine life.",
-      highlights: ["Water Slides", "Shark Lagoon", "Dolphin Bay", "Private Beach"]
-    },
-    {
-      id: 17,
-      name: "Dubai Creek Heritage Tour",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96",
-      description: "Discover Dubai's rich heritage and traditional culture in the historic Creek area.",
-      highlights: ["Abra Rides", "Gold Souk", "Spice Souk", "Heritage Village"]
-    },
-    {
-      id: 18,
-      name: "Ferrari World Abu Dhabi",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64",
-      description: "Experience the world's fastest roller coaster and Ferrari-themed attractions.",
-      highlights: ["Formula Rossa", "Ferrari Experience", "Racing Simulators", "Go-Karting"]
-    }
-  ];
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const handleBookNow = (activityName: string) => {
-    const message = encodeURIComponent(`Hi! I'm interested in booking the ${activityName}. Could you please provide more details and pricing?`);
+    const message = encodeURIComponent(`Hi! I'm interested in booking ${activityName}. Could you please provide more details about pricing, availability, and what's included?`);
     window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
   };
 
-  const handleImageClick = (activityName: string) => {
-    const message = encodeURIComponent(`Hi! I'd like to know more about ${activityName}. Can you send me detailed information, photos, and availability?`);
-    window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
-  };
+  const yachtingCruises = [
+    { name: "Luxury Yacht Charters", description: "Private luxury yacht experiences with premium amenities", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
+    { name: "Day Cruises", description: "Full day sailing experiences around Dubai coastline", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
+    { name: "Sunset Cruises", description: "Romantic sunset sailing with stunning views", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
+    { name: "Private Parties & Events", description: "Exclusive yacht parties and corporate events", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
+    { name: "Traditional Dhow Cruises", description: "Authentic Arabian dhow boat experiences", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
+    { name: "Dinner Cruise with Live Entertainment", description: "Fine dining with cultural shows aboard", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
+    { name: "Brunch Cruises", description: "Luxury brunch experiences on the water", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" }
+  ];
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
-      <Navigation />
-      
-      {/* Hero Section with Motion */}
-      <div className="pt-24 pb-8">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent mb-6 animate-bounce">
-              Dubai Adventures
-            </h1>
-            <p className="text-xl text-gray-700 max-w-4xl mx-auto animate-slide-in-right">
-              Discover the magic of Dubai with our exclusive collection of experiences. 
-              From desert safaris to sky-high adventures, create memories that last a lifetime.
-            </p>
+  const waterAirAdventures = [
+    { name: "Jet-Ski & Flyboard", description: "High-speed water sports and flyboarding thrills", image: "/lovable-uploads/4e84f9cf-38b7-41b6-aa4d-6000217b448d.png" },
+    { name: "Wakeboarding & Waterskiing", description: "Professional wakeboarding and skiing experiences", image: "/lovable-uploads/4e84f9cf-38b7-41b6-aa4d-6000217b448d.png" },
+    { name: "Parasailing", description: "Soar above Dubai's coastline with parasailing", image: "/lovable-uploads/4e84f9cf-38b7-41b6-aa4d-6000217b448d.png" },
+    { name: "Skydive Dubai", description: "Tandem skydiving over iconic Dubai landmarks", image: "/lovable-uploads/ccad2320-aad3-4ac5-91fb-6c58d6bde829.png" },
+    { name: "Helicopter Tours", description: "Aerial tours of Dubai's stunning skyline", image: "/lovable-uploads/86dbcc77-2d33-4e6b-80a1-d1c43237d88c.png" }
+  ];
+
+  const helicopterImages = [
+    "/lovable-uploads/86dbcc77-2d33-4e6b-80a1-d1c43237d88c.png",
+    "/lovable-uploads/0260aa58-51ba-4251-ab06-d8cbbcae5016.png",
+    "/lovable-uploads/69806259-7038-4ae7-b806-46ba6ea917e9.png",
+    "/lovable-uploads/b3851242-8589-4d28-8849-ebd6681e5669.png"
+  ];
+
+  const themeParksAttractions = [
+    { name: "Ferrari World Abu Dhabi", description: "World's largest indoor theme park", image: "/lovable-uploads/9cebc0ec-daea-4380-bbaa-5bb3376794c4.png" },
+    { name: "Formula 1 Grand Prix Tickets", description: "Exclusive F1 race tickets and packages", image: "/lovable-uploads/0ffc5369-38df-4229-9fa5-98cd30c214c0.png" },
+    { name: "Dubai Miracle Garden", description: "World's largest natural flower garden", image: "/lovable-uploads/920ef9ad-df29-4c49-a8f1-65ef96250c9a.png" },
+    { name: "Museum of the Future", description: "Dubai's most innovative architectural marvel", image: "/lovable-uploads/c21fbecb-d54c-4ce2-b9cb-b9598ecd90b7.png" },
+    { name: "Dubai Frame", description: "Iconic golden frame offering panoramic views", image: "/lovable-uploads/c21fbecb-d54c-4ce2-b9cb-b9598ecd90b7.png" },
+    { name: "Al Ain Zoo", description: "Wildlife conservation and safari experiences", image: "/lovable-uploads/36e0d889-385e-493b-be74-fd791bcc2e2b.png" }
+  ];
+
+  const zooImages = [
+    "/lovable-uploads/e8a04597-9b03-4e2c-b4ef-ccef242c38ec.png",
+    "/lovable-uploads/93de7177-6f18-4230-889f-66c2449b4ff6.png",
+    "/lovable-uploads/7e58d382-d585-464e-8726-68a9cbfe50ae.png",
+    "/lovable-uploads/b9036e7d-e4d1-4ba6-ba01-85e146ed9d69.png",
+    "/lovable-uploads/36e0d889-385e-493b-be74-fd791bcc2e2b.png"
+  ];
+
+  const desertExperiences = [
+    { name: "Morning Desert Safari", description: "Early morning dune bashing and camel rides", image: "/lovable-uploads/d0221110-5c8a-4e43-8dfa-1da4ee967acc.png" },
+    { name: "Evening Desert Safari", description: "Sunset safari with BBQ dinner and shows", image: "/lovable-uploads/d0221110-5c8a-4e43-8dfa-1da4ee967acc.png" },
+    { name: "Overnight Safari with BBQ & Show", description: "Full desert camping experience", image: "/lovable-uploads/d0221110-5c8a-4e43-8dfa-1da4ee967acc.png" },
+    { name: "Photo Safaris", description: "Professional photography desert tours", image: "/lovable-uploads/d0221110-5c8a-4e43-8dfa-1da4ee967acc.png" }
+  ];
+
+  const groundTransportation = [
+    { name: "Self-Drive Luxury Cars", description: "Premium car rentals for self-driving", image: "/lovable-uploads/0ffc5369-38df-4229-9fa5-98cd30c214c0.png" },
+    { name: "Chauffeured Limousines & SUVs", description: "Professional chauffeur services", image: "/lovable-uploads/71fba801-a9fc-48c6-8b4c-5729492d59aa.png" }
+  ];
+
+  const visasPaperwork = [
+    { name: "Tourist Visa", description: "Fast processing for UAE tourist visas", image: "/lovable-uploads/c21fbecb-d54c-4ce2-b9cb-b9598ecd90b7.png" },
+    { name: "Residence Visa", description: "Long-term residence visa assistance", image: "/lovable-uploads/c21fbecb-d54c-4ce2-b9cb-b9598ecd90b7.png" }
+  ];
+
+  const uniqueStays = [
+    { name: "Overnight Yacht Live-Aboard", description: "Sleep under the stars on a luxury yacht", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
+    { name: "Queen Elizabeth II Floating Suite", description: "Exclusive suite on the historic QE2 hotel", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" }
+  ];
+
+  const renderActivityCard = (activity: any, index: number) => (
+    <Card 
+      key={index}
+      className={`transform transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer ${
+        hoveredCard === index ? 'rotate-2' : ''
+      }`}
+      onMouseEnter={() => setHoveredCard(index)}
+      onMouseLeave={() => setHoveredCard(null)}
+      onClick={() => handleBookNow(activity.name)}
+    >
+      <CardHeader className="p-0">
+        <div className="relative overflow-hidden rounded-t-lg">
+          <img 
+            src={activity.image} 
+            alt={activity.name}
+            className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span className="text-white font-bold text-lg animate-bounce">Book Now!</span>
           </div>
+        </div>
+      </CardHeader>
+      <CardContent className="p-6">
+        <CardTitle className="text-lg font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">
+          {activity.name}
+        </CardTitle>
+        <CardDescription className="text-gray-600 mb-4">
+          {activity.description}
+        </CardDescription>
+        <Button 
+          onClick={(e) => {
+            e.stopPropagation();
+            handleBookNow(activity.name);
+          }}
+          className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white transform hover:scale-105 transition-all duration-300"
+        >
+          Book via WhatsApp
+        </Button>
+      </CardContent>
+    </Card>
+  );
 
-          {/* Featured Adventure Photos with Motion */}
-          <div className="mb-16 overflow-hidden">
-            <div className="flex animate-slide-left-right space-x-8">
-              <img 
-                src="/lovable-uploads/4e84f9cf-38b7-41b6-aa4d-6000217b448d.png" 
-                alt="Skydiving over Palm Jumeirah" 
-                className="w-80 h-60 object-cover rounded-xl shadow-xl cursor-pointer hover:scale-110 transition-transform duration-500"
-                onClick={() => handleImageClick("Skydiving Over Palm Jumeirah")}
-              />
-              <img 
-                src="/lovable-uploads/8d822d3d-3fbe-41d7-bac8-2af12f41c190.png" 
-                alt="Luxury Yacht" 
-                className="w-80 h-60 object-cover rounded-xl shadow-xl cursor-pointer hover:scale-110 transition-transform duration-500"
-                onClick={() => handleImageClick("Luxury Yacht Charter")}
-              />
-              <img 
-                src="/lovable-uploads/b91d963a-5590-472e-8bda-ea298b028551.png" 
-                alt="Tandem Skydiving" 
-                className="w-80 h-60 object-cover rounded-xl shadow-xl cursor-pointer hover:scale-110 transition-transform duration-500"
-                onClick={() => handleImageClick("Tandem Skydiving Dubai")}
-              />
+  const renderImageSlider = (images: string[], title: string) => (
+    <div className="mb-8">
+      <h3 className="text-2xl font-bold text-center mb-6 text-gray-900">{title}</h3>
+      <div className="flex overflow-x-auto space-x-4 pb-4">
+        {images.map((image, index) => (
+          <div 
+            key={index}
+            className="flex-shrink-0 w-80 h-60 relative overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 animate-slide-left-right"
+            style={{ animationDelay: `${index * 200}ms` }}
+          >
+            <img 
+              src={image} 
+              alt={`${title} ${index + 1}`}
+              className="w-full h-full object-cover cursor-pointer hover:opacity-80 transition-opacity duration-300"
+              onClick={() => handleBookNow(title)}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span className="text-white font-bold text-lg animate-bounce">Click to Book!</span>
             </div>
           </div>
+        ))}
+      </div>
+    </div>
+  );
 
-          {/* Activities Grid with enhanced animations */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {activities.map((activity, index) => (
-              <div 
-                key={activity.id} 
-                className={`bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-4 hover:shadow-2xl border border-amber-200 animate-fade-in cursor-pointer ${
-                  hoveredActivity === activity.id ? 'scale-105 rotate-1' : ''
-                }`}
-                style={{ animationDelay: `${index * 100}ms` }}
-                onMouseEnter={() => setHoveredActivity(activity.id)}
-                onMouseLeave={() => setHoveredActivity(null)}
-              >
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={activity.image} 
-                    alt={activity.name}
-                    className={`w-full h-48 object-cover transition-all duration-700 cursor-pointer ${
-                      hoveredActivity === activity.id ? 'scale-125 rotate-3' : 'scale-100'
-                    }`}
-                    onClick={() => handleImageClick(activity.name)}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 
-                      className="text-lg font-bold text-white animate-pulse cursor-pointer hover:text-amber-300 transition-colors duration-300"
-                      onClick={() => handleImageClick(activity.name)}
-                    >
-                      {activity.name}
-                    </h3>
-                  </div>
-                  {hoveredActivity === activity.id && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 animate-pulse flex items-center justify-center">
-                      <span className="text-white font-bold text-lg animate-bounce">Click for Details!</span>
-                    </div>
-                  )}
-                </div>
-                
-                <div className="p-6">
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">{activity.description}</p>
-                  
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-amber-700 mb-2">Highlights:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {activity.highlights.map((highlight, idx) => (
-                        <span key={idx} className="bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-700 text-xs px-3 py-1 rounded-full animate-pulse">
-                          {highlight}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-col gap-2">
-                    <Button 
-                      onClick={() => handleImageClick(activity.name)}
-                      className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
-                    >
-                      View Details
-                    </Button>
-                    <Button 
-                      onClick={() => handleBookNow(activity.name)}
-                      className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-semibold transform hover:scale-105 transition-all duration-300 hover:shadow-xl animate-bounce"
-                    >
-                      Book Now via WhatsApp
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            ))}
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+      <Navigation />
+      
+      <div className="pt-24 pb-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 animate-bounce">
+              Dubai Activities & Experiences
+            </h1>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto animate-slide-in-right">
+              Discover the best of Dubai with our carefully curated selection of activities, 
+              tours, and experiences designed to create unforgettable memories.
+            </p>
           </div>
 
-          {/* Call to Action Section */}
-          <div className="mt-20 bg-gradient-to-r from-amber-500 to-yellow-500 text-white p-12 rounded-xl text-center transform hover:scale-105 transition-all duration-300 animate-pulse">
-            <h3 className="text-4xl font-bold mb-6 animate-bounce">Ready for the Adventure of a Lifetime?</h3>
-            <p className="text-xl mb-8 animate-fade-in">
-              Join thousands of satisfied customers who have experienced the magic of Dubai with us.
-              Book your perfect Dubai adventure today!
-            </p>
-            <Button 
-              onClick={() => handleBookNow("Custom Dubai Package")}
-              className="bg-white text-amber-600 hover:bg-gray-100 font-bold px-12 py-4 text-lg transform hover:scale-110 transition-all duration-300 hover:shadow-2xl animate-bounce"
-            >
-              Get Custom Package via WhatsApp
-            </Button>
+          <Tabs defaultValue="yachting" className="w-full">
+            <TabsList className="grid grid-cols-3 md:grid-cols-7 w-full mb-8 bg-white shadow-lg">
+              <TabsTrigger value="yachting" className="text-xs md:text-sm">Yachting & Cruises</TabsTrigger>
+              <TabsTrigger value="water-air" className="text-xs md:text-sm">Water & Air</TabsTrigger>
+              <TabsTrigger value="theme-parks" className="text-xs md:text-sm">Theme Parks</TabsTrigger>
+              <TabsTrigger value="desert" className="text-xs md:text-sm">Desert</TabsTrigger>
+              <TabsTrigger value="transport" className="text-xs md:text-sm">Transport</TabsTrigger>
+              <TabsTrigger value="visas" className="text-xs md:text-sm">Visas</TabsTrigger>
+              <TabsTrigger value="unique" className="text-xs md:text-sm">Unique Stays</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="yachting">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {yachtingCruises.map((activity, index) => renderActivityCard(activity, index))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="water-air">
+              {renderImageSlider(helicopterImages, "Helicopter Tours")}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {waterAirAdventures.map((activity, index) => renderActivityCard(activity, index))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="theme-parks">
+              {renderImageSlider(zooImages, "Zoo & Wildlife Experiences")}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {themeParksAttractions.map((activity, index) => renderActivityCard(activity, index))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="desert">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {desertExperiences.map((activity, index) => renderActivityCard(activity, index))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="transport">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {groundTransportation.map((activity, index) => renderActivityCard(activity, index))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="visas">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {visasPaperwork.map((activity, index) => renderActivityCard(activity, index))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="unique">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {uniqueStays.map((activity, index) => renderActivityCard(activity, index))}
+              </div>
+            </TabsContent>
+          </Tabs>
+
+          <div className="mt-16 text-center">
+            <div className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white p-8 rounded-lg transform hover:scale-105 transition-all duration-300">
+              <h3 className="text-3xl font-bold mb-4 animate-bounce">Ready for Your Dubai Adventure?</h3>
+              <p className="text-lg mb-6">
+                Contact us now to customize your perfect Dubai experience with exclusive packages and expert guidance.
+              </p>
+              <Button 
+                onClick={() => handleBookNow("Custom Dubai Package")}
+                className="bg-white text-amber-600 hover:bg-gray-100 font-semibold px-8 py-3 transform hover:scale-110 transition-all duration-300"
+              >
+                Get Custom Quote via WhatsApp
+              </Button>
+            </div>
           </div>
         </div>
       </div>
+
       <Footer />
-      <WhatsAppChat />
     </div>
   );
 };

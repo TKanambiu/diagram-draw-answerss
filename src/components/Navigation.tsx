@@ -36,7 +36,7 @@ const Navigation = () => {
               <div className="relative transform group-hover:scale-110 transition-transform duration-300">
                 <img 
                   src="/lovable-uploads/a9cb64a3-5cd6-403e-9e5b-ce0057d90590.png" 
-                  alt="Emirates Dubai Travel Logo" 
+                  alt="Emirates Dubai Tours & Travel Logo" 
                   className="w-16 h-16 object-contain animate-pulse"
                 />
               </div>
@@ -45,7 +45,7 @@ const Navigation = () => {
               <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 bg-clip-text text-transparent animate-pulse tracking-wide">
                 <span className="font-serif italic">Emirates</span>{" "}
                 <span className="font-sans font-black">Dubai</span>{" "}
-                <span className="font-serif">Travel</span>
+                <span className="font-serif">Tours & Travel</span>
               </div>
               <div className="text-xs text-amber-600 font-medium tracking-widest animate-fade-in">
                 Premium Travel Experience
