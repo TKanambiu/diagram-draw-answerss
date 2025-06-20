@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Home, Plane } from "lucide-react";
@@ -98,6 +97,7 @@ const FeaturedTours = () => {
     {
       id: 10,
       title: "Visa Services",
+      image: "/lovable-uploads/02239284-4299-414b-81b4-a26501a3e6b0.png",
       description: "Fast processing for UAE tourist visas and residence visa assistance",
       duration: "2-7 days",
       highlights: ["Tourist Visa", "Residence Visa", "Fast Processing", "Expert Assistance"],
@@ -108,7 +108,7 @@ const FeaturedTours = () => {
     {
       id: 11,
       title: "Traditional Dhow Cruises",
-      image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png",
+      image: "/lovable-uploads/fb8187fb-18f1-45b9-8453-f1468ba9aed8.png",
       description: "Authentic Arabian dhow boat experiences with dinner and entertainment",
       duration: "2-3 hours",
       highlights: ["Traditional Dhow", "Dubai Creek", "Buffet Dinner", "Live Shows"],
