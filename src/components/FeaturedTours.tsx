@@ -27,13 +27,83 @@ const FeaturedTours = () => {
     },
     {
       id: 3,
-      title: "Marina & Beach Experience",
-      image: "/lovable-uploads/e0b69a7c-b75e-4095-885a-ae392b569e79.png",
-      description: "Explore Dubai Marina's stunning waterfront and pristine beaches",
-      duration: "5 hours",
-      highlights: ["Marina Walk", "Beach Access", "Yacht Views", "Waterfront Dining"],
+      title: "Luxury Yacht Charter",
+      image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png",
+      description: "Premium yacht experiences with luxury amenities, day cruises, sunset trips, and private events",
+      duration: "4-8 hours",
+      highlights: ["Luxury Yacht", "Day Cruises", "Sunset Trips", "Private Events"],
       gradient: "from-cyan-500 to-blue-500",
       accentColor: "cyan"
+    },
+    {
+      id: 4,
+      title: "Helicopter Tours",
+      image: "/lovable-uploads/86dbcc77-2d33-4e6b-80a1-d1c43237d88c.png",
+      description: "Aerial tours of Dubai's stunning skyline with breathtaking views of iconic landmarks",
+      duration: "15-45 mins",
+      highlights: ["Aerial Views", "Burj Al Arab", "Palm Jumeirah", "Professional Pilot"],
+      gradient: "from-emerald-500 to-teal-500",
+      accentColor: "emerald"
+    },
+    {
+      id: 5,
+      title: "Ferrari World & Formula 1",
+      image: "/lovable-uploads/bbd8c5c4-b26f-42a4-bcc3-b35307f3d80a.png",
+      description: "World's largest indoor theme park and exclusive F1 race tickets and packages",
+      duration: "Full Day",
+      highlights: ["Ferrari World", "F1 Tickets", "Theme Park", "Racing Experience"],
+      gradient: "from-red-500 to-rose-500",
+      accentColor: "red"
+    },
+    {
+      id: 6,
+      title: "Skydiving Dubai",
+      image: "/lovable-uploads/9caf94b8-8bcc-4060-abac-55a1a674319a.png",
+      description: "Tandem skydiving over iconic Dubai landmarks with professional instructors",
+      duration: "3-4 hours",
+      highlights: ["Tandem Jump", "Professional Guide", "Dubai Views", "Safety First"],
+      gradient: "from-sky-500 to-indigo-500",
+      accentColor: "sky"
+    },
+    {
+      id: 7,
+      title: "Luxury Transportation",
+      image: "/lovable-uploads/aede6175-4086-428d-893b-2f52c27c187e.png",
+      description: "Professional chauffeur services with luxury vehicles and premium car rentals",
+      duration: "Flexible",
+      highlights: ["Luxury Cars", "Professional Chauffeur", "Airport Transfer", "City Tours"],
+      gradient: "from-amber-500 to-yellow-500",
+      accentColor: "amber"
+    },
+    {
+      id: 8,
+      title: "Dinner in the Sky",
+      image: "/lovable-uploads/9296ae66-1b17-46a2-a081-80ad85c65585.png",
+      description: "Experience fine dining 50 meters above ground with breathtaking views of Dubai's skyline",
+      duration: "90 minutes",
+      highlights: ["Sky Dining", "Panoramic Views", "Gourmet Menu", "Unique Experience"],
+      gradient: "from-violet-500 to-purple-500",
+      accentColor: "violet"
+    },
+    {
+      id: 9,
+      title: "Dubai Miracle Garden",
+      image: "/lovable-uploads/9b715064-256b-45c6-967f-6c43c71d0859.png",
+      description: "World's largest natural flower garden with stunning floral displays and artistic arrangements",
+      duration: "3-4 hours",
+      highlights: ["Flower Garden", "Artistic Displays", "Photo Spots", "Seasonal Blooms"],
+      gradient: "from-pink-500 to-rose-500",
+      accentColor: "pink"
+    },
+    {
+      id: 10,
+      title: "Visa Services",
+      image: "/lovable-uploads/a45ee7c4-7979-4d9b-8784-787f495d218a.png",
+      description: "Fast processing for UAE tourist visas and residence visa assistance",
+      duration: "2-7 days",
+      highlights: ["Tourist Visa", "Residence Visa", "Fast Processing", "Expert Assistance"],
+      gradient: "from-slate-500 to-gray-500",
+      accentColor: "slate"
     }
   ];
 
@@ -43,65 +113,64 @@ const FeaturedTours = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100">
+    <section className="py-12 md:py-20 bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-6">
             <Home className="text-amber-500 animate-bounce" size={32} />
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent animate-bounce">
-              Featured Experiences
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent animate-bounce">
+              Dubai Experiences & Activities
             </h2>
             <Home className="text-amber-500 animate-bounce" size={32} />
           </div>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto animate-slide-in-right">
-            Handpicked tours and experiences that showcase the very best of Dubai's 
-            attractions, culture, and adventures.
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto animate-slide-in-right">
+            Discover the complete collection of Dubai's most exciting tours, adventures, and luxury experiences.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mb-12">
           {tours.map((tour, index) => (
             <div 
               key={tour.id} 
               className={`bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 animate-fade-in border-2 border-gradient-to-r ${tour.gradient} hover:scale-105`}
-              style={{ animationDelay: `${index * 200}ms` }}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="relative overflow-hidden">
                 <img 
                   src={tour.image} 
                   alt={tour.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
+                  className="w-full h-40 md:h-48 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
                   onClick={() => handleLearnMore(tour.title)}
                 />
-                <div className={`absolute top-4 right-4 bg-gradient-to-r ${tour.gradient} text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse shadow-lg`}>
+                <div className={`absolute top-2 md:top-4 right-2 md:right-4 bg-gradient-to-r ${tour.gradient} text-white px-2 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-bold animate-pulse shadow-lg`}>
                   {tour.duration}
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white font-bold text-xl animate-bounce bg-black/50 px-4 py-2 rounded-lg">
+                  <span className="text-white font-bold text-lg md:text-xl animate-bounce bg-black/50 px-4 py-2 rounded-lg">
                     Click for Details!
                   </span>
                 </div>
                 <div className={`absolute top-0 left-0 w-full h-2 bg-gradient-to-r ${tour.gradient}`}></div>
               </div>
-              <div className="p-6 bg-gradient-to-br from-white to-gray-50">
+              <div className="p-4 md:p-6 bg-gradient-to-br from-white to-gray-50">
                 <h3 
-                  className={`text-xl font-bold text-gray-900 mb-3 cursor-pointer hover:bg-gradient-to-r hover:${tour.gradient} hover:bg-clip-text hover:text-transparent transition-all duration-300`}
+                  className={`text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3 cursor-pointer hover:bg-gradient-to-r hover:${tour.gradient} hover:bg-clip-text hover:text-transparent transition-all duration-300`}
                   onClick={() => handleLearnMore(tour.title)}
                 >
                   {tour.title}
                 </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">{tour.description}</p>
+                <p className="text-sm md:text-base text-gray-600 mb-3 md:mb-4 leading-relaxed line-clamp-3">{tour.description}</p>
                 
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                    <span className={`w-3 h-3 bg-gradient-to-r ${tour.gradient} rounded-full animate-pulse`}></span>
+                <div className="mb-4 md:mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-2 md:mb-3 flex items-center gap-2 text-sm md:text-base">
+                    <span className={`w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r ${tour.gradient} rounded-full animate-pulse`}></span>
                     Highlights:
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1 md:gap-2">
                     {tour.highlights.map((highlight, index) => (
                       <span 
                         key={index} 
-                        className={`bg-gradient-to-r ${tour.gradient} text-white text-xs px-3 py-1.5 rounded-full animate-pulse font-medium shadow-md hover:shadow-lg transition-shadow duration-300`}
+                        className={`bg-gradient-to-r ${tour.gradient} text-white text-xs px-2 md:px-3 py-1 md:py-1.5 rounded-full animate-pulse font-medium shadow-md hover:shadow-lg transition-shadow duration-300`}
                         style={{ animationDelay: `${index * 100}ms` }}
                       >
                         {highlight}
@@ -112,9 +181,9 @@ const FeaturedTours = () => {
                 
                 <Button 
                   onClick={() => handleLearnMore(tour.title)}
-                  className={`w-full bg-gradient-to-r ${tour.gradient} hover:from-gray-800 hover:to-gray-900 text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl font-semibold py-3 rounded-lg`}
+                  className={`w-full bg-gradient-to-r ${tour.gradient} hover:from-gray-800 hover:to-gray-900 text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl font-semibold py-2 md:py-3 rounded-lg text-sm md:text-base`}
                 >
-                  Learn More via WhatsApp
+                  Book via WhatsApp
                 </Button>
               </div>
             </div>
@@ -125,7 +194,7 @@ const FeaturedTours = () => {
           <Link to="/activities">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 text-white px-12 py-4 text-lg font-bold transform hover:scale-110 transition-all duration-300 hover:shadow-2xl animate-bounce rounded-xl shadow-lg"
+              className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 text-white px-8 md:px-12 py-3 md:py-4 text-base md:text-lg font-bold transform hover:scale-110 transition-all duration-300 hover:shadow-2xl animate-bounce rounded-xl shadow-lg"
             >
               View All Activities
             </Button>
