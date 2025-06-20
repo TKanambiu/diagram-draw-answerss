@@ -11,10 +11,10 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const activityCategories = [
-    { name: "Yachting & Cruises", path: "/activities#yachting" },
+    { name: "Yachts Luxury Cruises", path: "/activities#yachting" },
     { name: "Water & Air", path: "/activities#water-air" },
     { name: "Theme Parks", path: "/activities#theme-parks" },
-    { name: "Desert", path: "/activities#desert" },
+    { name: "Desert Safaris", path: "/activities#desert" },
     { name: "Transport", path: "/activities#transport" },
     { name: "Dinner in Sky", path: "/activities#dinner-sky" },
     { name: "Visas", path: "/activities#visas" }
@@ -27,7 +27,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Dubai Tours
+              Emirates Dubai Tours & Travel
             </div>
           </Link>
 
