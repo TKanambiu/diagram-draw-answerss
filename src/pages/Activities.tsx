@@ -1,8 +1,9 @@
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Plane } from "lucide-react";
+import { Plane, Utensils } from "lucide-react";
 import ActivitySection from "@/components/activities/ActivitySection";
 import {
   yachtingCruises,
@@ -12,6 +13,7 @@ import {
   groundTransportation,
   visasPaperwork,
   uniqueStays,
+  dinnerInTheSkyExperiences,
   helicopterImages,
   yachtImages,
   formulaOneImages,
@@ -30,7 +32,8 @@ import {
   newMiracleGardenImages,
   visaImages,
   additionalDesertImages,
-  additionalFormulaOneImages
+  additionalFormulaOneImages,
+  dinnerInTheSkyImages
 } from "@/data/activitiesData";
 
 const Activities = () => {
@@ -56,12 +59,16 @@ const Activities = () => {
           </div>
 
           <Tabs defaultValue="yachting" className="w-full">
-            <TabsList className="grid grid-cols-3 md:grid-cols-7 w-full mb-8 bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg rounded-lg">
+            <TabsList className="grid grid-cols-4 md:grid-cols-8 w-full mb-8 bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg rounded-lg">
               <TabsTrigger value="yachting" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Yachting & Cruises</TabsTrigger>
               <TabsTrigger value="water-air" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Water & Air</TabsTrigger>
               <TabsTrigger value="theme-parks" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Theme Parks</TabsTrigger>
               <TabsTrigger value="desert" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Desert</TabsTrigger>
               <TabsTrigger value="transport" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Transport</TabsTrigger>
+              <TabsTrigger value="dinner-sky" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold flex items-center gap-1">
+                <Utensils size={16} />
+                Dinner in Sky
+              </TabsTrigger>
               <TabsTrigger value="visas" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold flex items-center gap-1">
                 <Plane size={16} />
                 Visas
@@ -120,6 +127,14 @@ const Activities = () => {
                   { images: limousineImages, title: "Luxury Transportation" },
                   { images: ferrariImages, title: "Premium Ferrari Collection" }
                 ]}
+                onBookNow={handleBookNow} 
+              />
+            </TabsContent>
+
+            <TabsContent value="dinner-sky">
+              <ActivitySection 
+                activities={dinnerInTheSkyExperiences} 
+                imageSliders={[{ images: dinnerInTheSkyImages, title: "Dinner in the Sky Dubai" }]}
                 onBookNow={handleBookNow} 
               />
             </TabsContent>
