@@ -102,8 +102,7 @@ const FeaturedTours = () => {
       duration: "2-7 days",
       highlights: ["Tourist Visa", "Residence Visa", "Fast Processing", "Expert Assistance"],
       gradient: "from-slate-500 to-gray-500",
-      accentColor: "slate",
-      useIcon: true
+      accentColor: "slate"
     },
     {
       id: 11,
@@ -186,19 +185,12 @@ const FeaturedTours = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="relative overflow-hidden">
-                {tour.useIcon ? (
-                  <div className="w-full h-40 md:h-48 bg-gradient-to-br from-slate-100 to-gray-200 flex items-center justify-center cursor-pointer"
-                       onClick={() => handleLearnMore(tour.title)}>
-                    <Plane size={80} className="text-slate-600" />
-                  </div>
-                ) : (
-                  <img 
-                    src={tour.image} 
-                    alt={tour.title}
-                    className="w-full h-40 md:h-48 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
-                    onClick={() => handleLearnMore(tour.title)}
-                  />
-                )}
+                <img 
+                  src={tour.image} 
+                  alt={tour.title}
+                  className="w-full h-40 md:h-48 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
+                  onClick={() => handleLearnMore(tour.title)}
+                />
                 <div className={`absolute top-2 md:top-4 right-2 md:right-4 bg-gradient-to-r ${tour.gradient} text-white px-2 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-bold animate-pulse shadow-lg`}>
                   {tour.duration}
                 </div>
