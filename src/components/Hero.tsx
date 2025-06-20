@@ -71,14 +71,14 @@ const Hero = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-in-right delay-500">
           <Link to="/activities">
-            <Button size="lg" className="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white px-8 py-4 text-lg font-semibold transform hover:scale-110 transition-all duration-300 hover:shadow-2xl animate-pulse">
+            <Button size="lg" className="bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 hover:from-blue-700 hover:via-purple-700 hover:to-blue-900 text-white px-8 py-4 text-lg font-bold transform hover:scale-110 transition-all duration-300 hover:shadow-2xl animate-pulse border-2 border-white/20">
               Explore Activities
             </Button>
           </Link>
           <Button 
             onClick={handleBookNow}
             size="lg" 
-            className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 py-4 text-lg font-semibold transform hover:scale-110 transition-all duration-300 hover:shadow-2xl animate-bounce"
+            className="bg-gradient-to-br from-emerald-600 via-teal-600 to-green-700 hover:from-emerald-700 hover:via-teal-700 hover:to-green-800 text-white px-8 py-4 text-lg font-bold transform hover:scale-110 transition-all duration-300 hover:shadow-2xl animate-bounce border-2 border-white/20"
           >
             Book Now via WhatsApp
           </Button>
