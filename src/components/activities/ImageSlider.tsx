@@ -1,4 +1,6 @@
 
+import React, { useEffect, useRef } from 'react';
+
 interface ImageSliderProps {
   images: string[];
   title: string;
@@ -6,10 +8,63 @@ interface ImageSliderProps {
 }
 
 const ImageSlider = ({ images, title, onBookNow }: ImageSliderProps) => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    let scrollPosition = 0;
+    const scrollSpeed = 1; // pixels per frame
+    const maxScroll = container.scrollWidth - container.clientWidth;
+
+    const autoScroll = () => {
+      if (container) {
+        scrollPosition += scrollSpeed;
+        
+        // Reset to beginning when reached the end
+        if (scrollPosition >= maxScroll) {
+          scrollPosition = 0;
+        }
+        
+        container.scrollLeft = scrollPosition;
+      }
+    };
+
+    // Start auto-scrolling
+    const intervalId = setInterval(autoScroll, 16); // ~60fps
+
+    // Pause on hover
+    const handleMouseEnter = () => clearInterval(intervalId);
+    const handleMouseLeave = () => {
+      // Restart auto-scrolling when mouse leaves
+      const newIntervalId = setInterval(autoScroll, 16);
+      return newIntervalId;
+    };
+
+    container.addEventListener('mouseenter', handleMouseEnter);
+    container.addEventListener('mouseleave', () => {
+      clearInterval(intervalId);
+      const newIntervalId = setInterval(autoScroll, 16);
+    });
+
+    return () => {
+      clearInterval(intervalId);
+      if (container) {
+        container.removeEventListener('mouseenter', handleMouseEnter);
+        container.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, []);
+
   return (
     <div className="mb-8">
       <h3 className="text-2xl font-bold text-center mb-6 text-gray-900 animate-slide-left-to-right">{title}</h3>
-      <div className="flex overflow-x-auto space-x-4 pb-4">
+      <div 
+        ref={scrollContainerRef}
+        className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide"
+        style={{ scrollBehavior: 'auto' }}
+      >
         {images.map((image, index) => (
           <div 
             key={index}
