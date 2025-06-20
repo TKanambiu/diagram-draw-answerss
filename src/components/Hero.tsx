@@ -61,14 +61,13 @@ const Hero = () => {
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-scale-in">
           <span className="inline-block animate-bounce">Discover</span>{" "}
-          <span className="inline-block animate-bounce delay-200">Dubai's</span>
+          <span className="inline-block animate-bounce delay-200">Dubai</span>
           <span className="block bg-gradient-to-r from-amber-400 to-yellow-400 bg-clip-text text-transparent animate-pulse">
             Golden Magic
           </span>
         </h1>
         <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto animate-slide-in-right delay-300">
-          Experience luxury cars, helicopter tours, yacht cruises, desert safaris, and world-class adventures. 
-          Your ultimate Dubai experience awaits with premium services and unforgettable memories.
+          Experience the best of Dubai with luxury cars, helicopter tours, yacht cruises, desert safaris, and world-class adventures — all paired with seamless visa processing. Enjoy premium services, unforgettable memories, and a journey tailored just for you.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-in-right delay-500">
           <Link to="/activities">
