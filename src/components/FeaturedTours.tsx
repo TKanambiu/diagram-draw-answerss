@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Home, Plane } from "lucide-react";
@@ -278,6 +277,30 @@ const FeaturedTours = () => {
           </p>
         </div>
 
+        {/* Activity Category Navigation - Moved to top */}
+        <div className="mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+            {[
+              { name: "Yachting & Cruises", tab: "yachting", gradient: "from-cyan-500 to-blue-500" },
+              { name: "Water & Air", tab: "water-air", gradient: "from-blue-500 to-indigo-500" },
+              { name: "Theme Parks", tab: "theme-parks", gradient: "from-red-500 to-orange-500" },
+              { name: "Desert", tab: "desert", gradient: "from-orange-500 to-yellow-500" },
+              { name: "Transport", tab: "transport", gradient: "from-amber-500 to-red-500" },
+              { name: "Dinner in Sky", tab: "dinner-sky", gradient: "from-purple-500 to-pink-500" },
+              { name: "Visas", tab: "visas", gradient: "from-slate-500 to-gray-500" },
+              { name: "Unique", tab: "unique", gradient: "from-indigo-500 to-purple-500" }
+            ].map((category, index) => (
+              <Link key={index} to={`/activities#${category.tab}`}>
+                <Button 
+                  className={`w-full bg-gradient-to-r ${category.gradient} hover:shadow-xl text-white font-semibold py-3 px-4 rounded-lg transform hover:scale-105 transition-all duration-300 text-sm`}
+                >
+                  {category.name}
+                </Button>
+              </Link>
+            ))}
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mb-12">
           {tours.map((tour, index) => (
             <div 
@@ -338,33 +361,6 @@ const FeaturedTours = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Activity Category Navigation */}
-        <div className="mb-12">
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Browse by Category
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
-            {[
-              { name: "Yachting & Cruises", tab: "yachting", gradient: "from-cyan-500 to-blue-500" },
-              { name: "Water & Air", tab: "water-air", gradient: "from-blue-500 to-indigo-500" },
-              { name: "Theme Parks", tab: "theme-parks", gradient: "from-red-500 to-orange-500" },
-              { name: "Desert", tab: "desert", gradient: "from-orange-500 to-yellow-500" },
-              { name: "Transport", tab: "transport", gradient: "from-amber-500 to-red-500" },
-              { name: "Dinner in Sky", tab: "dinner-sky", gradient: "from-purple-500 to-pink-500" },
-              { name: "Visas", tab: "visas", gradient: "from-slate-500 to-gray-500" },
-              { name: "Unique", tab: "unique", gradient: "from-indigo-500 to-purple-500" }
-            ].map((category, index) => (
-              <Link key={index} to={`/activities#${category.tab}`}>
-                <Button 
-                  className={`w-full bg-gradient-to-r ${category.gradient} hover:shadow-xl text-white font-semibold py-3 px-4 rounded-lg transform hover:scale-105 transition-all duration-300 text-sm`}
-                >
-                  {category.name}
-                </Button>
-              </Link>
-            ))}
-          </div>
         </div>
 
         <div className="text-center">
