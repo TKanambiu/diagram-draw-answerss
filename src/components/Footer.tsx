@@ -29,12 +29,12 @@ const Footer = () => {
           <div className="animate-fade-in">
             <div className="flex items-center space-x-3 mb-6">
               <img 
-                src="/lovable-uploads/a9cb64a3-5cd6-403e-9e5b-ce0057d90590.png" 
+                src="/lovable-uploads/5c36784f-b200-45b7-acb2-9aa53be582c0.png" 
                 alt="Emirates Dubai Tours & Travel Logo" 
                 className="w-12 h-12 object-contain"
               />
               <div>
-                <h3 className="text-xl font-bold bg-gradient-to-r from-amber-400 to-yellow-400 bg-clip-text text-transparent">
+                <h3 className="text-xl font-bold bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-300 bg-clip-text text-transparent">
                   Emirates Dubai Tours & Travel
                 </h3>
                 <p className="text-sm text-gray-300">Premium Travel Experience</p>

@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -74,7 +73,7 @@ const Activities = () => {
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 animate-bounce">
+            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-400 bg-clip-text text-transparent mb-6 animate-bounce">
               Dubai Activities & Experiences
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto animate-slide-in-right">
@@ -84,21 +83,21 @@ const Activities = () => {
           </div>
 
           <Tabs defaultValue={getDefaultTab()} className="w-full">
-            <TabsList className="grid grid-cols-4 md:grid-cols-8 w-full mb-8 bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg rounded-lg">
-              <TabsTrigger value="yachting" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Yachts Luxury Cruises</TabsTrigger>
-              <TabsTrigger value="water-air" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Water & Air</TabsTrigger>
-              <TabsTrigger value="theme-parks" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Theme Parks</TabsTrigger>
-              <TabsTrigger value="desert" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Desert Safaris</TabsTrigger>
-              <TabsTrigger value="transport" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Transport</TabsTrigger>
-              <TabsTrigger value="dinner-sky" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold flex items-center gap-1">
+            <TabsList className="grid grid-cols-4 md:grid-cols-8 w-full mb-8 bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-400 shadow-lg rounded-lg">
+              <TabsTrigger value="yachting" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-amber-600 font-semibold">Luxury Yachts & Cruises</TabsTrigger>
+              <TabsTrigger value="water-air" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-amber-600 font-semibold">Water & Air</TabsTrigger>
+              <TabsTrigger value="theme-parks" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-amber-600 font-semibold">Theme Parks</TabsTrigger>
+              <TabsTrigger value="desert" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-amber-600 font-semibold">Desert Safaris</TabsTrigger>
+              <TabsTrigger value="transport" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-amber-600 font-semibold">Transport</TabsTrigger>
+              <TabsTrigger value="dinner-sky" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-amber-600 font-semibold flex items-center gap-1">
                 <Utensils size={16} />
                 Dinner in Sky
               </TabsTrigger>
-              <TabsTrigger value="visas" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold flex items-center gap-1">
+              <TabsTrigger value="visas" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-amber-600 font-semibold flex items-center gap-1">
                 <Plane size={16} />
                 Visas
               </TabsTrigger>
-              <TabsTrigger value="unique" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Unique Stays</TabsTrigger>
+              <TabsTrigger value="unique" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-amber-600 font-semibold">Unique Stays</TabsTrigger>
             </TabsList>
 
             <TabsContent value="yachting">
@@ -182,7 +181,7 @@ const Activities = () => {
           </Tabs>
 
           <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white p-8 rounded-lg transform hover:scale-105 transition-all duration-300">
+            <div className="bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-400 text-white p-8 rounded-lg transform hover:scale-105 transition-all duration-300">
               <h3 className="text-3xl font-bold mb-4 animate-bounce">Ready for Your Dubai Adventure?</h3>
               <p className="text-lg mb-6">
                 Contact us now to customize your perfect Dubai experience with exclusive packages and expert guidance.

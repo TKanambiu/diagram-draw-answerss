@@ -11,7 +11,7 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const activityCategories = [
-    { name: "Yachts Luxury Cruises", path: "/activities#yachting" },
+    { name: "Luxury Yachts & Cruises", path: "/activities#yachting" },
     { name: "Water & Air", path: "/activities#water-air" },
     { name: "Theme Parks", path: "/activities#theme-parks" },
     { name: "Desert Safaris", path: "/activities#desert" },
@@ -25,9 +25,14 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Emirates Dubai Tours & Travel
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/5c36784f-b200-45b7-acb2-9aa53be582c0.png" 
+              alt="Emirates Dubai Travel Logo" 
+              className="w-16 h-12 object-contain"
+            />
+            <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-400 bg-clip-text text-transparent">
+              Emirates Dubai Travel
             </div>
           </Link>
 
@@ -35,16 +40,16 @@ const Navigation = () => {
           <div className="hidden lg:flex items-center space-x-6">
             <Link
               to="/"
-              className={`text-gray-700 hover:text-blue-600 transition-colors ${
-                isActive("/") ? "text-blue-600 font-semibold" : ""
+              className={`text-gray-700 hover:text-amber-600 transition-colors ${
+                isActive("/") ? "text-amber-600 font-semibold" : ""
               }`}
             >
               Home
             </Link>
             <Link
               to="/about"
-              className={`text-gray-700 hover:text-blue-600 transition-colors ${
-                isActive("/about") ? "text-blue-600 font-semibold" : ""
+              className={`text-gray-700 hover:text-amber-600 transition-colors ${
+                isActive("/about") ? "text-amber-600 font-semibold" : ""
               }`}
             >
               About
@@ -54,19 +59,19 @@ const Navigation = () => {
             <div className="relative group">
               <Link
                 to="/activities"
-                className={`text-gray-700 hover:text-blue-600 transition-colors ${
-                  isActive("/activities") ? "text-blue-600 font-semibold" : ""
+                className={`text-gray-700 hover:text-amber-600 transition-colors ${
+                  isActive("/activities") ? "text-amber-600 font-semibold" : ""
                 }`}
               >
                 Activities
               </Link>
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="py-2">
                   {activityCategories.map((category, index) => (
                     <Link
                       key={index}
                       to={category.path}
-                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                      className="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600 transition-colors"
                     >
                       {category.name}
                     </Link>
@@ -77,8 +82,8 @@ const Navigation = () => {
 
             <Link
               to="/contact"
-              className={`text-gray-700 hover:text-blue-600 transition-colors ${
-                isActive("/contact") ? "text-blue-600 font-semibold" : ""
+              className={`text-gray-700 hover:text-amber-600 transition-colors ${
+                isActive("/contact") ? "text-amber-600 font-semibold" : ""
               }`}
             >
               Contact
@@ -114,8 +119,8 @@ const Navigation = () => {
             <div className="flex flex-col space-y-4">
               <Link
                 to="/"
-                className={`text-gray-700 hover:text-blue-600 transition-colors ${
-                  isActive("/") ? "text-blue-600 font-semibold" : ""
+                className={`text-gray-700 hover:text-amber-600 transition-colors ${
+                  isActive("/") ? "text-amber-600 font-semibold" : ""
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -123,8 +128,8 @@ const Navigation = () => {
               </Link>
               <Link
                 to="/about"
-                className={`text-gray-700 hover:text-blue-600 transition-colors ${
-                  isActive("/about") ? "text-blue-600 font-semibold" : ""
+                className={`text-gray-700 hover:text-amber-600 transition-colors ${
+                  isActive("/about") ? "text-amber-600 font-semibold" : ""
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -132,8 +137,8 @@ const Navigation = () => {
               </Link>
               <Link
                 to="/activities"
-                className={`text-gray-700 hover:text-blue-600 transition-colors ${
-                  isActive("/activities") ? "text-blue-600 font-semibold" : ""
+                className={`text-gray-700 hover:text-amber-600 transition-colors ${
+                  isActive("/activities") ? "text-amber-600 font-semibold" : ""
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -146,7 +151,7 @@ const Navigation = () => {
                   <Link
                     key={index}
                     to={category.path}
-                    className="block text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                    className="block text-gray-600 hover:text-amber-600 transition-colors text-sm"
                     onClick={() => setIsOpen(false)}
                   >
                     {category.name}
@@ -156,8 +161,8 @@ const Navigation = () => {
 
               <Link
                 to="/contact"
-                className={`text-gray-700 hover:text-blue-600 transition-colors ${
-                  isActive("/contact") ? "text-blue-600 font-semibold" : ""
+                className={`text-gray-700 hover:text-amber-600 transition-colors ${
+                  isActive("/contact") ? "text-amber-600 font-semibold" : ""
                 }`}
                 onClick={() => setIsOpen(false)}
               >

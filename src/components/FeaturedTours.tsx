@@ -267,7 +267,7 @@ const FeaturedTours = () => {
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-6">
             <Home className="text-amber-500 animate-bounce" size={32} />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent animate-bounce">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-400 bg-clip-text text-transparent animate-bounce">
               Dubai Experiences & Activities
             </h2>
             <Home className="text-amber-500 animate-bounce" size={32} />
@@ -281,7 +281,7 @@ const FeaturedTours = () => {
         <div className="mb-12">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
             {[
-              { name: "Yachting & Cruises", tab: "yachting", gradient: "from-cyan-500 to-blue-500" },
+              { name: "Luxury Yachts & Cruises", tab: "yachting", gradient: "from-cyan-500 to-blue-500" },
               { name: "Water & Air", tab: "water-air", gradient: "from-blue-500 to-indigo-500" },
               { name: "Theme Parks", tab: "theme-parks", gradient: "from-red-500 to-orange-500" },
               { name: "Desert", tab: "desert", gradient: "from-orange-500 to-yellow-500" },
@@ -367,7 +367,7 @@ const FeaturedTours = () => {
           <Link to="/activities">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 text-white px-8 md:px-12 py-3 md:py-4 text-base md:text-lg font-bold transform hover:scale-110 transition-all duration-300 hover:shadow-2xl animate-bounce rounded-xl shadow-lg"
+              className="bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-400 hover:from-yellow-700 hover:via-amber-600 hover:to-yellow-500 text-white px-8 md:px-12 py-3 md:py-4 text-base md:text-lg font-bold transform hover:scale-110 transition-all duration-300 hover:shadow-2xl animate-bounce rounded-xl shadow-lg"
             >
               View All Activities
             </Button>
