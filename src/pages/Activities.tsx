@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -34,7 +33,7 @@ import {
   additionalDesertImages,
   additionalFormulaOneImages,
   dinnerInTheSkyImages
-} from "@/data/activitiesData";
+} from "@/data/activities";
 
 const Activities = () => {
   const handleBookNow = (activityName: string) => {
