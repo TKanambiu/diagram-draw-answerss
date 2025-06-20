@@ -38,6 +38,30 @@
   }
 }
 
+@keyframes slide-left-to-right {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateX(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float-horizontal {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
@@ -54,4 +78,12 @@
 
 .animate-slide-in-left {
   animation: slide-in-left 0.5s ease-out forwards;
+}
+
+.animate-slide-left-to-right {
+  animation: slide-left-to-right 1s ease-out forwards;
+}
+
+.animate-float-horizontal {
+  animation: float-horizontal 3s ease-in-out infinite;
 }
