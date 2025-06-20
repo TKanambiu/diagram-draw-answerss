@@ -13,7 +13,7 @@ const ImageSlider = ({ images, title, onBookNow }: ImageSliderProps) => {
         {images.map((image, index) => (
           <div 
             key={index}
-            className="flex-shrink-0 w-80 h-60 relative overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 animate-slide-in-right"
+            className="flex-shrink-0 w-80 h-60 relative overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 animate-slide-in-left"
             style={{ animationDelay: `${index * 150}ms` }}
           >
             <img 

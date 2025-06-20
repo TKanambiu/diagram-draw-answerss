@@ -1,4 +1,3 @@
-
 export const yachtingCruises = [
   { name: "Luxury Yacht Charters & Cruises", description: "Premium yacht experiences with luxury amenities, day cruises, sunset trips, and private events", image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png" },
   { name: "Traditional Dhow Cruises", description: "Authentic Arabian dhow boat experiences", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
@@ -159,7 +158,7 @@ export const newMiracleGardenImages = [
 
 export const visaImages = [
   "/lovable-uploads/f9082ca4-b70a-4446-a58c-8fa4f2656a48.png",
-  "/lovable-uploads/d85ea6af-7756-4918-89c2-3cbe86220a84.png"
+  "/lovable-uploads/bbf187ad-57e7-4a93-8a22-4677f3ab79a4.png"
 ];
 
 // Additional desert images from the new uploads
