@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Plane, Utensils } from "lucide-react";
 import ActivitySection from "@/components/activities/ActivitySection";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import {
   yachtingCruises,
   waterAirAdventures,
@@ -36,9 +38,32 @@ import {
 } from "@/data/activities";
 
 const Activities = () => {
+  const location = useLocation();
+
+  // Scroll to top when component mounts or when coming from homepage links
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
+
   const handleBookNow = (activityName: string) => {
     const message = encodeURIComponent(`Hi! I'm interested in booking ${activityName}. Could you please provide more details about pricing, availability, and what's included?`);
     window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
+  };
+
+  // Map hash fragments to tab values
+  const getDefaultTab = () => {
+    const hash = location.hash.replace('#', '');
+    const tabMapping: { [key: string]: string } = {
+      'yachting': 'yachting',
+      'water-air': 'water-air',
+      'theme-parks': 'theme-parks',
+      'desert': 'desert',
+      'transport': 'transport',
+      'dinner-sky': 'dinner-sky',
+      'visas': 'visas',
+      'unique': 'unique'
+    };
+    return tabMapping[hash] || 'yachting';
   };
 
   return (
@@ -57,7 +82,7 @@ const Activities = () => {
             </p>
           </div>
 
-          <Tabs defaultValue="yachting" className="w-full">
+          <Tabs defaultValue={getDefaultTab()} className="w-full">
             <TabsList className="grid grid-cols-4 md:grid-cols-8 w-full mb-8 bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg rounded-lg">
               <TabsTrigger value="yachting" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Yachting & Cruises</TabsTrigger>
               <TabsTrigger value="water-air" className="text-xs md:text-sm text-white data-[state=active]:bg-white data-[state=active]:text-blue-600 font-semibold">Water & Air</TabsTrigger>
