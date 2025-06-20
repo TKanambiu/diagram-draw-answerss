@@ -1,123 +1,179 @@
 
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Menu, X, Phone, Mail } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  const navItems = [
-    { name: "Cruise", path: "/cruise", color: "from-blue-500 to-cyan-500", textColor: "text-blue-600" },
-    { name: "Visa", path: "/visa", color: "from-green-500 to-emerald-500", textColor: "text-green-600" },
-    { name: "Activities", path: "/activities", color: "from-purple-500 to-violet-500", textColor: "text-purple-600" },
-    { name: "Hotel", path: "/hotel", color: "from-red-500 to-pink-500", textColor: "text-red-600" },
-    { name: "Holiday", path: "/holiday", color: "from-orange-500 to-amber-500", textColor: "text-orange-600" },
+  const isActive = (path: string) => location.pathname === path;
+
+  const activityCategories = [
+    { name: "Yachting & Cruises", path: "/activities#yachting" },
+    { name: "Water & Air", path: "/activities#water-air" },
+    { name: "Theme Parks", path: "/activities#theme-parks" },
+    { name: "Desert", path: "/activities#desert" },
+    { name: "Transport", path: "/activities#transport" },
+    { name: "Dinner in Sky", path: "/activities#dinner-sky" },
+    { name: "Visas", path: "/activities#visas" }
   ];
 
-  const isActivePath = (path: string) => {
-    return location.pathname === path;
-  };
-
-  const handleBookNow = () => {
-    const message = encodeURIComponent("Hi! I'm interested in booking a Dubai experience. Please help me with the best packages available.");
-    window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
-  };
-
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-xl z-50 border-b border-amber-200 transition-all duration-300">
+    <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
-          {/* Enhanced Logo with uploaded image */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-              <div className="relative transform group-hover:scale-110 transition-transform duration-300">
-                <img 
-                  src="/lovable-uploads/a9cb64a3-5cd6-403e-9e5b-ce0057d90590.png" 
-                  alt="Emirates Dubai Tours & Travel Logo" 
-                  className="w-16 h-16 object-contain animate-pulse"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 bg-clip-text text-transparent animate-pulse tracking-wide">
-                <span className="font-serif italic">Emirates</span>{" "}
-                <span className="font-sans font-black">Dubai</span>{" "}
-                <span className="font-serif">Tours & Travel</span>
-              </div>
-              <div className="text-xs text-amber-600 font-medium tracking-widest animate-fade-in">
-                Premium Travel Experience
-              </div>
+        <div className="flex justify-between items-center py-4">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Dubai Tours
             </div>
           </Link>
 
-          {/* Desktop Menu with enhanced animations */}
-          <div className="hidden md:flex items-center space-x-2">
-            {navItems.map((item, index) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className="relative group"
-              >
-                <Button 
-                  className={`bg-gradient-to-r ${item.color} hover:shadow-2xl transform hover:scale-110 transition-all duration-300 text-white font-semibold px-6 py-3 animate-fade-in hover:animate-pulse ${
-                    isActivePath(item.path) ? "shadow-2xl scale-110 animate-bounce" : ""
-                  }`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  {item.name}
-                </Button>
-              </Link>
-            ))}
-            <Button 
-              onClick={handleBookNow}
-              className="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-semibold px-8 py-3 ml-4 transform hover:scale-110 transition-all duration-300 hover:shadow-2xl animate-bounce"
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-6">
+            <Link
+              to="/"
+              className={`text-gray-700 hover:text-blue-600 transition-colors ${
+                isActive("/") ? "text-blue-600 font-semibold" : ""
+              }`}
             >
-              Book Now
-            </Button>
+              Home
+            </Link>
+            <Link
+              to="/about"
+              className={`text-gray-700 hover:text-blue-600 transition-colors ${
+                isActive("/about") ? "text-blue-600 font-semibold" : ""
+              }`}
+            >
+              About
+            </Link>
+            
+            {/* Activity Categories Dropdown */}
+            <div className="relative group">
+              <Link
+                to="/activities"
+                className={`text-gray-700 hover:text-blue-600 transition-colors ${
+                  isActive("/activities") ? "text-blue-600 font-semibold" : ""
+                }`}
+              >
+                Activities
+              </Link>
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div className="py-2">
+                  {activityCategories.map((category, index) => (
+                    <Link
+                      key={index}
+                      to={category.path}
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    >
+                      {category.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <Link
+              to="/contact"
+              className={`text-gray-700 hover:text-blue-600 transition-colors ${
+                isActive("/contact") ? "text-blue-600 font-semibold" : ""
+              }`}
+            >
+              Contact
+            </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-amber-600 transition-all duration-300 transform hover:scale-110"
-            >
-              {isMenuOpen ? <X size={28} className="animate-spin" /> : <Menu size={28} className="animate-pulse" />}
-            </button>
+          {/* Contact Info */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <Phone size={16} />
+              <span>+971 56 872 3633</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <Mail size={16} />
+              <span>info@dubaitours.com</span>
+            </div>
           </div>
+
+          {/* Mobile menu button */}
+          <Button
+            variant="ghost"
+            size="sm"
+            className="lg:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </Button>
         </div>
 
-        {/* Mobile Menu with enhanced animations */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-amber-200 animate-slide-in-right">
-            <div className="px-2 pt-2 pb-3 space-y-3">
-              {navItems.map((item, index) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className="block animate-fade-in"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <Button 
-                    className={`w-full bg-gradient-to-r ${item.color} hover:shadow-2xl text-white font-semibold transform hover:scale-105 transition-all duration-300 ${
-                      isActivePath(item.path) ? "shadow-2xl animate-pulse" : ""
-                    }`}
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="lg:hidden py-4 border-t">
+            <div className="flex flex-col space-y-4">
+              <Link
+                to="/"
+                className={`text-gray-700 hover:text-blue-600 transition-colors ${
+                  isActive("/") ? "text-blue-600 font-semibold" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className={`text-gray-700 hover:text-blue-600 transition-colors ${
+                  isActive("/about") ? "text-blue-600 font-semibold" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                to="/activities"
+                className={`text-gray-700 hover:text-blue-600 transition-colors ${
+                  isActive("/activities") ? "text-blue-600 font-semibold" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                All Activities
+              </Link>
+              
+              {/* Mobile Activity Categories */}
+              <div className="ml-4 space-y-2">
+                {activityCategories.map((category, index) => (
+                  <Link
+                    key={index}
+                    to={category.path}
+                    className="block text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                    onClick={() => setIsOpen(false)}
                   >
-                    {item.name}
-                  </Button>
-                </Link>
-              ))}
-              <div className="pt-2">
-                <Button 
-                  onClick={handleBookNow}
-                  className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-semibold transform hover:scale-105 transition-all duration-300 animate-bounce"
-                >
-                  Book Now
-                </Button>
+                    {category.name}
+                  </Link>
+                ))}
+              </div>
+
+              <Link
+                to="/contact"
+                className={`text-gray-700 hover:text-blue-600 transition-colors ${
+                  isActive("/contact") ? "text-blue-600 font-semibold" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </Link>
+              
+              {/* Mobile Contact Info */}
+              <div className="pt-4 border-t space-y-2">
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <Phone size={16} />
+                  <span>+971 56 872 3633</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <Mail size={16} />
+                  <span>info@dubaitours.com</span>
+                </div>
               </div>
             </div>
           </div>
