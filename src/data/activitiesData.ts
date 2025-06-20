@@ -52,7 +52,15 @@ export const helicopterImages = [
 export const yachtImages = [
   "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png",
   "/lovable-uploads/ed15b493-f7a8-44f1-91c4-4541214637ae.png",
-  "/lovable-uploads/37bd3fb1-3908-4a36-9da5-d29eaedd40be.png"
+  "/lovable-uploads/37bd3fb1-3908-4a36-9da5-d29eaedd40be.png",
+  "/lovable-uploads/550209fd-28c8-423d-a00f-a80e56cf9954.png",
+  "/lovable-uploads/e7cd4b28-8404-48d7-9c07-a4d3635c814c.png",
+  "/lovable-uploads/4d4bf36f-3699-4cf0-8f85-d12ee725961b.png",
+  "/lovable-uploads/da6c0b7c-0513-4219-955a-b58e73e51cbc.png",
+  "/lovable-uploads/99fe7264-453b-48a7-82e8-1a56eee72bb4.png",
+  "/lovable-uploads/27e7d4a9-e62f-4e6c-80de-02e98a1bb169.png",
+  "/lovable-uploads/3685bd9d-2322-44ee-b2ff-7560daea51dc.png",
+  "/lovable-uploads/99961db3-b5d1-4974-bd32-ac0a4ed9a247.png"
 ];
 
 export const formulaOneImages = [
