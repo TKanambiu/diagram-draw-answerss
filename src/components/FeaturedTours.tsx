@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Home, Plane, Anchor } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedTours = () => {
+  const navigate = useNavigate();
+
   const tours = [
     {
       id: 1,
@@ -12,7 +15,8 @@ const FeaturedTours = () => {
       duration: "8 hours",
       highlights: ["Burj Khalifa", "Dubai Mall", "Dubai Frame", "Gold Souk"],
       gradient: "from-purple-500 to-pink-500",
-      accentColor: "purple"
+      accentColor: "purple",
+      section: "theme-parks"
     },
     {
       id: 2,
@@ -22,7 +26,8 @@ const FeaturedTours = () => {
       duration: "6 hours",
       highlights: ["Dune Bashing", "Camel Riding", "BBQ Dinner", "Cultural Shows"],
       gradient: "from-orange-500 to-red-500",
-      accentColor: "orange"
+      accentColor: "orange",
+      section: "desert"
     },
     {
       id: 3,
@@ -32,7 +37,8 @@ const FeaturedTours = () => {
       duration: "4-8 hours",
       highlights: ["Luxury Yacht", "Day Cruises", "Sunset Trips", "Private Events"],
       gradient: "from-cyan-500 to-blue-500",
-      accentColor: "cyan"
+      accentColor: "cyan",
+      section: "yachting"
     },
     {
       id: 4,
@@ -42,7 +48,8 @@ const FeaturedTours = () => {
       duration: "15-45 mins",
       highlights: ["Aerial Views", "Burj Al Arab", "Palm Jumeirah", "Professional Pilot"],
       gradient: "from-emerald-500 to-teal-500",
-      accentColor: "emerald"
+      accentColor: "emerald",
+      section: "water-air"
     },
     {
       id: 5,
@@ -52,7 +59,8 @@ const FeaturedTours = () => {
       duration: "Full Day",
       highlights: ["Ferrari World", "F1 Tickets", "Theme Park", "Racing Experience"],
       gradient: "from-red-500 to-rose-500",
-      accentColor: "red"
+      accentColor: "red",
+      section: "theme-parks"
     },
     {
       id: 6,
@@ -62,7 +70,8 @@ const FeaturedTours = () => {
       duration: "3-4 hours",
       highlights: ["Tandem Jump", "Professional Guide", "Dubai Views", "Safety First"],
       gradient: "from-sky-500 to-indigo-500",
-      accentColor: "sky"
+      accentColor: "sky",
+      section: "water-air"
     },
     {
       id: 7,
@@ -72,7 +81,8 @@ const FeaturedTours = () => {
       duration: "Flexible",
       highlights: ["Luxury Cars", "Professional Chauffeur", "Airport Transfer", "City Tours"],
       gradient: "from-amber-500 to-yellow-500",
-      accentColor: "amber"
+      accentColor: "amber",
+      section: "transport"
     },
     {
       id: 8,
@@ -82,7 +92,8 @@ const FeaturedTours = () => {
       duration: "90 minutes",
       highlights: ["Sky Dining", "Panoramic Views", "Gourmet Menu", "Unique Experience"],
       gradient: "from-violet-500 to-purple-500",
-      accentColor: "violet"
+      accentColor: "violet",
+      section: "dinner-sky"
     },
     {
       id: 9,
@@ -92,7 +103,8 @@ const FeaturedTours = () => {
       duration: "3-4 hours",
       highlights: ["Flower Garden", "Artistic Displays", "Photo Spots", "Seasonal Blooms"],
       gradient: "from-pink-500 to-rose-500",
-      accentColor: "pink"
+      accentColor: "pink",
+      section: "theme-parks"
     },
     {
       id: 10,
@@ -102,7 +114,8 @@ const FeaturedTours = () => {
       duration: "2-7 days",
       highlights: ["Tourist Visa", "Residence Visa", "Fast Processing", "Expert Assistance"],
       gradient: "from-slate-500 to-gray-500",
-      accentColor: "slate"
+      accentColor: "slate",
+      section: "visas"
     },
     {
       id: 11,
@@ -112,7 +125,8 @@ const FeaturedTours = () => {
       duration: "2-3 hours",
       highlights: ["Traditional Dhow", "Dubai Creek", "Buffet Dinner", "Live Shows"],
       gradient: "from-teal-500 to-cyan-500",
-      accentColor: "teal"
+      accentColor: "teal",
+      section: "yachting"
     },
     {
       id: 12,
@@ -122,7 +136,8 @@ const FeaturedTours = () => {
       duration: "2-4 hours",
       highlights: ["Jet-Ski", "Flyboard", "Wakeboarding", "Parasailing"],
       gradient: "from-blue-500 to-indigo-500",
-      accentColor: "blue"
+      accentColor: "blue",
+      section: "water-air"
     },
     {
       id: 13,
@@ -132,7 +147,8 @@ const FeaturedTours = () => {
       duration: "4-6 hours",
       highlights: ["Museum of Future", "Dubai Frame", "Heritage Sites", "Cultural Experience"],
       gradient: "from-green-500 to-emerald-500",
-      accentColor: "green"
+      accentColor: "green",
+      section: "theme-parks"
     },
     {
       id: 14,
@@ -142,7 +158,8 @@ const FeaturedTours = () => {
       duration: "Full Day",
       highlights: ["Al Ain Zoo", "Safari Experience", "Wildlife Conservation", "Educational Tours"],
       gradient: "from-yellow-500 to-orange-500",
-      accentColor: "yellow"
+      accentColor: "yellow",
+      section: "theme-parks"
     },
     {
       id: 15,
@@ -152,7 +169,8 @@ const FeaturedTours = () => {
       duration: "Overnight",
       highlights: ["Yacht Live-Aboard", "QE2 Hotel", "Luxury Suite", "Unique Experience"],
       gradient: "from-indigo-500 to-purple-500",
-      accentColor: "indigo"
+      accentColor: "indigo",
+      section: "unique"
     },
     {
       id: 16,
@@ -162,7 +180,8 @@ const FeaturedTours = () => {
       duration: "2-3 hours",
       highlights: ["Jet-Ski", "Flyboard", "Water Thrills", "Professional Guide"],
       gradient: "from-blue-400 to-cyan-500",
-      accentColor: "blue"
+      accentColor: "blue",
+      section: "water-air"
     },
     {
       id: 17,
@@ -172,7 +191,8 @@ const FeaturedTours = () => {
       duration: "2-4 hours",
       highlights: ["Wakeboarding", "Waterskiing", "Professional Instruction", "Equipment Included"],
       gradient: "from-cyan-400 to-blue-600",
-      accentColor: "cyan"
+      accentColor: "cyan",
+      section: "water-air"
     },
     {
       id: 18,
@@ -182,7 +202,8 @@ const FeaturedTours = () => {
       duration: "1-2 hours",
       highlights: ["Parasailing", "Coastal Views", "Safe Equipment", "Photo Opportunities"],
       gradient: "from-sky-400 to-blue-500",
-      accentColor: "sky"
+      accentColor: "sky",
+      section: "water-air"
     },
     {
       id: 19,
@@ -192,7 +213,8 @@ const FeaturedTours = () => {
       duration: "Flexible",
       highlights: ["Luxury Vehicles", "Self-Drive", "Insurance Included", "24/7 Support"],
       gradient: "from-red-400 to-orange-500",
-      accentColor: "red"
+      accentColor: "red",
+      section: "transport"
     },
     {
       id: 20,
@@ -202,7 +224,8 @@ const FeaturedTours = () => {
       duration: "4-6 hours",
       highlights: ["Photography Tour", "Professional Guide", "Equipment Provided", "Scenic Locations"],
       gradient: "from-amber-400 to-yellow-600",
-      accentColor: "amber"
+      accentColor: "amber",
+      section: "desert"
     },
     {
       id: 21,
@@ -212,7 +235,8 @@ const FeaturedTours = () => {
       duration: "2 hours",
       highlights: ["Aerial Dining", "Gourmet Breakfast", "City Views", "Unique Experience"],
       gradient: "from-orange-400 to-red-500",
-      accentColor: "orange"
+      accentColor: "orange",
+      section: "dinner-sky"
     },
     {
       id: 22,
@@ -222,7 +246,8 @@ const FeaturedTours = () => {
       duration: "2 hours",
       highlights: ["Sky Dining", "Gourmet Lunch", "Panoramic Views", "Professional Service"],
       gradient: "from-purple-400 to-pink-500",
-      accentColor: "purple"
+      accentColor: "purple",
+      section: "dinner-sky"
     },
     {
       id: 23,
@@ -232,7 +257,8 @@ const FeaturedTours = () => {
       duration: "2-3 hours",
       highlights: ["Special Events", "Customized Menu", "Celebration Package", "Memorable Experience"],
       gradient: "from-violet-400 to-purple-600",
-      accentColor: "violet"
+      accentColor: "violet",
+      section: "dinner-sky"
     },
     {
       id: 24,
@@ -242,7 +268,8 @@ const FeaturedTours = () => {
       duration: "2-7 days",
       highlights: ["Fast Processing", "Expert Guidance", "Document Support", "Multiple Entry Options"],
       gradient: "from-gray-400 to-slate-600",
-      accentColor: "gray"
+      accentColor: "gray",
+      section: "visas"
     },
     {
       id: 25,
@@ -252,13 +279,18 @@ const FeaturedTours = () => {
       duration: "1-2 weeks",
       highlights: ["Residence Visa", "Application Support", "Document Preparation", "Follow-up Service"],
       gradient: "from-slate-400 to-gray-600",
-      accentColor: "slate"
+      accentColor: "slate",
+      section: "visas"
     }
   ];
 
   const handleLearnMore = (tourTitle: string) => {
     const message = encodeURIComponent(`Hi! I'm interested in the ${tourTitle}. Could you please provide more details, pricing, and availability?`);
     window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
+  };
+
+  const handleImageClick = (section: string) => {
+    navigate(`/activities#${section}`);
   };
 
   const cruisePackages = [
@@ -355,7 +387,7 @@ const FeaturedTours = () => {
                     src={cruise.image} 
                     alt={cruise.title}
                     className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
-                    onClick={() => handleLearnMore(cruise.title)}
+                    onClick={() => navigate('/cruise')}
                   />
                   <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     {cruise.duration}
@@ -402,7 +434,7 @@ const FeaturedTours = () => {
                   src={tour.image} 
                   alt={tour.title}
                   className="w-full h-40 md:h-48 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
-                  onClick={() => handleLearnMore(tour.title)}
+                  onClick={() => handleImageClick(tour.section)}
                 />
                 <div className={`absolute top-2 md:top-4 right-2 md:right-4 bg-gradient-to-r ${tour.gradient} text-white px-2 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-bold animate-pulse shadow-lg`}>
                   {tour.duration}
