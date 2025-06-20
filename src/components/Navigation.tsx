@@ -11,13 +11,13 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const activityCategories = [
-    { name: "Luxury Yachts & Cruises", path: "/activities#yachting" },
-    { name: "Water & Air", path: "/activities#water-air" },
-    { name: "Theme Parks", path: "/activities#theme-parks" },
-    { name: "Desert Safaris", path: "/activities#desert" },
-    { name: "Transport", path: "/activities#transport" },
-    { name: "Dinner in Sky", path: "/activities#dinner-sky" },
-    { name: "Visas", path: "/activities#visas" }
+    { name: "Luxury Yachts & Cruises", path: "/activities#yachting", color: "bg-gradient-to-br from-blue-500 to-cyan-600" },
+    { name: "Water & Air", path: "/activities#water-air", color: "bg-gradient-to-br from-sky-400 to-blue-500" },
+    { name: "Theme Parks", path: "/activities#theme-parks", color: "bg-gradient-to-br from-purple-500 to-pink-500" },
+    { name: "Desert Safaris", path: "/activities#desert", color: "bg-gradient-to-br from-orange-500 to-red-500" },
+    { name: "Transport", path: "/activities#transport", color: "bg-gradient-to-br from-gray-600 to-gray-800" },
+    { name: "Dinner in Sky", path: "/activities#dinner-sky", color: "bg-gradient-to-br from-indigo-500 to-purple-600" },
+    { name: "Visas", path: "/activities#visas", color: "bg-gradient-to-br from-green-500 to-emerald-600" }
   ];
 
   return (
@@ -73,13 +73,13 @@ const Navigation = () => {
               >
                 Activities
               </Link>
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border-2 border-yellow-300">
-                <div className="py-2">
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border-2 border-yellow-300 p-2">
+                <div className="grid gap-2">
                   {activityCategories.map((category, index) => (
                     <Link
                       key={index}
                       to={category.path}
-                      className="block px-4 py-2 text-gray-700 hover:bg-yellow-50 hover:text-amber-600 transition-colors font-medium"
+                      className={`${category.color} text-white font-bold px-4 py-3 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-center text-sm`}
                     >
                       {category.name}
                     </Link>
@@ -159,7 +159,7 @@ const Navigation = () => {
                   <Link
                     key={index}
                     to={category.path}
-                    className="block text-yellow-100 hover:text-yellow-200 transition-colors text-sm font-medium px-4 py-1 rounded hover:bg-white/10"
+                    className={`block ${category.color} text-white font-bold px-4 py-2 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-center text-sm`}
                     onClick={() => setIsOpen(false)}
                   >
                     {category.name}
