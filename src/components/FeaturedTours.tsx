@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Home, Plane, Anchor } from "lucide-react";
@@ -31,7 +32,7 @@ const FeaturedTours = () => {
     },
     {
       id: 3,
-      title: "Luxury Yacht Charter",
+      title: "Private luxury Yacht cruises",
       image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png",
       description: "Premium yacht experiences with luxury amenities, day cruises, sunset trips, and private events",
       duration: "4-8 hours",
@@ -120,7 +121,7 @@ const FeaturedTours = () => {
     {
       id: 11,
       title: "Traditional Dhow Cruises",
-      image: "/lovable-uploads/fb8187fb-18f1-45b9-8453-f1468ba9aed8.png",
+      image: "/lovable-uploads/51cb8303-b129-4d42-9aa2-fdcc94103926.png",
       description: "Authentic Arabian dhow boat experiences with dinner and entertainment",
       duration: "2-3 hours",
       highlights: ["Traditional Dhow", "Dubai Creek", "Buffet Dinner", "Live Shows"],
@@ -290,7 +291,20 @@ const FeaturedTours = () => {
   };
 
   const handleImageClick = (section: string) => {
+    // Navigate to activities page and scroll to top, then to section
     navigate(`/activities#${section}`);
+    // Small delay to ensure navigation completes before scrolling
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
+
+  const handleCruiseImageClick = () => {
+    // Navigate to cruise page and scroll to top
+    navigate('/cruise');
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
   };
 
   const cruisePackages = [
@@ -387,7 +401,7 @@ const FeaturedTours = () => {
                     src={cruise.image} 
                     alt={cruise.title}
                     className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
-                    onClick={() => navigate('/cruise')}
+                    onClick={handleCruiseImageClick}
                   />
                   <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     {cruise.duration}
