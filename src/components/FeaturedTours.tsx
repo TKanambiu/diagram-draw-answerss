@@ -291,11 +291,17 @@ const FeaturedTours = () => {
   };
 
   const handleImageClick = (section: string) => {
-    // Navigate to activities page and scroll to top, then to section
+    // Navigate to activities page with the specific section hash
     navigate(`/activities#${section}`);
     // Small delay to ensure navigation completes before scrolling
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // First scroll to top
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      // Then find and scroll to the specific section
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }, 100);
   };
 
