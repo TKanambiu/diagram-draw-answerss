@@ -281,22 +281,21 @@ const FeaturedTours = () => {
         <div className="mb-12">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
             {[
-              { name: "Luxury Yachts & Cruises", tab: "yachting", icon: "🛥️" },
-              { name: "Water & Air", tab: "water-air", icon: "🌊" },
-              { name: "Theme Parks", tab: "theme-parks", icon: "🎢" },
-              { name: "Desert Safaris", tab: "desert", icon: "🏜️" },
-              { name: "Transport", tab: "transport", icon: "🚗" },
-              { name: "Dinner in Sky", tab: "dinner-sky", icon: "🍽️" },
-              { name: "Visas", tab: "visas", icon: "✈️" },
-              { name: "Unique Stays", tab: "unique", icon: "🏨" }
+              { name: "Luxury Yachts & Cruises", tab: "yachting", gradient: "from-blue-500 to-cyan-500" },
+              { name: "Water & Air", tab: "water-air", gradient: "from-sky-500 to-blue-600" },
+              { name: "Theme Parks", tab: "theme-parks", gradient: "from-pink-500 to-rose-500" },
+              { name: "Desert Safaris", tab: "desert", gradient: "from-orange-500 to-red-500" },
+              { name: "Transport", tab: "transport", gradient: "from-purple-500 to-indigo-500" },
+              { name: "Dinner in Sky", tab: "dinner-sky", gradient: "from-violet-500 to-purple-600" },
+              { name: "Visas", tab: "visas", gradient: "from-emerald-500 to-teal-500" },
+              { name: "Unique Stays", tab: "unique", gradient: "from-amber-500 to-yellow-500" }
             ].map((category, index) => (
               <Link key={index} to={`/activities#${category.tab}`}>
                 <Button 
-                  className="w-full bg-white hover:bg-gray-50 text-gray-800 border border-gray-300 px-3 py-4 rounded-lg transition-colors duration-200"
+                  className={`w-full bg-gradient-to-r ${category.gradient} hover:opacity-90 text-white border-0 px-3 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl`}
                 >
                   <div className="flex flex-col items-center space-y-1">
-                    <span className="text-2xl">{category.icon}</span>
-                    <span className="text-xs md:text-sm font-medium text-center leading-tight">
+                    <span className="text-xs md:text-sm font-bold text-center leading-tight text-white">
                       {category.name}
                     </span>
                   </div>
