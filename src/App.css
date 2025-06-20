@@ -62,6 +62,24 @@
   }
 }
 
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes continuous-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
@@ -86,4 +104,23 @@
 
 .animate-float-horizontal {
   animation: float-horizontal 3s ease-in-out infinite;
+}
+
+.animate-continuous-scroll {
+  animation: continuous-scroll 20s linear infinite;
+}
+
+.scroll-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-track {
+  display: flex;
+  width: max-content;
+  animation: continuous-scroll 30s linear infinite;
+}
+
+.scroll-track:hover {
+  animation-play-state: paused;
 }
