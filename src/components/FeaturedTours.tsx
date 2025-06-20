@@ -1,6 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Home, Plane } from "lucide-react";
+import { Home, Plane, Anchor } from "lucide-react";
 
 const FeaturedTours = () => {
   const tours = [
@@ -261,6 +262,30 @@ const FeaturedTours = () => {
     window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
   };
 
+  const cruisePackages = [
+    {
+      id: 1,
+      title: "Dubai Marina Dinner Cruise",
+      image: "/lovable-uploads/e0b69a7c-b75e-4095-885a-ae392b569e79.png",
+      description: "Luxury dining experience while cruising through Dubai Marina",
+      duration: "3 hours"
+    },
+    {
+      id: 2,
+      title: "Traditional Dhow Cruise",
+      image: "/lovable-uploads/ed5fce7a-dacd-4f89-9db0-cafa8df8c5af.png",
+      description: "Authentic Arabian dhow boat experience with cultural entertainment",
+      duration: "2.5 hours"
+    },
+    {
+      id: 3,
+      title: "Luxury Yacht Charter",
+      image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png",
+      description: "Private luxury yacht charter for exclusive Dubai coastline experience",
+      duration: "4-8 hours"
+    }
+  ];
+
   return (
     <section className="py-12 md:py-20 bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100">
       <div className="container mx-auto px-4">
@@ -302,6 +327,67 @@ const FeaturedTours = () => {
                 </Button>
               </Link>
             ))}
+          </div>
+        </div>
+
+        {/* New Cruise Packages Section */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Anchor className="text-blue-500 animate-bounce" size={28} />
+              <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                Featured Cruise Packages
+              </h3>
+              <Anchor className="text-blue-500 animate-bounce" size={28} />
+            </div>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore Dubai's stunning coastline and waterways with our premium cruise experiences
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {cruisePackages.map((cruise) => (
+              <div 
+                key={cruise.id}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-200"
+              >
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={cruise.image} 
+                    alt={cruise.title}
+                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
+                    onClick={() => handleLearnMore(cruise.title)}
+                  />
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    {cruise.duration}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-xl font-bold text-gray-900 mb-3 cursor-pointer hover:text-blue-600 transition-colors"
+                      onClick={() => handleLearnMore(cruise.title)}>
+                    {cruise.title}
+                  </h4>
+                  <p className="text-gray-600 mb-4">{cruise.description}</p>
+                  <Button 
+                    onClick={() => handleLearnMore(cruise.title)}
+                    className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold"
+                  >
+                    Book via WhatsApp
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/cruise">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 py-3 text-lg font-bold transform hover:scale-105 transition-all duration-300 hover:shadow-xl rounded-xl shadow-lg"
+              >
+                View All Cruise Packages
+              </Button>
+            </Link>
           </div>
         </div>
 
