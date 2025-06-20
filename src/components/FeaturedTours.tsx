@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Home } from "lucide-react";
+import { Home, Plane } from "lucide-react";
 
 const FeaturedTours = () => {
   const tours = [
@@ -98,12 +98,62 @@ const FeaturedTours = () => {
     {
       id: 10,
       title: "Visa Services",
-      image: "/lovable-uploads/a45ee7c4-7979-4d9b-8784-787f495d218a.png",
       description: "Fast processing for UAE tourist visas and residence visa assistance",
       duration: "2-7 days",
       highlights: ["Tourist Visa", "Residence Visa", "Fast Processing", "Expert Assistance"],
       gradient: "from-slate-500 to-gray-500",
-      accentColor: "slate"
+      accentColor: "slate",
+      useIcon: true
+    },
+    {
+      id: 11,
+      title: "Traditional Dhow Cruises",
+      image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png",
+      description: "Authentic Arabian dhow boat experiences with dinner and entertainment",
+      duration: "2-3 hours",
+      highlights: ["Traditional Dhow", "Dubai Creek", "Buffet Dinner", "Live Shows"],
+      gradient: "from-teal-500 to-cyan-500",
+      accentColor: "teal"
+    },
+    {
+      id: 12,
+      title: "Water Sports Adventures",
+      image: "/lovable-uploads/345c54d1-791a-4801-b153-5c532a91639a.png",
+      description: "Jet-ski, flyboard, wakeboarding and parasailing thrills on Dubai's waters",
+      duration: "2-4 hours",
+      highlights: ["Jet-Ski", "Flyboard", "Wakeboarding", "Parasailing"],
+      gradient: "from-blue-500 to-indigo-500",
+      accentColor: "blue"
+    },
+    {
+      id: 13,
+      title: "Museum & Cultural Tours",
+      image: "/lovable-uploads/9d408d3e-f1ac-484e-9e8a-c35e3318f2df.png",
+      description: "Explore Dubai's culture at Museum of the Future, Dubai Frame and heritage sites",
+      duration: "4-6 hours",
+      highlights: ["Museum of Future", "Dubai Frame", "Heritage Sites", "Cultural Experience"],
+      gradient: "from-green-500 to-emerald-500",
+      accentColor: "green"
+    },
+    {
+      id: 14,
+      title: "Wildlife & Zoo Experiences",
+      image: "/lovable-uploads/36e0d889-385e-493b-be74-fd791bcc2e2b.png",
+      description: "Al Ain Zoo and wildlife conservation experiences with safari adventures",
+      duration: "Full Day",
+      highlights: ["Al Ain Zoo", "Safari Experience", "Wildlife Conservation", "Educational Tours"],
+      gradient: "from-yellow-500 to-orange-500",
+      accentColor: "yellow"
+    },
+    {
+      id: 15,
+      title: "Unique Luxury Stays",
+      image: "/lovable-uploads/ce9bca36-9216-4d50-9f7d-431a7d3b7aa1.png",
+      description: "Overnight yacht live-aboard and Queen Elizabeth II floating suite experiences",
+      duration: "Overnight",
+      highlights: ["Yacht Live-Aboard", "QE2 Hotel", "Luxury Suite", "Unique Experience"],
+      gradient: "from-indigo-500 to-purple-500",
+      accentColor: "indigo"
     }
   ];
 
@@ -136,12 +186,19 @@ const FeaturedTours = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="relative overflow-hidden">
-                <img 
-                  src={tour.image} 
-                  alt={tour.title}
-                  className="w-full h-40 md:h-48 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
-                  onClick={() => handleLearnMore(tour.title)}
-                />
+                {tour.useIcon ? (
+                  <div className="w-full h-40 md:h-48 bg-gradient-to-br from-slate-100 to-gray-200 flex items-center justify-center cursor-pointer"
+                       onClick={() => handleLearnMore(tour.title)}>
+                    <Plane size={80} className="text-slate-600" />
+                  </div>
+                ) : (
+                  <img 
+                    src={tour.image} 
+                    alt={tour.title}
+                    className="w-full h-40 md:h-48 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
+                    onClick={() => handleLearnMore(tour.title)}
+                  />
+                )}
                 <div className={`absolute top-2 md:top-4 right-2 md:right-4 bg-gradient-to-r ${tour.gradient} text-white px-2 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-bold animate-pulse shadow-lg`}>
                   {tour.duration}
                 </div>
