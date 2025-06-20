@@ -98,7 +98,7 @@ const FeaturedTours = () => {
     {
       id: 10,
       title: "Visa Services",
-      image: "/lovable-uploads/02239284-4299-414b-81b4-a26501a3e6b0.png",
+      image: "/lovable-uploads/6dc7fb8d-1bf4-4abb-b15c-e96b7e003eef.png",
       description: "Fast processing for UAE tourist visas and residence visa assistance",
       duration: "2-7 days",
       highlights: ["Tourist Visa", "Residence Visa", "Fast Processing", "Expert Assistance"],
@@ -188,7 +188,7 @@ const FeaturedTours = () => {
     {
       id: 19,
       title: "Self-Drive Luxury Cars",
-      image: "/lovable-uploads/c24685ca-cc44-4fc5-bd03-a0a74d80c932.png",
+      image: "/lovable-uploads/5d821699-e1b1-4c7c-a66b-04792d07becb.png",
       description: "Premium car rentals for self-driving adventures around Dubai",
       duration: "Flexible",
       highlights: ["Luxury Vehicles", "Self-Drive", "Insurance Included", "24/7 Support"],
@@ -238,7 +238,7 @@ const FeaturedTours = () => {
     {
       id: 24,
       title: "Tourist Visa Processing",
-      image: "/lovable-uploads/a45ee7c4-7979-4d9b-8784-787f495d218a.png",
+      image: "/lovable-uploads/6dc7fb8d-1bf4-4abb-b15c-e96b7e003eef.png",
       description: "Fast and reliable UAE tourist visa processing with expert guidance",
       duration: "2-7 days",
       highlights: ["Fast Processing", "Expert Guidance", "Document Support", "Multiple Entry Options"],
@@ -248,7 +248,7 @@ const FeaturedTours = () => {
     {
       id: 25,
       title: "Residence Visa Assistance",
-      image: "/lovable-uploads/a45ee7c4-7979-4d9b-8784-787f495d218a.png",
+      image: "/lovable-uploads/6dc7fb8d-1bf4-4abb-b15c-e96b7e003eef.png",
       description: "Comprehensive assistance for UAE residence visa applications and renewals",
       duration: "1-2 weeks",
       highlights: ["Residence Visa", "Application Support", "Document Preparation", "Follow-up Service"],
@@ -338,6 +338,33 @@ const FeaturedTours = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Activity Category Navigation */}
+        <div className="mb-12">
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            Browse by Category
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+            {[
+              { name: "Yachting & Cruises", tab: "yachting", gradient: "from-cyan-500 to-blue-500" },
+              { name: "Water & Air", tab: "water-air", gradient: "from-blue-500 to-indigo-500" },
+              { name: "Theme Parks", tab: "theme-parks", gradient: "from-red-500 to-orange-500" },
+              { name: "Desert", tab: "desert", gradient: "from-orange-500 to-yellow-500" },
+              { name: "Transport", tab: "transport", gradient: "from-amber-500 to-red-500" },
+              { name: "Dinner in Sky", tab: "dinner-sky", gradient: "from-purple-500 to-pink-500" },
+              { name: "Visas", tab: "visas", gradient: "from-slate-500 to-gray-500" },
+              { name: "Unique", tab: "unique", gradient: "from-indigo-500 to-purple-500" }
+            ].map((category, index) => (
+              <Link key={index} to={`/activities#${category.tab}`}>
+                <Button 
+                  className={`w-full bg-gradient-to-r ${category.gradient} hover:shadow-xl text-white font-semibold py-3 px-4 rounded-lg transform hover:scale-105 transition-all duration-300 text-sm`}
+                >
+                  {category.name}
+                </Button>
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="text-center">
