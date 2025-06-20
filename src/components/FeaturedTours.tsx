@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Home, Plane } from "lucide-react";
@@ -153,6 +154,106 @@ const FeaturedTours = () => {
       highlights: ["Yacht Live-Aboard", "QE2 Hotel", "Luxury Suite", "Unique Experience"],
       gradient: "from-indigo-500 to-purple-500",
       accentColor: "indigo"
+    },
+    {
+      id: 16,
+      title: "Jet-Ski & Flyboard",
+      image: "/lovable-uploads/345c54d1-791a-4801-b153-5c532a91639a.png",
+      description: "High-speed water sports and flyboarding thrills on Dubai's pristine waters",
+      duration: "2-3 hours",
+      highlights: ["Jet-Ski", "Flyboard", "Water Thrills", "Professional Guide"],
+      gradient: "from-blue-400 to-cyan-500",
+      accentColor: "blue"
+    },
+    {
+      id: 17,
+      title: "Wakeboarding & Waterskiing",
+      image: "/lovable-uploads/deabe26b-4e4a-409d-b086-db43fce48ac4.png",
+      description: "Professional wakeboarding and skiing experiences for all skill levels",
+      duration: "2-4 hours",
+      highlights: ["Wakeboarding", "Waterskiing", "Professional Instruction", "Equipment Included"],
+      gradient: "from-cyan-400 to-blue-600",
+      accentColor: "cyan"
+    },
+    {
+      id: 18,
+      title: "Parasailing Adventures",
+      image: "/lovable-uploads/87a3db89-65d0-4a98-8888-47a3a3daa437.png",
+      description: "Soar above Dubai's coastline with breathtaking parasailing experiences",
+      duration: "1-2 hours",
+      highlights: ["Parasailing", "Coastal Views", "Safe Equipment", "Photo Opportunities"],
+      gradient: "from-sky-400 to-blue-500",
+      accentColor: "sky"
+    },
+    {
+      id: 19,
+      title: "Self-Drive Luxury Cars",
+      image: "/lovable-uploads/c24685ca-cc44-4fc5-bd03-a0a74d80c932.png",
+      description: "Premium car rentals for self-driving adventures around Dubai",
+      duration: "Flexible",
+      highlights: ["Luxury Vehicles", "Self-Drive", "Insurance Included", "24/7 Support"],
+      gradient: "from-red-400 to-orange-500",
+      accentColor: "red"
+    },
+    {
+      id: 20,
+      title: "Photo Safaris",
+      image: "/lovable-uploads/8cae6130-34d5-4166-99ab-1c080c5dbe11.png",
+      description: "Professional photography desert tours capturing Dubai's natural beauty",
+      duration: "4-6 hours",
+      highlights: ["Photography Tour", "Professional Guide", "Equipment Provided", "Scenic Locations"],
+      gradient: "from-amber-400 to-yellow-600",
+      accentColor: "amber"
+    },
+    {
+      id: 21,
+      title: "Breakfast in the Air",
+      image: "/lovable-uploads/fcf70f1e-696a-4ac2-9208-c20a1ba4b358.png",
+      description: "Unique dining experience suspended high above Dubai with panoramic views",
+      duration: "2 hours",
+      highlights: ["Aerial Dining", "Gourmet Breakfast", "City Views", "Unique Experience"],
+      gradient: "from-orange-400 to-red-500",
+      accentColor: "orange"
+    },
+    {
+      id: 22,
+      title: "Lunch in the Sky",
+      image: "/lovable-uploads/c5419099-2fda-4d98-91a1-810430d3cf23.png",
+      description: "Enjoy a gourmet lunch experience high above Dubai with panoramic city views",
+      duration: "2 hours",
+      highlights: ["Sky Dining", "Gourmet Lunch", "Panoramic Views", "Professional Service"],
+      gradient: "from-purple-400 to-pink-500",
+      accentColor: "purple"
+    },
+    {
+      id: 23,
+      title: "Sky High Celebration",
+      image: "/lovable-uploads/dd99814d-7824-484a-8bf3-9fec4e8f69cf.png",
+      description: "Celebrate special occasions with an unforgettable dining experience in the sky",
+      duration: "2-3 hours",
+      highlights: ["Special Events", "Customized Menu", "Celebration Package", "Memorable Experience"],
+      gradient: "from-violet-400 to-purple-600",
+      accentColor: "violet"
+    },
+    {
+      id: 24,
+      title: "Tourist Visa Processing",
+      image: "/lovable-uploads/a45ee7c4-7979-4d9b-8784-787f495d218a.png",
+      description: "Fast and reliable UAE tourist visa processing with expert guidance",
+      duration: "2-7 days",
+      highlights: ["Fast Processing", "Expert Guidance", "Document Support", "Multiple Entry Options"],
+      gradient: "from-gray-400 to-slate-600",
+      accentColor: "gray"
+    },
+    {
+      id: 25,
+      title: "Residence Visa Assistance",
+      image: "/lovable-uploads/a45ee7c4-7979-4d9b-8784-787f495d218a.png",
+      description: "Comprehensive assistance for UAE residence visa applications and renewals",
+      duration: "1-2 weeks",
+      highlights: ["Residence Visa", "Application Support", "Document Preparation", "Follow-up Service"],
+      gradient: "from-slate-400 to-gray-600",
+      accentColor: "slate"
     }
   ];
 
