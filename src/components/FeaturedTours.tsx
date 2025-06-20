@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Home, Plane, Anchor } from "lucide-react";
@@ -265,24 +264,24 @@ const FeaturedTours = () => {
   const cruisePackages = [
     {
       id: 1,
-      title: "Dubai Marina Dinner Cruise",
-      image: "/lovable-uploads/e0b69a7c-b75e-4095-885a-ae392b569e79.png",
-      description: "Luxury dining experience while cruising through Dubai Marina",
-      duration: "3 hours"
+      title: "Private luxury Yacht cruises",
+      image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png",
+      description: "Private luxury yacht charter for exclusive Dubai coastline experience",
+      duration: "4-8 hours"
     },
     {
       id: 2,
       title: "Traditional Dhow Cruise",
-      image: "/lovable-uploads/ed5fce7a-dacd-4f89-9db0-cafa8df8c5af.png",
+      image: "/lovable-uploads/51cb8303-b129-4d42-9aa2-fdcc94103926.png",
       description: "Authentic Arabian dhow boat experience with cultural entertainment",
       duration: "2.5 hours"
     },
     {
       id: 3,
-      title: "Luxury Yacht Charter",
-      image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png",
-      description: "Private luxury yacht charter for exclusive Dubai coastline experience",
-      duration: "4-8 hours"
+      title: "Dubai Marina Dinner Cruise",
+      image: "/lovable-uploads/e0b69a7c-b75e-4095-885a-ae392b569e79.png",
+      description: "Luxury dining experience while cruising through Dubai Marina",
+      duration: "3 hours"
     }
   ];
 

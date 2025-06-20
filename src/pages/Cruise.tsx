@@ -7,6 +7,22 @@ const Cruise = () => {
   const cruisePackages = [
     {
       id: 1,
+      title: "Private luxury Yacht cruises",
+      image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png",
+      description: "Private luxury yacht experience along Dubai's pristine coastline.",
+      duration: "4-8 hours",
+      features: ["Private yacht", "Professional crew", "Water sports", "Gourmet catering"]
+    },
+    {
+      id: 2,
+      title: "Dubai Creek Traditional Dhow Cruise",
+      image: "/lovable-uploads/51cb8303-b129-4d42-9aa2-fdcc94103926.png",
+      description: "Sail on a traditional wooden dhow and discover Dubai's heritage along the historic creek.",
+      duration: "2.5 hours",
+      features: ["Traditional dhow boat", "Arabic buffet", "Cultural shows", "Heritage views"]
+    },
+    {
+      id: 3,
       title: "Dubai Marina Premium Dinner Cruise",
       image: "/lovable-uploads/e0b69a7c-b75e-4095-885a-ae392b569e79.png",
       description: "Experience luxury dining while cruising through Dubai Marina's stunning skyline.",
@@ -14,28 +30,12 @@ const Cruise = () => {
       features: ["5-star buffet dinner", "Live entertainment", "Panoramic views", "Welcome drinks"]
     },
     {
-      id: 2,
-      title: "Dubai Creek Traditional Dhow Cruise",
-      image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png",
-      description: "Sail on a traditional wooden dhow and discover Dubai's heritage along the historic creek.",
-      duration: "2.5 hours",
-      features: ["Traditional dhow boat", "Arabic buffet", "Cultural shows", "Heritage views"]
-    },
-    {
-      id: 3,
+      id: 4,
       title: "Dhow Dinner Cruise with Entertainment",
       image: "/lovable-uploads/ed5fce7a-dacd-4f89-9db0-cafa8df8c5af.png",
       description: "Traditional dhow dining experience with authentic Arabian entertainment and cultural performances.",
       duration: "3 hours",
       features: ["Traditional dhow boat", "Authentic Arabian buffet", "Live cultural entertainment", "Traditional dance shows", "Panoramic creek views"]
-    },
-    {
-      id: 4,
-      title: "Luxury Yacht Charter - Dubai Coast",
-      image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png",
-      description: "Private luxury yacht experience along Dubai's pristine coastline.",
-      duration: "4-8 hours",
-      features: ["Private yacht", "Professional crew", "Water sports", "Gourmet catering"]
     },
     {
       id: 5,
