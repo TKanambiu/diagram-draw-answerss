@@ -1,3 +1,4 @@
+
 export const yachtingCruises = [
   { name: "Luxury Yacht Charters & Cruises", description: "Premium yacht experiences with luxury amenities, day cruises, sunset trips, and private events", image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png" },
   { name: "Traditional Dhow Cruises", description: "Authentic Arabian dhow boat experiences", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
@@ -62,7 +63,13 @@ export const formulaOneImages = [
 
 export const limousineImages = [
   "/lovable-uploads/aede6175-4086-428d-893b-2f52c27c187e.png",
-  "/lovable-uploads/12ef6bf9-3fa2-46af-ad6d-022a85ba013c.png"
+  "/lovable-uploads/12ef6bf9-3fa2-46af-ad6d-022a85ba013c.png",
+  "/lovable-uploads/a3bfcc7f-b880-4e3f-bb61-5cc7c82c62eb.png",
+  "/lovable-uploads/c5bff3ca-90c8-4d7f-8c1f-99885a8e5edf.png",
+  "/lovable-uploads/02a8eb83-9a46-484d-9e14-4358580536ee.png",
+  "/lovable-uploads/036b7d0a-a410-4a14-8f90-4d34cedd1afa.png",
+  "/lovable-uploads/38a67266-9354-41a3-9e90-ffd4734da918.png",
+  "/lovable-uploads/41c29b26-54c0-4537-a30c-0f8e32cce30b.png"
 ];
 
 export const desertImages = [

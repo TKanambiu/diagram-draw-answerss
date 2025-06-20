@@ -13,8 +13,8 @@ const ImageSlider = ({ images, title, onBookNow }: ImageSliderProps) => {
         {images.map((image, index) => (
           <div 
             key={index}
-            className="flex-shrink-0 w-80 h-60 relative overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 animate-slide-left-right"
-            style={{ animationDelay: `${index * 200}ms` }}
+            className="flex-shrink-0 w-80 h-60 relative overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 animate-slide-in-right"
+            style={{ animationDelay: `${index * 150}ms` }}
           >
             <img 
               src={image} 
@@ -23,7 +23,7 @@ const ImageSlider = ({ images, title, onBookNow }: ImageSliderProps) => {
               onClick={() => onBookNow(title)}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <span className="text-white font-bold text-lg animate-bounce">Click to Book!</span>
+              <span className="text-white font-bold text-lg animate-pulse">Click to Book!</span>
             </div>
           </div>
         ))}
