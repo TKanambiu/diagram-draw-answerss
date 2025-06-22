@@ -21,7 +21,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 shadow-2xl sticky top-0 z-50 border-b-4 border-yellow-600/50">
+    <nav className="bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 shadow-2xl sticky top-0 z-50 border-b-4 border-yellow-500/40">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -35,10 +35,12 @@ const Navigation = () => {
               <div className="absolute -inset-1 bg-white/20 rounded-lg blur-sm group-hover:blur-md transition-all duration-300"></div>
             </div>
             <div className="text-xl md:text-2xl font-bold text-white drop-shadow-lg">
-              <span className="block text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-white via-yellow-100 to-white bg-clip-text text-transparent animate-pulse">
-                Emirates Dubai Travel
+              <span className="block text-2xl md:text-3xl font-black bg-gradient-to-r from-white via-yellow-50 to-white bg-clip-text text-transparent tracking-wide">
+                <span className="font-serif italic text-shadow-lg">Emirates</span>
+                <span className="font-sans ml-2 text-yellow-100 drop-shadow-md">Dubai</span>
+                <span className="font-serif italic ml-2 bg-gradient-to-r from-yellow-200 to-white bg-clip-text text-transparent">Travel</span>
               </span>
-              <span className="block text-sm md:text-base font-medium text-yellow-100/90 mt-1 tracking-wide">
+              <span className="block text-sm md:text-base font-semibold text-yellow-50/95 mt-1 tracking-wider font-serif italic">
                 Golden Experiences Await
               </span>
             </div>
@@ -48,16 +50,16 @@ const Navigation = () => {
           <div className="hidden lg:flex items-center space-x-8">
             <Link
               to="/"
-              className={`text-white hover:text-yellow-200 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
-                isActive("/") ? "text-yellow-200 bg-white/20 shadow-lg" : ""
+              className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
+                isActive("/") ? "text-yellow-100 bg-white/20 shadow-lg" : ""
               }`}
             >
               Home
             </Link>
             <Link
               to="/about"
-              className={`text-white hover:text-yellow-200 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
-                isActive("/about") ? "text-yellow-200 bg-white/20 shadow-lg" : ""
+              className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
+                isActive("/about") ? "text-yellow-100 bg-white/20 shadow-lg" : ""
               }`}
             >
               About
@@ -67,8 +69,8 @@ const Navigation = () => {
             <div className="relative group">
               <Link
                 to="/activities"
-                className={`text-white hover:text-yellow-200 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
-                  isActive("/activities") ? "text-yellow-200 bg-white/20 shadow-lg" : ""
+                className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
+                  isActive("/activities") ? "text-yellow-100 bg-white/20 shadow-lg" : ""
                 }`}
               >
                 Activities
@@ -90,8 +92,8 @@ const Navigation = () => {
 
             <Link
               to="/contact"
-              className={`text-white hover:text-yellow-200 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
-                isActive("/contact") ? "text-yellow-200 bg-white/20 shadow-lg" : ""
+              className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
+                isActive("/contact") ? "text-yellow-100 bg-white/20 shadow-lg" : ""
               }`}
             >
               Contact
@@ -101,11 +103,11 @@ const Navigation = () => {
           {/* Contact Info */}
           <div className="hidden lg:flex items-center space-x-6">
             <div className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg backdrop-blur-sm">
-              <Phone size={16} className="text-yellow-200" />
+              <Phone size={16} className="text-yellow-100" />
               <span className="font-medium">+971 56 872 3633</span>
             </div>
             <div className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg backdrop-blur-sm">
-              <Mail size={16} className="text-yellow-200" />
+              <Mail size={16} className="text-yellow-100" />
               <span className="font-medium">info@dubaitours.com</span>
             </div>
           </div>
@@ -114,7 +116,7 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="sm"
-            className="lg:hidden text-white hover:bg-white/20 hover:text-yellow-200"
+            className="lg:hidden text-white hover:bg-white/20 hover:text-yellow-100"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -123,12 +125,12 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t border-yellow-400/30">
+          <div className="lg:hidden py-4 border-t border-yellow-300/30">
             <div className="flex flex-col space-y-4">
               <Link
                 to="/"
-                className={`text-white hover:text-yellow-200 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
-                  isActive("/") ? "text-yellow-200 bg-white/20" : ""
+                className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
+                  isActive("/") ? "text-yellow-100 bg-white/20" : ""
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -136,8 +138,8 @@ const Navigation = () => {
               </Link>
               <Link
                 to="/about"
-                className={`text-white hover:text-yellow-200 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
-                  isActive("/about") ? "text-yellow-200 bg-white/20" : ""
+                className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
+                  isActive("/about") ? "text-yellow-100 bg-white/20" : ""
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -145,8 +147,8 @@ const Navigation = () => {
               </Link>
               <Link
                 to="/activities"
-                className={`text-white hover:text-yellow-200 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
-                  isActive("/activities") ? "text-yellow-200 bg-white/20" : ""
+                className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
+                  isActive("/activities") ? "text-yellow-100 bg-white/20" : ""
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -169,8 +171,8 @@ const Navigation = () => {
 
               <Link
                 to="/contact"
-                className={`text-white hover:text-yellow-200 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
-                  isActive("/contact") ? "text-yellow-200 bg-white/20" : ""
+                className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
+                  isActive("/contact") ? "text-yellow-100 bg-white/20" : ""
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -178,13 +180,13 @@ const Navigation = () => {
               </Link>
               
               {/* Mobile Contact Info */}
-              <div className="pt-4 border-t border-yellow-400/30 space-y-2">
+              <div className="pt-4 border-t border-yellow-300/30 space-y-2">
                 <div className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg">
-                  <Phone size={16} className="text-yellow-200" />
+                  <Phone size={16} className="text-yellow-100" />
                   <span>+971 56 872 3633</span>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg">
-                  <Mail size={16} className="text-yellow-200" />
+                  <Mail size={16} className="text-yellow-100" />
                   <span>info@dubaitours.com</span>
                 </div>
               </div>

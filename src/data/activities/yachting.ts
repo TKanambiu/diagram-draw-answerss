@@ -1,3 +1,4 @@
+
 export const yachtingCruises = [
   { name: "Luxury Yacht Charters & Cruises", description: "Premium yacht experiences with luxury amenities, day cruises, sunset trips, and private events", image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png" },
   { name: "Traditional Dhow Cruises", description: "Authentic Arabian dhow boat experiences", image: "/lovable-uploads/f62de0bf-5a34-4fa0-b24b-d77bebe60be3.png" },
@@ -33,6 +34,9 @@ export const marinaImages = [
 
 export const dhowCruiseImages = [
   "/lovable-uploads/ed5fce7a-dacd-4f89-9db0-cafa8df8c5af.png",
+  "/lovable-uploads/56fbae06-3a88-486b-ba0b-d5cc8b2f0d08.png",
+  "/lovable-uploads/3f1e876e-7c2a-4c3b-8a4d-adeee6ccc858.png",
+  "/lovable-uploads/dce1b8d0-3d04-4983-8bf8-951a49cd00dd.png",
   "/lovable-uploads/e09e2a51-fabe-4964-975f-a921a5b8af69.png",
   "/lovable-uploads/d2597b2c-fef9-4dfe-855c-e119494f939f.png",
   "/lovable-uploads/5475eadd-1835-4d93-a24f-1419d7ab8a91.png",
