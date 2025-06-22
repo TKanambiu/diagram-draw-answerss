@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Home, Plane, Anchor } from "lucide-react";
@@ -119,20 +118,9 @@ const FeaturedTours = () => {
       section: "visas"
     },
     {
-      id: 11,
-      title: "Traditional Dhow Cruises",
-      image: "/lovable-uploads/51cb8303-b129-4d42-9aa2-fdcc94103926.png",
-      description: "Authentic Arabian dhow boat experiences with dinner and entertainment",
-      duration: "2-3 hours",
-      highlights: ["Traditional Dhow", "Dubai Creek", "Buffet Dinner", "Live Shows"],
-      gradient: "from-teal-500 to-cyan-500",
-      accentColor: "teal",
-      section: "yachting"
-    },
-    {
       id: 12,
       title: "Water Sports Adventures",
-      image: "/lovable-uploads/345c54d1-791a-4801-b153-5c532a91639a.png",
+      image: "/lovable-uploads/6458e530-a21d-498c-96e8-c33d51ee9ff3.png",
       description: "Jet-ski, flyboard, wakeboarding and parasailing thrills on Dubai's waters",
       duration: "2-4 hours",
       highlights: ["Jet-Ski", "Flyboard", "Wakeboarding", "Parasailing"],
@@ -176,7 +164,7 @@ const FeaturedTours = () => {
     {
       id: 16,
       title: "Jet-Ski & Flyboard",
-      image: "/lovable-uploads/345c54d1-791a-4801-b153-5c532a91639a.png",
+      image: "/lovable-uploads/6458e530-a21d-498c-96e8-c33d51ee9ff3.png",
       description: "High-speed water sports and flyboarding thrills on Dubai's pristine waters",
       duration: "2-3 hours",
       highlights: ["Jet-Ski", "Flyboard", "Water Thrills", "Professional Guide"],
@@ -434,7 +422,7 @@ const FeaturedTours = () => {
             <Link to="/cruise">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 py-3 text-lg font-bold transform hover:scale-105 transition-all duration-300 hover:shadow-xl rounded-xl shadow-lg"
+                className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 py-3 text-lg font-bold transform hover:scale-110 transition-all duration-300 hover:shadow-xl rounded-xl shadow-lg"
               >
                 View All Cruise Packages
               </Button>
