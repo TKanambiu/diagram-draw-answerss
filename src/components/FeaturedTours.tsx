@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Home, Plane, Anchor } from "lucide-react";
@@ -307,21 +308,24 @@ const FeaturedTours = () => {
       title: "Private luxury Yacht cruises",
       image: "/lovable-uploads/1af48b16-d1b5-4745-8dd2-a85b6abe177b.png",
       description: "Private luxury yacht charter for exclusive Dubai coastline experience",
-      duration: "4-8 hours"
+      duration: "4-8 hours",
+      section: "yachting"
     },
     {
       id: 2,
       title: "Traditional Dhow Cruise",
       image: "/lovable-uploads/51cb8303-b129-4d42-9aa2-fdcc94103926.png",
       description: "Authentic Arabian dhow boat experience with cultural entertainment",
-      duration: "2.5 hours"
+      duration: "2.5 hours",
+      section: "yachting"
     },
     {
       id: 3,
       title: "Dubai Marina Dinner Cruise",
       image: "/lovable-uploads/e0b69a7c-b75e-4095-885a-ae392b569e79.png",
       description: "Luxury dining experience while cruising through Dubai Marina",
-      duration: "3 hours"
+      duration: "3 hours",
+      section: "yachting"
     }
   ];
 
@@ -395,15 +399,17 @@ const FeaturedTours = () => {
                     src={cruise.image} 
                     alt={cruise.title}
                     className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
-                    onClick={handleCruiseImageClick}
+                    onClick={() => handleImageClick(cruise.section)}
                   />
                   <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     {cruise.duration}
                   </div>
                 </div>
                 <div className="p-6">
-                  <h4 className="text-xl font-bold text-gray-900 mb-3 cursor-pointer hover:text-blue-600 transition-colors"
-                      onClick={() => handleLearnMore(cruise.title)}>
+                  <h4 
+                    className="text-xl font-bold text-gray-900 mb-3 cursor-pointer hover:text-blue-600 transition-colors"
+                    onClick={() => handleImageClick(cruise.section)}
+                  >
                     {cruise.title}
                   </h4>
                   <p className="text-gray-600 mb-4">{cruise.description}</p>
@@ -457,7 +463,7 @@ const FeaturedTours = () => {
               <div className="p-4 md:p-6 bg-gradient-to-br from-white to-gray-50">
                 <h3 
                   className={`text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3 cursor-pointer hover:bg-gradient-to-r hover:${tour.gradient} hover:bg-clip-text hover:text-transparent transition-all duration-300`}
-                  onClick={() => handleLearnMore(tour.title)}
+                  onClick={() => handleImageClick(tour.section)}
                 >
                   {tour.title}
                 </h3>
