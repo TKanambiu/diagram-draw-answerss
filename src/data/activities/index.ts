@@ -1,3 +1,4 @@
+
 // Yachting & Cruises
 export {
   yachtingCruises,
@@ -52,5 +53,6 @@ export {
   visasPaperwork,
   uniqueStays,
   visaImages,
+  uniqueStayImages,
   queenElizabethImages
 } from './other';

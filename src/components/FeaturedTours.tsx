@@ -118,6 +118,17 @@ const FeaturedTours = () => {
       section: "visas"
     },
     {
+      id: 11,
+      title: "Unique Luxury Stays",
+      image: "/lovable-uploads/4e798f74-8e77-44b2-8b90-1b5d10f0586c.png",
+      description: "Luxury hotel suites with Marina views, desert resorts with private pools, and unique accommodations",
+      duration: "Overnight",
+      highlights: ["Marina Views", "Desert Resorts", "Private Pools", "Luxury Suites"],
+      gradient: "from-teal-500 to-cyan-500",
+      accentColor: "teal",
+      section: "unique"
+    },
+    {
       id: 12,
       title: "Water Sports Adventures",
       image: "/lovable-uploads/6458e530-a21d-498c-96e8-c33d51ee9ff3.png",
@@ -149,17 +160,6 @@ const FeaturedTours = () => {
       gradient: "from-yellow-500 to-orange-500",
       accentColor: "yellow",
       section: "theme-parks"
-    },
-    {
-      id: 15,
-      title: "Unique Luxury Stays",
-      image: "/lovable-uploads/ce9bca36-9216-4d50-9f7d-431a7d3b7aa1.png",
-      description: "Overnight yacht live-aboard and Queen Elizabeth II floating suite experiences",
-      duration: "Overnight",
-      highlights: ["Yacht Live-Aboard", "QE2 Hotel", "Luxury Suite", "Unique Experience"],
-      gradient: "from-indigo-500 to-purple-500",
-      accentColor: "indigo",
-      section: "unique"
     },
     {
       id: 16,
