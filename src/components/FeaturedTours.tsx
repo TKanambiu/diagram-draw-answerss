@@ -280,16 +280,16 @@ const FeaturedTours = () => {
   };
 
   const handleImageClick = (section: string) => {
-    // Navigate to activities page with the specific section hash
-    navigate(`/activities#${section}`);
-    // Small delay to ensure navigation completes before scrolling
+    // Navigate to activities page with the specific section
+    navigate(`/activities`);
+    // Small delay to ensure navigation completes before scrolling to section
     setTimeout(() => {
       // First scroll to top
       window.scrollTo({ top: 0, behavior: 'instant' });
-      // Then find and scroll to the specific section
-      const element = document.getElementById(section);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Then programmatically trigger the tab change by finding and clicking the tab
+      const tabTrigger = document.querySelector(`[value="${section}"]`);
+      if (tabTrigger) {
+        (tabTrigger as HTMLElement).click();
       }
     }, 100);
   };
@@ -350,10 +350,10 @@ const FeaturedTours = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
             {[
               { name: "Luxury Yachts & Cruises", tab: "yachting", gradient: "from-blue-500 to-cyan-500" },
-              { name: "Water & Air", tab: "water-air", gradient: "from-sky-500 to-blue-600" },
+              { name: "Water & Air Experience", tab: "water-air", gradient: "from-sky-500 to-blue-600" },
               { name: "Theme Parks", tab: "theme-parks", gradient: "from-pink-500 to-rose-500" },
               { name: "Desert Safaris", tab: "desert", gradient: "from-orange-500 to-red-500" },
-              { name: "Transport", tab: "transport", gradient: "from-purple-500 to-indigo-500" },
+              { name: "Luxury Transport", tab: "transport", gradient: "from-purple-500 to-indigo-500" },
               { name: "Dinner in Sky", tab: "dinner-sky", gradient: "from-violet-500 to-purple-600" },
               { name: "Visas", tab: "visas", gradient: "from-emerald-500 to-teal-500" },
               { name: "Unique Stays", tab: "unique", gradient: "from-amber-500 to-yellow-500" }
