@@ -1,7 +1,6 @@
-
 export const desertExperiences = [
   { name: "Desert Safari Adventures", description: "Thrilling dune bashing, camel rides, BBQ dinner and cultural shows", image: "/lovable-uploads/f1060add-de06-497e-9d0f-9ccfc0bf5de0.png" },
-  { name: "Photo Safaris", description: "Professional photography desert tours", image: "/lovable-uploads/8cae6130-34d5-4166-99ab-1c080c5dbe11.png" }
+  { name: "Desert Photo Safaris", description: "Professional photography desert tours", image: "/lovable-uploads/30a1f2e2-585e-4ff3-9dae-f03e9addf01b.png" }
 ];
 
 export const desertImages = [
