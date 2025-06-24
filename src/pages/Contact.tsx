@@ -14,7 +14,7 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Contact Emirates Dubai Travel
+              Contact Emirates Dubai Tours & Travel
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Ready to start your Dubai adventure? Get in touch with our travel experts 
@@ -45,8 +45,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
-                    <p className="text-gray-600">info@emiratesdubaitravel.com</p>
-                    <p className="text-gray-600">bookings@emiratesdubaitravel.com</p>
+                    <p className="text-gray-600">info@emiratedubaitours.com</p>
+                    <p className="text-gray-600">bookings@emiratedubaitours.com</p>
                   </div>
                 </div>
 
@@ -112,7 +112,7 @@ const Contact = () => {
                 <p className="text-gray-600">Yes, we offer complimentary hotel transfers for most of our tour packages within Dubai city limits.</p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">What's your cancellation policy?</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">What's our cancellation policy?</h3>
                 <p className="text-gray-600">Cancellations made 24 hours before the tour date are eligible for a full refund. Please check specific package terms.</p>
               </div>
             </div>

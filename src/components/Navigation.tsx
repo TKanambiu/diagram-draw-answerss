@@ -29,7 +29,7 @@ const Navigation = () => {
             <div className="relative">
               <img 
                 src="/lovable-uploads/5c36784f-b200-45b7-acb2-9aa53be582c0.png" 
-                alt="Emirates Dubai Travel Logo" 
+                alt="Emirates Dubai Tours & Travel Logo" 
                 className="w-16 h-12 object-contain transform group-hover:scale-110 transition-transform duration-300 drop-shadow-lg"
               />
               <div className="absolute -inset-1 bg-white/20 rounded-lg blur-sm group-hover:blur-md transition-all duration-300"></div>
@@ -38,7 +38,7 @@ const Navigation = () => {
               <span className="block text-2xl md:text-3xl font-black bg-gradient-to-r from-white via-yellow-50 to-white bg-clip-text text-transparent tracking-wide">
                 <span className="font-serif italic text-shadow-lg">Emirates</span>
                 <span className="font-sans ml-2 text-yellow-100 drop-shadow-md">Dubai</span>
-                <span className="font-serif italic ml-2 bg-gradient-to-r from-yellow-200 to-white bg-clip-text text-transparent">Travel</span>
+                <span className="font-serif italic ml-2 bg-gradient-to-r from-yellow-200 to-white bg-clip-text text-transparent">Tours & Travel</span>
               </span>
               <span className="block text-sm md:text-base font-semibold text-yellow-50/95 mt-1 tracking-wider font-serif italic">
                 Golden Experiences Await
@@ -108,7 +108,7 @@ const Navigation = () => {
             </div>
             <div className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg backdrop-blur-sm">
               <Mail size={16} className="text-yellow-100" />
-              <span className="font-medium">info@dubaitours.com</span>
+              <span className="font-medium">info@emiratedubaitours.com</span>
             </div>
           </div>
 
@@ -187,7 +187,7 @@ const Navigation = () => {
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg">
                   <Mail size={16} className="text-yellow-100" />
-                  <span>info@dubaitours.com</span>
+                  <span>info@emiratedubaitours.com</span>
                 </div>
               </div>
             </div>

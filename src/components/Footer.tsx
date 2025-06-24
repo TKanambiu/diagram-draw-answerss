@@ -9,7 +9,7 @@ const Footer = () => {
   };
 
   const handleEmail = () => {
-    window.open("mailto:info@emiratesdubaitours.com", "_self");
+    window.open("mailto:info@emiratedubaitours.com", "_self");
   };
 
   const handleWhatsApp = () => {
@@ -89,7 +89,7 @@ const Footer = () => {
                   className="text-gray-300 cursor-pointer hover:text-amber-400 transition-colors duration-300"
                   onClick={handleEmail}
                 >
-                  info@emiratesdubaitours.com
+                  info@emiratedubaitours.com
                 </span>
               </div>
               <div className="flex items-center space-x-3">

@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import WhatsAppChat from "@/components/WhatsAppChat";
 import Footer from "@/components/Footer";
@@ -15,11 +16,11 @@ const Cruise = () => {
     },
     {
       id: 2,
-      title: "Dubai Creek Traditional Dhow Cruise",
+      title: "Dubai Creek Luxury Dhow Cruise",
       image: "/lovable-uploads/51cb8303-b129-4d42-9aa2-fdcc94103926.png",
-      description: "Sail on a traditional wooden dhow and discover Dubai's heritage along the historic creek.",
+      description: "Sail on a luxury wooden dhow and discover Dubai's heritage along the historic creek.",
       duration: "2.5 hours",
-      features: ["Traditional dhow boat", "Arabic buffet", "Cultural shows", "Heritage views"]
+      features: ["Luxury dhow boat", "Arabic buffet", "Cultural shows", "Heritage views"]
     },
     {
       id: 3,
@@ -33,9 +34,9 @@ const Cruise = () => {
       id: 4,
       title: "Dhow Dinner Cruise with Entertainment",
       image: "/lovable-uploads/ed5fce7a-dacd-4f89-9db0-cafa8df8c5af.png",
-      description: "Traditional dhow dining experience with authentic Arabian entertainment and cultural performances.",
+      description: "Luxury dhow dining experience with authentic Arabian entertainment and cultural performances.",
       duration: "3 hours",
-      features: ["Traditional dhow boat", "Authentic Arabian buffet", "Live cultural entertainment", "Traditional dance shows", "Panoramic creek views"]
+      features: ["Luxury dhow boat", "Authentic Arabian buffet", "Live cultural entertainment", "Traditional dance shows", "Panoramic creek views"]
     },
     {
       id: 5,

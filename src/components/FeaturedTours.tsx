@@ -313,9 +313,9 @@ const FeaturedTours = () => {
     },
     {
       id: 2,
-      title: "Traditional Dhow Cruise",
+      title: "Luxury Dhow Cruise",
       image: "/lovable-uploads/51cb8303-b129-4d42-9aa2-fdcc94103926.png",
-      description: "Authentic Arabian dhow boat experience with cultural entertainment",
+      description: "Authentic Arabian luxury dhow boat experience with cultural entertainment",
       duration: "2.5 hours",
       section: "yachting"
     },
