@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Home, Plane, Anchor } from "lucide-react";
@@ -346,7 +347,7 @@ const FeaturedTours = () => {
 
         {/* Enhanced Activity Category Navigation */}
         <div className="mb-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
             {[
               { name: "Luxury Yachts & Cruises", tab: "yachting", gradient: "from-blue-500 to-cyan-500" },
               { name: "Water & Air Experience", tab: "water-air", gradient: "from-sky-500 to-blue-600" },
@@ -359,10 +360,10 @@ const FeaturedTours = () => {
             ].map((category, index) => (
               <Link key={index} to={`/activities#${category.tab}`}>
                 <Button 
-                  className={`w-full bg-gradient-to-r ${category.gradient} hover:opacity-90 text-white border-0 px-3 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl`}
+                  className={`w-full h-auto bg-gradient-to-r ${category.gradient} hover:opacity-90 text-white border-0 px-2 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl`}
                 >
-                  <div className="flex flex-col items-center space-y-1">
-                    <span className="text-xs md:text-sm font-bold text-center leading-tight text-white">
+                  <div className="flex flex-col items-center justify-center space-y-1 min-h-[60px]">
+                    <span className="text-xs md:text-sm font-bold text-center leading-tight text-white break-words hyphens-auto">
                       {category.name}
                     </span>
                   </div>
