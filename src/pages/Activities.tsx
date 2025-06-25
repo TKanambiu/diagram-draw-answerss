@@ -36,7 +36,8 @@ import {
   visaImages,
   additionalDesertImages,
   additionalFormulaOneImages,
-  dinnerInTheSkyImages
+  dinnerInTheSkyImages,
+  dhowCruiseImages
 } from "@/data/activities";
 
 const Activities = () => {
@@ -92,7 +93,8 @@ const Activities = () => {
                 activities={yachtingCruises} 
                 imageSliders={[
                   { images: yachtImages, title: "Luxury Yacht Experiences" },
-                  { images: marinaImages, title: "Marina & Beach Experience" }
+                  { images: marinaImages, title: "Marina & Beach Experience" },
+                  { images: dhowCruiseImages, title: "Traditional Dhow Cruises" }
                 ]}
                 onBookNow={handleBookNow} 
               />
@@ -102,9 +104,7 @@ const Activities = () => {
               <ActivitySection 
                 activities={waterAirAdventures} 
                 imageSliders={[
-                  { images: yachtImages, title: "Luxury Yacht Experiences" },
                   { images: [...helicopterImages, ...newHelicopterImages], title: "Helicopter Tours" },
-                  { images: marinaImages, title: "Marina & Beach Experience" },
                   { images: waterSportsImages, title: "Water Sports Adventures" },
                   { images: skydivingImages, title: "Skydiving Experiences" }
                 ]}
