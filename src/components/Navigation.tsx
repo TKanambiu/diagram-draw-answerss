@@ -20,6 +20,14 @@ const Navigation = () => {
     { name: "Visas", path: "/activities#visas", color: "bg-gradient-to-br from-green-500 to-emerald-600" }
   ];
 
+  const handlePhoneCall = () => {
+    window.location.href = "tel:+971568723633";
+  };
+
+  const handleEmailCompose = () => {
+    window.open("https://mail.google.com/mail/?view=cm&fs=1&to=info@emiratedubaitours.com", "_blank");
+  };
+
   return (
     <nav className="bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 shadow-2xl sticky top-0 z-50 border-b-4 border-yellow-500/40">
       <div className="container mx-auto px-4">
@@ -56,14 +64,6 @@ const Navigation = () => {
             >
               Home
             </Link>
-            <Link
-              to="/about"
-              className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
-                isActive("/about") ? "text-yellow-100 bg-white/20 shadow-lg" : ""
-              }`}
-            >
-              About
-            </Link>
             
             {/* Activity Categories Dropdown */}
             <div className="relative group">
@@ -91,6 +91,15 @@ const Navigation = () => {
             </div>
 
             <Link
+              to="/about"
+              className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
+                isActive("/about") ? "text-yellow-100 bg-white/20 shadow-lg" : ""
+              }`}
+            >
+              About
+            </Link>
+
+            <Link
               to="/contact"
               className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
                 isActive("/contact") ? "text-yellow-100 bg-white/20 shadow-lg" : ""
@@ -101,15 +110,21 @@ const Navigation = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="hidden lg:flex items-center space-x-6">
-            <div className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg backdrop-blur-sm">
+          <div className="hidden lg:flex items-center space-x-4">
+            <button
+              onClick={handlePhoneCall}
+              className="flex items-center space-x-2 text-sm text-white bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
+            >
               <Phone size={16} className="text-yellow-100" />
               <span className="font-medium">+971 56 872 3633</span>
-            </div>
-            <div className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg backdrop-blur-sm">
+            </button>
+            <button
+              onClick={handleEmailCompose}
+              className="flex items-center space-x-2 text-sm text-white bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
+            >
               <Mail size={16} className="text-yellow-100" />
               <span className="font-medium">info@emiratedubaitours.com</span>
-            </div>
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -137,15 +152,6 @@ const Navigation = () => {
                 Home
               </Link>
               <Link
-                to="/about"
-                className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
-                  isActive("/about") ? "text-yellow-100 bg-white/20" : ""
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                About
-              </Link>
-              <Link
                 to="/activities"
                 className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
                   isActive("/activities") ? "text-yellow-100 bg-white/20" : ""
@@ -170,6 +176,16 @@ const Navigation = () => {
               </div>
 
               <Link
+                to="/about"
+                className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
+                  isActive("/about") ? "text-yellow-100 bg-white/20" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                About
+              </Link>
+
+              <Link
                 to="/contact"
                 className={`text-white hover:text-yellow-100 transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-white/10 ${
                   isActive("/contact") ? "text-yellow-100 bg-white/20" : ""
@@ -181,14 +197,20 @@ const Navigation = () => {
               
               {/* Mobile Contact Info */}
               <div className="pt-4 border-t border-yellow-300/30 space-y-2">
-                <div className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg">
+                <button
+                  onClick={handlePhoneCall}
+                  className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg w-full hover:bg-white/20 transition-all duration-300"
+                >
                   <Phone size={16} className="text-yellow-100" />
                   <span>+971 56 872 3633</span>
-                </div>
-                <div className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg">
+                </button>
+                <button
+                  onClick={handleEmailCompose}
+                  className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg w-full hover:bg-white/20 transition-all duration-300"
+                >
                   <Mail size={16} className="text-yellow-100" />
                   <span>info@emiratedubaitours.com</span>
-                </div>
+                </button>
               </div>
             </div>
           </div>
