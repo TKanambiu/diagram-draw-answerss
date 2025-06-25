@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Plane, Utensils } from "lucide-react";
 import ActivitySection from "@/components/activities/ActivitySection";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import {
   yachtingCruises,
@@ -43,6 +43,7 @@ import {
 const Activities = () => {
   const location = useLocation();
   const [activeTab, setActiveTab] = useState('yachting');
+  const isNavigationChangeRef = useRef(false);
 
   // Map hash fragments to tab values
   const getDefaultTab = () => {
@@ -69,14 +70,21 @@ const Activities = () => {
   // Listen for hash changes and custom events from navigation
   useEffect(() => {
     const handleHashChange = () => {
-      const newTab = getDefaultTab();
-      console.log('Hash changed, setting tab to:', newTab);
-      setActiveTab(newTab);
+      // Only handle hash changes if they're not from navigation clicks
+      if (!isNavigationChangeRef.current) {
+        const newTab = getDefaultTab();
+        console.log('Hash changed externally, setting tab to:', newTab);
+        setActiveTab(newTab);
+      }
+      // Reset the flag
+      isNavigationChangeRef.current = false;
     };
 
     const handleActivityTabChange = (event: CustomEvent) => {
       const { tab } = event.detail;
       console.log('Custom event received, setting tab to:', tab);
+      // Set flag to prevent hash change from interfering
+      isNavigationChangeRef.current = true;
       setActiveTab(tab);
     };
 
