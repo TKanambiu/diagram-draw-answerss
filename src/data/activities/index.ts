@@ -11,6 +11,7 @@ export {
 export {
   waterAirAdventures,
   helicopterImages,
+  newHelicopterImages,
   waterSportsImages,
   skydivingImages
 } from './waterAir';

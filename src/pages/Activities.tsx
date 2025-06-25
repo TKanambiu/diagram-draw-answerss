@@ -17,6 +17,7 @@ import {
   uniqueStays,
   dinnerInTheSkyExperiences,
   helicopterImages,
+  newHelicopterImages,
   yachtImages,
   formulaOneImages,
   limousineImages,
@@ -101,7 +102,9 @@ const Activities = () => {
               <ActivitySection 
                 activities={waterAirAdventures} 
                 imageSliders={[
-                  { images: helicopterImages, title: "Helicopter Tours" },
+                  { images: yachtImages, title: "Luxury Yacht Experiences" },
+                  { images: [...helicopterImages, ...newHelicopterImages], title: "Helicopter Tours" },
+                  { images: marinaImages, title: "Marina & Beach Experience" },
                   { images: waterSportsImages, title: "Water Sports Adventures" },
                   { images: skydivingImages, title: "Skydiving Experiences" }
                 ]}

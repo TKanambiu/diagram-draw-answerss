@@ -15,6 +15,14 @@ export const helicopterImages = [
   "/lovable-uploads/b3851242-8589-4d28-8849-ebd6681e5669.png"
 ];
 
+export const newHelicopterImages = [
+  "/lovable-uploads/1ea4bdb3-3ac0-4819-93fc-b078bd589448.png",
+  "/lovable-uploads/b54d0773-748a-43b9-a8a4-e9442e65e640.png",
+  "/lovable-uploads/b73a9945-11b6-4526-83a6-374e566215ef.png",
+  "/lovable-uploads/3e8d2af8-62cb-437c-a208-aae24434769c.png",
+  "/lovable-uploads/8be02246-27b1-4bec-8b4a-0b68b9661ad4.png"
+];
+
 export const waterSportsImages = [
   "/lovable-uploads/6458e530-a21d-498c-96e8-c33d51ee9ff3.png",
   "/lovable-uploads/a59b6e93-081a-4e6d-872d-b1b591817a80.png",
