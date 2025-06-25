@@ -280,7 +280,7 @@ const FeaturedTours = () => {
 
   const handleImageClick = (section: string) => {
     // Navigate to activities page with the specific section
-    navigate(`/activities`);
+    navigate(`/activities#${section}`);
     // Small delay to ensure navigation completes before scrolling to section
     setTimeout(() => {
       // First scroll to top

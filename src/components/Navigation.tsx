@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, Mail } from "lucide-react";
@@ -10,15 +9,16 @@ const Navigation = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  // Updated to match exactly with homepage activity categories
   const activityCategories = [
-    { name: "Luxury Yachts & Cruises", path: "/activities#yachting", color: "bg-gradient-to-br from-blue-500 to-cyan-600" },
-    { name: "Water & Air Experience", path: "/activities#water-air", color: "bg-gradient-to-br from-sky-400 to-blue-500" },
-    { name: "Theme Parks", path: "/activities#theme-parks", color: "bg-gradient-to-br from-purple-500 to-pink-500" },
+    { name: "Luxury Yachts & Cruises", path: "/activities#yachting", color: "bg-gradient-to-br from-blue-500 to-cyan-500" },
+    { name: "Water & Air Experience", path: "/activities#water-air", color: "bg-gradient-to-br from-sky-500 to-blue-600" },
+    { name: "Theme Parks", path: "/activities#theme-parks", color: "bg-gradient-to-br from-pink-500 to-rose-500" },
     { name: "Desert Safaris", path: "/activities#desert", color: "bg-gradient-to-br from-orange-500 to-red-500" },
-    { name: "Luxury Transport", path: "/activities#transport", color: "bg-gradient-to-br from-gray-600 to-gray-800" },
-    { name: "Dinner in Sky", path: "/activities#dinner-sky", color: "bg-gradient-to-br from-indigo-500 to-purple-600" },
-    { name: "Visas", path: "/activities#visas", color: "bg-gradient-to-br from-green-500 to-emerald-600" },
-    { name: "Unique Stays", path: "/activities#unique", color: "bg-gradient-to-br from-pink-500 to-rose-500" }
+    { name: "Luxury Transport", path: "/activities#transport", color: "bg-gradient-to-br from-purple-500 to-indigo-500" },
+    { name: "Dinner in Sky", path: "/activities#dinner-sky", color: "bg-gradient-to-br from-violet-500 to-purple-600" },
+    { name: "Visas", path: "/activities#visas", color: "bg-gradient-to-br from-emerald-500 to-teal-500" },
+    { name: "Unique Stays", path: "/activities#unique", color: "bg-gradient-to-br from-amber-500 to-yellow-500" }
   ];
 
   const handlePhoneCall = () => {
