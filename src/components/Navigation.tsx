@@ -1,11 +1,13 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, Mail } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -27,6 +29,23 @@ const Navigation = () => {
 
   const handleEmailCompose = () => {
     window.open("https://mail.google.com/mail/?view=cm&fs=1&to=info@emiratedubaitours.com", "_blank");
+  };
+
+  const handleActivityClick = (path: string) => {
+    const hash = path.split('#')[1];
+    if (location.pathname === '/activities') {
+      // If already on activities page, just scroll to section
+      const element = document.querySelector(`[data-tab="${hash}"]`);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      // Update URL hash
+      window.history.pushState(null, '', path);
+    } else {
+      // Navigate to activities page with hash
+      navigate(path);
+    }
+    setIsOpen(false);
   };
 
   return (
@@ -79,13 +98,13 @@ const Navigation = () => {
               <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border-2 border-yellow-300 p-2">
                 <div className="grid gap-2">
                   {activityCategories.map((category, index) => (
-                    <Link
+                    <button
                       key={index}
-                      to={category.path}
+                      onClick={() => handleActivityClick(category.path)}
                       className={`${category.color} text-white font-bold px-4 py-3 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-center text-sm`}
                     >
                       {category.name}
-                    </Link>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -165,14 +184,13 @@ const Navigation = () => {
               {/* Mobile Activity Categories */}
               <div className="ml-4 space-y-2">
                 {activityCategories.map((category, index) => (
-                  <Link
+                  <button
                     key={index}
-                    to={category.path}
-                    className={`block ${category.color} text-white font-bold px-4 py-2 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-center text-sm`}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => handleActivityClick(category.path)}
+                    className={`block w-full ${category.color} text-white font-bold px-4 py-2 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-center text-sm`}
                   >
                     {category.name}
-                  </Link>
+                  </button>
                 ))}
               </div>
 

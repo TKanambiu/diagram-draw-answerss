@@ -88,7 +88,7 @@ const Activities = () => {
               <TabsTrigger value="unique">Unique Stays</TabsTrigger>
             </TabsList>
 
-            <TabsContent value="yachting">
+            <TabsContent value="yachting" data-tab="yachting">
               <ActivitySection 
                 activities={yachtingCruises} 
                 imageSliders={[
@@ -100,7 +100,7 @@ const Activities = () => {
               />
             </TabsContent>
 
-            <TabsContent value="water-air">
+            <TabsContent value="water-air" data-tab="water-air">
               <ActivitySection 
                 activities={waterAirAdventures} 
                 imageSliders={[
@@ -112,7 +112,7 @@ const Activities = () => {
               />
             </TabsContent>
 
-            <TabsContent value="theme-parks">
+            <TabsContent value="theme-parks" data-tab="theme-parks">
               <ActivitySection 
                 activities={themeParksAttractions} 
                 imageSliders={[
@@ -125,7 +125,7 @@ const Activities = () => {
               />
             </TabsContent>
 
-            <TabsContent value="desert">
+            <TabsContent value="desert" data-tab="desert">
               <ActivitySection 
                 activities={desertExperiences} 
                 imageSliders={[{ images: [...desertImages, ...newDesertImages, ...additionalDesertImages], title: "Desert Safari Adventures" }]}
@@ -133,7 +133,7 @@ const Activities = () => {
               />
             </TabsContent>
 
-            <TabsContent value="transport">
+            <TabsContent value="transport" data-tab="transport">
               <ActivitySection 
                 activities={groundTransportation} 
                 imageSliders={[
@@ -144,7 +144,7 @@ const Activities = () => {
               />
             </TabsContent>
 
-            <TabsContent value="dinner-sky">
+            <TabsContent value="dinner-sky" data-tab="dinner-sky">
               <ActivitySection 
                 activities={dinnerInTheSkyExperiences} 
                 imageSliders={[{ images: dinnerInTheSkyImages, title: "Dinner in the Sky Dubai" }]}
@@ -152,7 +152,7 @@ const Activities = () => {
               />
             </TabsContent>
 
-            <TabsContent value="visas">
+            <TabsContent value="visas" data-tab="visas">
               <ActivitySection 
                 activities={visasPaperwork} 
                 imageSliders={[{ images: visaImages, title: "Visa Services" }]}
@@ -160,7 +160,7 @@ const Activities = () => {
               />
             </TabsContent>
 
-            <TabsContent value="unique">
+            <TabsContent value="unique" data-tab="unique">
               <ActivitySection 
                 activities={uniqueStays} 
                 imageSliders={[{ images: queenElizabethImages, title: "Queen Elizabeth II Floating Suite" }]}
