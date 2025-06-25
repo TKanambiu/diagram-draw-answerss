@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Plane, Utensils } from "lucide-react";
 import ActivitySection from "@/components/activities/ActivitySection";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import {
   yachtingCruises,
@@ -42,16 +42,7 @@ import {
 
 const Activities = () => {
   const location = useLocation();
-
-  // Scroll to top when component mounts or when coming from homepage links
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [location.pathname]);
-
-  const handleBookNow = (activityName: string) => {
-    const message = encodeURIComponent(`Hi! I'm interested in booking ${activityName}. Could you please provide more details about pricing, availability, and what's included?`);
-    window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
-  };
+  const [activeTab, setActiveTab] = useState('yachting');
 
   // Map hash fragments to tab values
   const getDefaultTab = () => {
@@ -69,13 +60,53 @@ const Activities = () => {
     return tabMapping[hash] || 'yachting';
   };
 
+  // Scroll to top when component mounts or when coming from homepage links
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setActiveTab(getDefaultTab());
+  }, [location.pathname]);
+
+  // Listen for hash changes and custom events from navigation
+  useEffect(() => {
+    const handleHashChange = () => {
+      const newTab = getDefaultTab();
+      console.log('Hash changed, setting tab to:', newTab);
+      setActiveTab(newTab);
+    };
+
+    const handleActivityTabChange = (event: CustomEvent) => {
+      const { tab } = event.detail;
+      console.log('Custom event received, setting tab to:', tab);
+      setActiveTab(tab);
+    };
+
+    // Set initial tab based on hash
+    setActiveTab(getDefaultTab());
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // Listen for custom events from navigation
+    window.addEventListener('activityTabChange', handleActivityTabChange as EventListener);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('activityTabChange', handleActivityTabChange as EventListener);
+    };
+  }, []);
+
+  const handleBookNow = (activityName: string) => {
+    const message = encodeURIComponent(`Hi! I'm interested in booking ${activityName}. Could you please provide more details about pricing, availability, and what's included?`);
+    window.open(`https://wa.me/971568723633?text=${message}`, "_blank");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Navigation />
       
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4">
-          <Tabs defaultValue={getDefaultTab()} className="w-full">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             {/* Hidden tabs list for functionality but not visible to users */}
             <TabsList className="hidden">
               <TabsTrigger value="yachting">Luxury Yachts & Cruises</TabsTrigger>

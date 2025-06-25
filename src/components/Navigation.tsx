@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, Mail } from "lucide-react";
@@ -33,14 +32,20 @@ const Navigation = () => {
 
   const handleActivityClick = (path: string) => {
     const hash = path.split('#')[1];
+    console.log('Activity clicked:', hash, 'Current path:', location.pathname);
+    
     if (location.pathname === '/activities') {
-      // If already on activities page, just scroll to section
-      const element = document.querySelector(`[data-tab="${hash}"]`);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-      // Update URL hash
-      window.history.pushState(null, '', path);
+      // If already on activities page, trigger tab change by updating hash and triggering a custom event
+      window.location.hash = hash;
+      
+      // Dispatch a custom event to notify the Activities component
+      const event = new CustomEvent('activityTabChange', { detail: { tab: hash } });
+      window.dispatchEvent(event);
+      
+      // Scroll to top smoothly
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
     } else {
       // Navigate to activities page with hash
       navigate(path);
