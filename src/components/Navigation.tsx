@@ -12,12 +12,13 @@ const Navigation = () => {
 
   const activityCategories = [
     { name: "Luxury Yachts & Cruises", path: "/activities#yachting", color: "bg-gradient-to-br from-blue-500 to-cyan-600" },
-    { name: "Water & Air", path: "/activities#water-air", color: "bg-gradient-to-br from-sky-400 to-blue-500" },
+    { name: "Water & Air Experience", path: "/activities#water-air", color: "bg-gradient-to-br from-sky-400 to-blue-500" },
     { name: "Theme Parks", path: "/activities#theme-parks", color: "bg-gradient-to-br from-purple-500 to-pink-500" },
     { name: "Desert Safaris", path: "/activities#desert", color: "bg-gradient-to-br from-orange-500 to-red-500" },
-    { name: "Transport", path: "/activities#transport", color: "bg-gradient-to-br from-gray-600 to-gray-800" },
+    { name: "Luxury Transport", path: "/activities#transport", color: "bg-gradient-to-br from-gray-600 to-gray-800" },
     { name: "Dinner in Sky", path: "/activities#dinner-sky", color: "bg-gradient-to-br from-indigo-500 to-purple-600" },
-    { name: "Visas", path: "/activities#visas", color: "bg-gradient-to-br from-green-500 to-emerald-600" }
+    { name: "Visas", path: "/activities#visas", color: "bg-gradient-to-br from-green-500 to-emerald-600" },
+    { name: "Unique Stays", path: "/activities#unique", color: "bg-gradient-to-br from-pink-500 to-rose-500" }
   ];
 
   const handlePhoneCall = () => {
@@ -109,21 +110,21 @@ const Navigation = () => {
             </Link>
           </div>
 
-          {/* Contact Info - Enhanced Visibility with No-Wrap */}
+          {/* Contact Info - Enhanced Visibility */}
           <div className="hidden lg:flex items-center space-x-3">
             <button
               onClick={handlePhoneCall}
-              className="flex items-center space-x-2 text-white bg-gradient-to-r from-blue-600 to-blue-700 px-3 py-2.5 rounded-lg shadow-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 border border-blue-500/30"
+              className="flex items-center space-x-2 text-white bg-gradient-to-r from-emerald-600 to-teal-700 px-4 py-3 rounded-lg shadow-xl hover:from-emerald-700 hover:to-teal-800 transition-all duration-300 transform hover:scale-105 border-2 border-emerald-500/50 hover:border-emerald-400/70 backdrop-blur-sm"
             >
-              <Phone size={18} className="text-white flex-shrink-0" />
-              <span className="font-semibold text-sm whitespace-nowrap">+971 56 872 3633</span>
+              <Phone size={20} className="text-white flex-shrink-0 drop-shadow-lg" />
+              <span className="font-bold text-base whitespace-nowrap drop-shadow-md tracking-wide">+971 56 872 3633</span>
             </button>
             <button
               onClick={handleEmailCompose}
-              className="flex items-center space-x-2 text-white bg-gradient-to-r from-green-600 to-green-700 px-3 py-2.5 rounded-lg shadow-lg hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105 border border-green-500/30"
+              className="flex items-center space-x-2 text-white bg-gradient-to-r from-blue-600 to-indigo-700 px-4 py-3 rounded-lg shadow-xl hover:from-blue-700 hover:to-indigo-800 transition-all duration-300 transform hover:scale-105 border-2 border-blue-500/50 hover:border-blue-400/70 backdrop-blur-sm"
             >
-              <Mail size={18} className="text-white flex-shrink-0" />
-              <span className="font-semibold text-sm whitespace-nowrap">Email Us</span>
+              <Mail size={20} className="text-white flex-shrink-0 drop-shadow-lg" />
+              <span className="font-bold text-base whitespace-nowrap drop-shadow-md tracking-wide">Email Us</span>
             </button>
           </div>
 
@@ -195,18 +196,18 @@ const Navigation = () => {
                 Contact
               </Link>
               
-              {/* Mobile Contact Info - Enhanced */}
+              {/* Mobile Contact Info */}
               <div className="pt-4 border-t border-yellow-300/30 space-y-3">
                 <button
                   onClick={handlePhoneCall}
-                  className="flex items-center space-x-3 text-white bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-3 rounded-lg w-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg"
+                  className="flex items-center space-x-3 text-white bg-gradient-to-r from-emerald-600 to-teal-700 px-4 py-3 rounded-lg w-full hover:from-emerald-700 hover:to-teal-800 transition-all duration-300 shadow-lg border border-emerald-500/30"
                 >
                   <Phone size={20} className="text-white flex-shrink-0" />
                   <span className="font-semibold whitespace-nowrap">+971 56 872 3633</span>
                 </button>
                 <button
                   onClick={handleEmailCompose}
-                  className="flex items-center space-x-3 text-white bg-gradient-to-r from-green-600 to-green-700 px-4 py-3 rounded-lg w-full hover:from-green-700 hover:to-green-800 transition-all duration-300 shadow-lg"
+                  className="flex items-center space-x-3 text-white bg-gradient-to-r from-blue-600 to-indigo-700 px-4 py-3 rounded-lg w-full hover:from-blue-700 hover:to-indigo-800 transition-all duration-300 shadow-lg border border-blue-500/30"
                 >
                   <Mail size={20} className="text-white flex-shrink-0" />
                   <span className="font-semibold whitespace-nowrap">Send Email</span>
