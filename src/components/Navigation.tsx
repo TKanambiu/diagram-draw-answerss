@@ -109,21 +109,21 @@ const Navigation = () => {
             </Link>
           </div>
 
-          {/* Contact Info */}
-          <div className="hidden lg:flex items-center space-x-4">
+          {/* Contact Info - Enhanced Visibility */}
+          <div className="hidden lg:flex items-center space-x-3">
             <button
               onClick={handlePhoneCall}
-              className="flex items-center space-x-2 text-sm text-white bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
+              className="flex items-center space-x-2 text-white bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2.5 rounded-lg shadow-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 border border-blue-500/30"
             >
-              <Phone size={16} className="text-yellow-100" />
-              <span className="font-medium">+971 56 872 3633</span>
+              <Phone size={18} className="text-white" />
+              <span className="font-semibold text-sm">+971 56 872 3633</span>
             </button>
             <button
               onClick={handleEmailCompose}
-              className="flex items-center space-x-2 text-sm text-white bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
+              className="flex items-center space-x-2 text-white bg-gradient-to-r from-green-600 to-green-700 px-4 py-2.5 rounded-lg shadow-lg hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105 border border-green-500/30"
             >
-              <Mail size={16} className="text-yellow-100" />
-              <span className="font-medium">info@emiratedubaitours.com</span>
+              <Mail size={18} className="text-white" />
+              <span className="font-semibold text-sm">Email Us</span>
             </button>
           </div>
 
@@ -195,21 +195,21 @@ const Navigation = () => {
                 Contact
               </Link>
               
-              {/* Mobile Contact Info */}
-              <div className="pt-4 border-t border-yellow-300/30 space-y-2">
+              {/* Mobile Contact Info - Enhanced */}
+              <div className="pt-4 border-t border-yellow-300/30 space-y-3">
                 <button
                   onClick={handlePhoneCall}
-                  className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg w-full hover:bg-white/20 transition-all duration-300"
+                  className="flex items-center space-x-3 text-white bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-3 rounded-lg w-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg"
                 >
-                  <Phone size={16} className="text-yellow-100" />
-                  <span>+971 56 872 3633</span>
+                  <Phone size={20} className="text-white" />
+                  <span className="font-semibold">+971 56 872 3633</span>
                 </button>
                 <button
                   onClick={handleEmailCompose}
-                  className="flex items-center space-x-2 text-sm text-white bg-white/10 px-3 py-2 rounded-lg w-full hover:bg-white/20 transition-all duration-300"
+                  className="flex items-center space-x-3 text-white bg-gradient-to-r from-green-600 to-green-700 px-4 py-3 rounded-lg w-full hover:from-green-700 hover:to-green-800 transition-all duration-300 shadow-lg"
                 >
-                  <Mail size={16} className="text-yellow-100" />
-                  <span>info@emiratedubaitours.com</span>
+                  <Mail size={20} className="text-white" />
+                  <span className="font-semibold">Send Email</span>
                 </button>
               </div>
             </div>
